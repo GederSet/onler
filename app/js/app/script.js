@@ -1,0 +1,12 @@
+import './functions/popup.js';
+import './functions/search.js';
+import './functions/is_mobile.js';
+import './functions/menu_burger.js';
+import './functions/placeholder.js';
+import '../api/user/login_user.js';
+import '../api/user/register_user.js';
+import '../api/basket/add_basket_products.js';
+import '../api/basket/get_basket_products.js';
+import '../api/basket/count_basket_products.js';
+import '../api/basket/delete_basket_product.js';
+import '../api/basket/update_count_products.js';

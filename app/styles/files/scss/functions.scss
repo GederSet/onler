@@ -1,0 +1,53 @@
+@import 'settings';
+
+@function rem($px) {
+    $result: ($px / 16)+rem;
+    @return $result;
+}
+
+@function em($px) {
+    $result: ($px / 16)+em;
+    @return $result;
+}
+
+
+
+@mixin adaptiv-value($property, $startSize, $minSize, $type) {
+    $addSize: $startSize - $minSize;
+
+    @if $type ==1 {
+
+        #{$property}: $startSize + px;
+
+        @media (max-width: #{$containerWidth + px}) {
+            #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$containerWidth - 320}));
+        }
+
+    }
+
+    @else if $type ==2 {
+
+        #{$property}: $startSize + px;
+
+        @media (min-width: #{$containerWidth + px}) {
+            #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+        }
+
+    }
+
+    @else {
+        #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+    }
+}
+
+@mixin adaptiv-exact($property, $container, $endPosiiton, $startSize, $minSize) {
+
+    $addSize: $startSize - $minSize;
+
+    #{$property}: $startSize + px;
+
+    @media (max-width: #{$container + px}) {
+        #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - #{$endPosiiton + px}) / #{$container - $endPosiiton}));
+    }
+
+}

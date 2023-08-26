@@ -1,0 +1,50 @@
+const rangeGap = 10000;
+const progressBar = document.querySelector('.filter__range');
+const rangePrice = document.querySelectorAll('.filter__rows input');
+const rangePriceMax = rangePrice[1].max;
+const rangeRound = document.querySelectorAll('.filter__range-input input');
+startRangeSlider();
+
+
+rangePrice.forEach((input) => {
+    input.addEventListener('input', getRangePrice);
+});
+rangeRound.forEach((round) => {
+    round.addEventListener('input', startRangeSlider);
+});
+
+function getRangePrice(e) {
+
+    let minVal = parseInt(rangePrice[0].value);
+    let maxVal = parseInt(rangePrice[1].value);
+
+    if (maxVal - minVal >= rangeGap) {
+        if ((e.target.className === 'filter__price-min') && maxVal <= rangePriceMax) {
+            rangeRound[0].value = minVal;
+            progressBar.style.left = (minVal / rangeRound[0].max) * 100 + '%';
+        } else {
+            rangeRound[1].value = maxVal;
+            progressBar.style.right = 100 - (maxVal / rangeRound[1].max) * 100 + '%';
+        }
+    }
+
+}
+function startRangeSlider(e) {
+
+    let minVal = parseInt(rangeRound[0].value);
+    let maxVal = parseInt(rangeRound[1].value);
+
+    if (maxVal - minVal < rangeGap) {
+        if (e.target.className === 'filter__range-min') {
+            rangeRound[0].value = maxVal - rangeGap;
+        } else {
+            rangeRound[1].value = minVal + rangeGap;
+        }
+    } else {
+        rangePrice[0].value = minVal;
+        rangePrice[1].value = maxVal;
+        progressBar.style.left = (minVal / rangeRound[0].max) * 100 + '%';
+        progressBar.style.right = 100 - (maxVal / rangeRound[1].max) * 100 + '%';
+    }
+
+}

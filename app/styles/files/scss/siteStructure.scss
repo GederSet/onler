@@ -1,0 +1,24 @@
+/* Структура сайта ---------------------------------------------------------------------------------------------------*/
+@import 'functions';
+@import 'settings';
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    min-height: 100%;
+
+    >main {
+        flex: 1 1 auto;
+    }
+}
+
+[class*='__container'] {
+    max-width: rem($containerWidth);
+    padding: 0 rem($containerPadding);
+    margin: 0 auto;
+}
+
+[class*='__title'] {
+    font-size: $titleFontSize;
+}
