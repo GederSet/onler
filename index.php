@@ -248,7 +248,6 @@
         </div>
         <script type="module" src="app/js/app/script.js"></script>
         <script type="module" src="app/js/app/pages_site/home_script.js"></script>
-        <script src="app/js/api/products/get_products.js"></script>
     </div>
 </body>
 

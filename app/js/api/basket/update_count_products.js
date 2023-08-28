@@ -8,7 +8,7 @@ export async function updateCountProduct(productId, productCount) {
         product_count: productCount,
     }
     const options = {
-        method: 'POST',
+        method: 'PATCH',
         headers: {
             "Content-type": "application/json",
         },

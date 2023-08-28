@@ -24,7 +24,7 @@ async function deleteBasketProduct(userId, product) {
         product_id: productId,
     }
     const options = {
-        method: 'POST',
+        method: 'DELETE',
         headers: {
             "Content-type": "application/json",
         },

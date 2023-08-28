@@ -1,3 +1,5 @@
+import { showProducts } from "../../api/main_page/get_products.js";
+
 const rangeGap = 10000;
 const progressBar = document.querySelector('.filter__range');
 const rangePrice = document.querySelectorAll('.filter__rows input');
@@ -26,6 +28,7 @@ function getRangePrice(e) {
             rangeRound[1].value = maxVal;
             progressBar.style.right = 100 - (maxVal / rangeRound[1].max) * 100 + '%';
         }
+        showProducts(minVal, maxVal);
     }
 
 }
@@ -45,6 +48,7 @@ function startRangeSlider(e) {
         rangePrice[1].value = maxVal;
         progressBar.style.left = (minVal / rangeRound[0].max) * 100 + '%';
         progressBar.style.right = 100 - (maxVal / rangeRound[1].max) * 100 + '%';
+        showProducts(minVal, maxVal);
     }
 
 }

@@ -13,12 +13,19 @@
     }
 }
 
+// Для контейнеров
 [class*='__container'] {
     max-width: rem($containerWidth);
     padding: 0 rem($containerPadding);
     margin: 0 auto;
 }
 
+// Для Заголовков
 [class*='__title'] {
+    font-size: $titleFontSize;
+}
+
+// Для текста, который указывает на отсутствие товара
+[class*='__null'] {
     font-size: $titleFontSize;
 }
