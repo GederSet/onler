@@ -23,13 +23,13 @@
                         <div class="filter__body">
                             <div class="filter__button" data-spoiler>
                                 <div class="filter__icon _icon-filter"></div>
-                                <div class="filter__text">Фильтр</div>
+                                <div class="filter__text">Фильтры</div>
                             </div>
                             <div class="filter__page">
                                 <div class="filter__options">
                                     <div class="filter__title">Цена</div>
                                     <div class="filter__rows">
-                                        <input type="number" class="filter__price-min" max="100000" value="25000">
+                                        <input type="number" class="filter__price-min" max="100000" value="25000" placeholder="1000">
                                         <input type="number" class="filter__price-max" max="100000" value="75000">
                                     </div>
                                     <div class="filter__slider">
@@ -41,153 +41,51 @@
                                         <input type="range" min="1000" max="100000" value="75000"
                                             class="filter__range-max" step="1000">
                                     </div>
-                                    <div class="filter__spoiler spoiler">
+                                    <div class="filter__spoiler spoiler" id="filter-gender">
                                         <div class="spoiler__title" data-spoiler>
                                             <div class="spoiler__name">Пол</div>
                                             <div class="spoiler__arrow _icon-arrow"></div>
                                         </div>
                                         <div class="spoiler__body">
                                             <div class="spoiler__content">
-                                                <label class="spoiler__rows">
-                                                    <input class="spoiler__checkbox" type="checkbox">
-                                                    <div class="spoiler__true-checkbox">
-                                                        <span class="spoiler__check _icon-check"></span>
-                                                    </div>
-                                                    <div class="spoiler__property">Мужской</div>
-                                                </label>
-                                                <label class="spoiler__rows">
-                                                    <input class="spoiler__checkbox" type="checkbox">
-                                                    <div class="spoiler__true-checkbox">
-                                                        <span class="spoiler__check _icon-check"></span>
-                                                    </div>
-                                                    <div class="spoiler__property">Женский</div>
-                                                </label>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="filter__spoiler spoiler">
+                                    <div class="filter__spoiler spoiler" id="filter-strap-material">
                                         <div class="spoiler__title" data-spoiler>
                                             <div class="spoiler__name">Материал ремешка</div>
                                             <div class="spoiler__arrow _icon-arrow"></div>
                                         </div>
                                         <div class="spoiler__body">
                                             <div class="spoiler__content">
-                                                <label class="spoiler__rows">
-                                                    <input class="spoiler__checkbox" type="checkbox">
-                                                    <div class="spoiler__true-checkbox">
-                                                        <span class="spoiler__check _icon-check"></span>
-                                                    </div>
-                                                    <div class="spoiler__property">Стальной</div>
-                                                </label>
-                                                <label class="spoiler__rows">
-                                                    <input class="spoiler__checkbox" type="checkbox">
-                                                    <div class="spoiler__true-checkbox">
-                                                        <span class="spoiler__check _icon-check"></span>
-                                                    </div>
-                                                    <div class="spoiler__property">Кожанный</div>
-                                                </label>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="filter__spoiler spoiler">
+                                    <div class="filter__spoiler spoiler" id="filter-strap-color">
                                         <div class="spoiler__title" data-spoiler>
                                             <div class="spoiler__name">Цвет ремешка</div>
                                             <div class="spoiler__arrow _icon-arrow"></div>
                                         </div>
                                         <div class="spoiler__body">
-                                            <div class="spoiler__content">
-                                                <label class="spoiler__rows">
-                                                    <input class="spoiler__checkbox" type="checkbox">
-                                                    <div class="spoiler__true-checkbox">
-                                                        <span class="spoiler__check _icon-check"></span>
-                                                    </div>
-                                                    <div class="spoiler__property">Чёрный</div>
-                                                </label>
-                                                <label class="spoiler__rows">
-                                                    <input class="spoiler__checkbox" type="checkbox">
-                                                    <div class="spoiler__true-checkbox">
-                                                        <span class="spoiler__check _icon-check"></span>
-                                                    </div>
-                                                    <div class="spoiler__property">Серый</div>
-                                                </label>
-                                                <label class="spoiler__rows">
-                                                    <input class="spoiler__checkbox" type="checkbox">
-                                                    <div class="spoiler__true-checkbox">
-                                                        <span class="spoiler__check _icon-check"></span>
-                                                    </div>
-                                                    <div class="spoiler__property">Коричневый</div>
-                                                </label>
-                                            </div>
+                                            <div class="spoiler__content"></div>
                                         </div>
                                     </div>
-                                    <div class="filter__spoiler spoiler">
+                                    <div class="filter__spoiler spoiler" id="filter-face-color">
                                         <div class="spoiler__title" data-spoiler>
                                             <div class="spoiler__name">Цвет циферблата</div>
                                             <div class="spoiler__arrow _icon-arrow"></div>
                                         </div>
                                         <div class="spoiler__body">
-                                            <div class="spoiler__content">
-                                                <label class="spoiler__rows">
-                                                    <input class="spoiler__checkbox" type="checkbox">
-                                                    <div class="spoiler__true-checkbox">
-                                                        <span class="spoiler__check _icon-check"></span>
-                                                    </div>
-                                                    <div class="spoiler__property">Белый</div>
-                                                </label>
-                                                <label class="spoiler__rows">
-                                                    <input class="spoiler__checkbox" type="checkbox">
-                                                    <div class="spoiler__true-checkbox">
-                                                        <span class="spoiler__check _icon-check"></span>
-                                                    </div>
-                                                    <div class="spoiler__property">Чёрный</div>
-                                                </label>
-                                                <label class="spoiler__rows">
-                                                    <input class="spoiler__checkbox" type="checkbox">
-                                                    <div class="spoiler__true-checkbox">
-                                                        <span class="spoiler__check _icon-check"></span>
-                                                    </div>
-                                                    <div class="spoiler__property">Синий</div>
-                                                </label>
-                                                <label class="spoiler__rows">
-                                                    <input class="spoiler__checkbox" type="checkbox">
-                                                    <div class="spoiler__true-checkbox">
-                                                        <span class="spoiler__check _icon-check"></span>
-                                                    </div>
-                                                    <div class="spoiler__property">Серебристый</div>
-                                                </label>
-                                            </div>
+                                            <div class="spoiler__content"></div>
                                         </div>
                                     </div>
-                                    <div class="filter__spoiler spoiler">
+                                    <div class="filter__spoiler spoiler" id="filter-mechanism">
                                         <div class="spoiler__title" data-spoiler>
                                             <div class="spoiler__name">Механизм</div>
                                             <div class="spoiler__arrow _icon-arrow"></div>
                                         </div>
                                         <div class="spoiler__body">
-                                            <div class="spoiler__content">
-                                                <label class="spoiler__rows">
-                                                    <input class="spoiler__checkbox" type="checkbox">
-                                                    <div class="spoiler__true-checkbox">
-                                                        <span class="spoiler__check _icon-check"></span>
-                                                    </div>
-                                                    <div class="spoiler__property">Кварцевый</div>
-                                                </label>
-                                                <label class="spoiler__rows">
-                                                    <input class="spoiler__checkbox" type="checkbox">
-                                                    <div class="spoiler__true-checkbox">
-                                                        <span class="spoiler__check _icon-check"></span>
-                                                    </div>
-                                                    <div class="spoiler__property">Автоматический подзавод</div>
-                                                </label>
-                                                <label class="spoiler__rows">
-                                                    <input class="spoiler__checkbox" type="checkbox">
-                                                    <div class="spoiler__true-checkbox">
-                                                        <span class="spoiler__check _icon-check"></span>
-                                                    </div>
-                                                    <div class="spoiler__property">Механический с ручным подзаводом
-                                                    </div>
-                                                </label>
-                                            </div>
+                                            <div class="spoiler__content"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -247,7 +145,7 @@
             </div>
         </div>
         <script type="module" src="app/js/app/script.js"></script>
-        <script type="module" src="app/js/app/pages_site/home_script.js"></script>
+        <script type="module" src="app/js/app/pages_site/home_page/home_script.js"></script>
     </div>
 </body>
 

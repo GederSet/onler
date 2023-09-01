@@ -1,9 +1,14 @@
-export async function showProducts(minPrice, maxPrice) {
+export async function showProducts(minPrice, maxPrice, gender, strapMaterial, strapColor, faceColor, mechanism) {
 
     const url = 'http://localhost/onler_2/api/products/get_products.php';
     const data = {
         min_price: minPrice,
         max_price: maxPrice,
+        gender: gender,
+        strap_material: strapMaterial,
+        strap_color: strapColor,
+        face_color: faceColor,
+        mechanism: mechanism,
     }
     const options = {
         method: 'POST',
@@ -21,6 +26,7 @@ export async function showProducts(minPrice, maxPrice) {
             throw await response.json();
         }
         const products = await response.json();
+        console.log(products);
 
         productsBody.innerHTML = '';
         products.forEach(products => {
@@ -45,7 +51,7 @@ export async function showProducts(minPrice, maxPrice) {
         });
     }
     catch (error) {
-        productsBody.innerHTML = `<div class="">${error['message']}</div>`;
+        productsBody.innerHTML = `<div class="products__null">${error['message']}</div>`;
         console.log(error);
     }
 

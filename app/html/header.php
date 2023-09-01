@@ -5,9 +5,9 @@
                 <a href="index.php" class="header__logo">onler</a>
                 <nav class="header__menu menu">
                     <ul class="menu__list">
-                        <li class="menu__items"><a href="" class="menu__link">Каталог</a></li>
-                        <li class="menu__items"><a href="" class="menu__link">Мужские</a></li>
-                        <li class="menu__items"><a href="" class="menu__link">Женские</a></li>
+                        <li class="menu__items"><a href="#" class="menu__link" id="link-all">Каталог</a></li>
+                        <li class="menu__items"><a href="#" class="menu__link" id="link-men">Мужские</a></li>
+                        <li class="menu__items"><a href="#" class="menu__link" id="link-women">Женские</a></li>
                     </ul>
                 </nav>
             </div>

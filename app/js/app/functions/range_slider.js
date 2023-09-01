@@ -1,11 +1,13 @@
 import { showProducts } from "../../api/main_page/get_products.js";
+import { getAllParametersInfo } from "../../api/main_page/filter/filter_by_parameters.js";
+
+
 
 const rangeGap = 10000;
 const progressBar = document.querySelector('.filter__range');
 const rangePrice = document.querySelectorAll('.filter__rows input');
 const rangePriceMax = rangePrice[1].max;
-const rangeRound = document.querySelectorAll('.filter__range-input input');
-startRangeSlider();
+const rangeRound = document.querySelectorAll('.filter__range-input input');;
 
 
 rangePrice.forEach((input) => {
@@ -15,7 +17,7 @@ rangeRound.forEach((round) => {
     round.addEventListener('input', startRangeSlider);
 });
 
-function getRangePrice(e) {
+async function getRangePrice(e) {
 
     let minVal = parseInt(rangePrice[0].value);
     let maxVal = parseInt(rangePrice[1].value);
@@ -28,11 +30,19 @@ function getRangePrice(e) {
             rangeRound[1].value = maxVal;
             progressBar.style.right = 100 - (maxVal / rangeRound[1].max) * 100 + '%';
         }
-        showProducts(minVal, maxVal);
+
+        const arrayParameters = await getAllParametersInfo('selected');
+        const gender = arrayParameters.get('filter-gender');
+        const strapMaterial = arrayParameters.get('filter-strap-material');
+        const strapColor = arrayParameters.get('filter-strap-color');
+        const faceColor = arrayParameters.get('filter-face-color');
+        const mechanism = arrayParameters.get('filter-mechanism');
+
+        showProducts(minVal, maxVal, gender, strapMaterial, strapColor, faceColor, mechanism);
     }
 
 }
-function startRangeSlider(e) {
+export async function startRangeSlider(e) {
 
     let minVal = parseInt(rangeRound[0].value);
     let maxVal = parseInt(rangeRound[1].value);
@@ -48,7 +58,33 @@ function startRangeSlider(e) {
         rangePrice[1].value = maxVal;
         progressBar.style.left = (minVal / rangeRound[0].max) * 100 + '%';
         progressBar.style.right = 100 - (maxVal / rangeRound[1].max) * 100 + '%';
-        showProducts(minVal, maxVal);
+
+        const arrayParameters = await getAllParametersInfo('selected');
+        const gender = arrayParameters.get('filter-gender');
+        const strapMaterial = arrayParameters.get('filter-strap-material');
+        const strapColor = arrayParameters.get('filter-strap-color');
+        const faceColor = arrayParameters.get('filter-face-color');
+        const mechanism = arrayParameters.get('filter-mechanism');
+
+        showProducts(minVal, maxVal, gender, strapMaterial, strapColor, faceColor, mechanism);
     }
+
+}
+
+export async function getPriceProduct() {
+
+    const minVal = parseInt(rangeRound[0].value);
+    const maxVal = parseInt(rangeRound[1].value);
+    const arrayValues = [minVal, maxVal];
+    return arrayValues;
+
+}
+
+export async function getAllPriceProduct() {
+
+    const minVal = parseInt(rangeRound[0].min);
+    const maxVal = parseInt(rangeRound[1].max);
+    const arrayValues = [minVal, maxVal];
+    return arrayValues;
 
 }

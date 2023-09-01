@@ -13,7 +13,8 @@
             $this->conn = $db;
         }
 
-        public function addProducts(){
+        public function addProducts()
+        {
             
             $sql = "SELECT id_product FROM $this->table_name WHERE id_user = :user_id AND id_product = :product_id";
             $stmt = $this->conn->prepare($sql);
@@ -38,7 +39,8 @@
 
         }
 
-        public function getProducts(){
+        public function getProducts()
+        {
 
             $sql = 
             "SELECT id, name, price AS minimal_price, url_image, stock_quantity, 
@@ -55,7 +57,8 @@
 
         }
 
-        public function getTotalPrice(){
+        public function getTotalPrice()
+        {
 
             $sql = 
             "SELECT SUM(basket.count * price) AS total_price, 
@@ -71,7 +74,8 @@
 
         }
 
-        public function getCountProducts(){
+        public function getCountProducts()
+        {
 
             $sql = 
             "SELECT SUM(count) AS count_products FROM product 
@@ -85,7 +89,8 @@
 
         }
 
-        public function deleteProduct(){
+        public function deleteProduct()
+        {
 
             $sql = "DELETE FROM $this->table_name WHERE id_user = :user_id AND id_product = :product_id";
             $stmt = $this->conn->prepare($sql);
@@ -100,7 +105,8 @@
 
         }
 
-        public function updateCountProduct(){
+        public function updateCountProduct()
+        {
 
             $sql = 
             "UPDATE $this->table_name 
