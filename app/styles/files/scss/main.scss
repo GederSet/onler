@@ -22,6 +22,7 @@ main {
         flex: 1 1 auto;
         display: flex;
         flex-wrap: wrap;
+        height: max-content;
         padding-bottom: rem(20);
         gap: rem(20) rem(20);
         margin-right: rem(-20);
@@ -32,11 +33,44 @@ main {
         display: flex;
         flex-direction: column;
         font-family: Lato;
-        padding: rem(20) rem(15);
         overflow: hidden;
         background: $baseBlockColor;
         border-radius: rem(9);
         box-shadow: rem(1) rem(1) rem(20) rem(10) #F4F4F4;
+    }
+
+    &__card:hover {
+        overflow: visible;
+    }
+
+    &__card:hover &__rows {
+        position: absolute;
+        height: max-content;
+        z-index: 2;
+        overflow: hidden;
+        border-radius: 0 0 rem(9) rem(9);
+        box-shadow: rem(1) rem(1) rem(20) rem(10) #F4F4F4;
+    }
+
+    &__card:hover &__name {
+        overflow: visible;
+        max-height: max-content;
+        -webkit-line-clamp: initial;
+        display: initial;
+        -webkit-box-orient: initial;
+        text-overflow: initial;
+    }
+
+    &__card:hover &__shell-image {
+        overflow: hidden;
+        position: relative;
+        z-index: 4;
+        border-radius: rem(9) rem(9) 0 0;
+        background-color: $baseBlockColor;
+    }
+
+    &__shell-image {
+        padding: rem(20) rem(15) rem(0) rem(15);
     }
 
     &__image {
@@ -54,8 +88,17 @@ main {
         object-fit: contain;
     }
 
+    &__shell-info {
+        position: relative;
+        min-height: rem(50);
+    }
+
     &__rows {
+        width: 100%;
+        min-height: 100%;
         display: flex;
+        padding: 0 rem(15) rem(20) rem(15);
+        background: $baseBlockColor;
     }
 
     &__page {
@@ -92,6 +135,13 @@ main {
         font-size: rem(18);
         @include adaptiv-exact('font-size', 580, 320, 18, 14);
         margin-bottom: rem(5);
+        word-break: break-all;
+        overflow: hidden;
+        max-height: rem(50);
+        -webkit-line-clamp: 1;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
     }
 
     &__price {

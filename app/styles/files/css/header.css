@@ -5,32 +5,28 @@
   top: 0;
   left: 0;
   width: 100%;
-  padding: 2.25rem 0;
+  padding: 1.75rem 0;
   background-color: white;
 }
-
 .header__container {
   display: flex;
   -moz-column-gap: 0.625rem;
-  column-gap: 0.625rem;
+       column-gap: 0.625rem;
   align-items: center;
   justify-content: space-between;
 }
-
 .header__wrapper {
   max-width: 29.375rem;
   flex: 1 1 29.375rem;
 }
-
 .header__page {
   max-width: 24.0625rem;
   display: flex;
   -moz-column-gap: 0.625rem;
-  column-gap: 0.625rem;
+       column-gap: 0.625rem;
   align-items: center;
   justify-content: space-between;
 }
-
 .header__logo {
   flex: 0 0 auto;
   font-size: 1.75rem;
@@ -39,34 +35,29 @@
   font-family: Montserrat;
   text-transform: uppercase;
 }
-
 @media (max-width: 1350px) {
   .header__logo {
     font-size: calc(20px + 8 * ((100vw - 320px) / 1030));
   }
 }
-
 .header__menu {
   flex: 0 1 auto;
 }
-
 .header__search {
   max-width: 350px;
   flex: 1 1 350px;
 }
-
 .header__info {
   flex: 1 1 auto;
   justify-content: flex-end;
   display: flex;
   -moz-column-gap: 20px;
-  column-gap: 20px;
+       column-gap: 20px;
 }
-
 @media (max-width: 1350px) {
   .header__info {
     -moz-column-gap: calc(16px + 4 * ((100vw - 320px) / 1030));
-    column-gap: calc(16px + 4 * ((100vw - 320px) / 1030));
+         column-gap: calc(16px + 4 * ((100vw - 320px) / 1030));
   }
 }
 
@@ -80,7 +71,6 @@
   display: none;
   font-size: 1.125rem;
 }
-
 .search__page {
   display: flex;
   align-items: center;
@@ -90,7 +80,6 @@
   z-index: 4;
   border: 0.0625rem solid #CECECE;
 }
-
 .search__page._active {
   display: flex;
   position: absolute;
@@ -100,7 +89,6 @@
   height: 100%;
   background-color: white;
 }
-
 .search__magnifier {
   cursor: pointer;
   flex: 0 0 2.5rem;
@@ -110,7 +98,6 @@
   justify-content: center;
   font-size: 0.875rem;
 }
-
 .search__info {
   flex: 1 1 auto;
   min-width: 0;
@@ -120,30 +107,25 @@
 .header-info {
   align-items: center;
 }
-
 .header-info__page {
   cursor: pointer;
   display: flex;
   align-items: center;
   flex-direction: column;
 }
-
 .header-info__icon_page {
   display: flex;
   -moz-column-gap: 0.4375rem;
-  column-gap: 0.4375rem;
+       column-gap: 0.4375rem;
 }
-
 .header-info__icon {
   font-size: 1.25rem;
   color: #4B4B4B;
   margin-bottom: 0.1875rem;
 }
-
 .header-info__count {
   display: none;
 }
-
 .header-info__count.show {
   display: flex;
   align-items: center;
@@ -157,7 +139,6 @@
   height: -moz-max-content;
   height: max-content;
 }
-
 .header-info__text {
   color: #4B4B4B;
   font-size: 0.75rem;
@@ -177,7 +158,6 @@
     padding: 1.25rem 0;
   }
 }
-
 @media (max-width: 48.4375em) {
   .menu {
     position: fixed;
@@ -190,21 +170,17 @@
     transition: all 0.3s ease 0s;
     overflow: auto;
   }
-
   .menu__list {
     padding: 6.25rem 1.875rem;
     row-gap: 1.875rem;
     flex-direction: column;
   }
-
   .menu__link {
     font-size: 1.5rem;
   }
-
   .menu._active {
     right: 0;
   }
-
   .menu-burger {
     z-index: 3;
     flex: 0 0 1.875rem;
@@ -212,7 +188,6 @@
     position: relative;
     height: 1.25rem;
   }
-
   .menu-burger__line {
     position: absolute;
     left: 0;
@@ -221,53 +196,42 @@
     background-color: #17696A;
     transition: all 0.3s ease 0s;
   }
-
   .menu-burger__line:nth-child(1) {
     top: 0;
   }
-
   .menu-burger__line:nth-child(2) {
     top: 50%;
     transform: translateY(-50%);
   }
-
   .menu-burger__line:nth-child(3) {
     bottom: 0;
   }
-
   .menu-burger._active .menu-burger__line:nth-child(1) {
     top: 0.5625rem;
     transform: rotate(45deg);
   }
-
   .menu-burger._active .menu-burger__line:nth-child(2) {
     width: 0%;
   }
-
   .menu-burger._active .menu-burger__line:nth-child(3) {
     bottom: 0.5625rem;
     transform: rotate(-45deg);
   }
 }
-
 @media (max-width: 32.75em) {
   .search__mobile-magnifer {
     display: block;
   }
-
   .search__page {
     border: none;
     display: none;
   }
-
   .search__magnifier {
     flex: 0 0 3.75rem;
   }
-
   .search__info {
     padding: 0.625rem 0.625rem 0.625rem 1.25rem;
   }
-
   .header-info__text {
     display: none;
   }

@@ -1,5 +1,4 @@
 @charset "UTF-8";
-
 /* Структура сайта ---------------------------------------------------------------------------------------------------*/
 .wrapper {
   display: flex;
@@ -7,8 +6,7 @@
   overflow: hidden;
   min-height: 100%;
 }
-
-.wrapper>main {
+.wrapper > main {
   flex: 1 1 auto;
 }
 
