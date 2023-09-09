@@ -138,7 +138,6 @@ function calculationTotalPrice() {
     const currentTotalPrice = parseInt(blockTotalPrice.textContent);
     const countProducts = document.querySelectorAll('.basket__number');
     const priceProducts = document.querySelectorAll('.basket__price');
-    console.log(parseInt(priceProducts[0].getAttribute('data-current-price')));
     const count = Array.from(countProducts).reduce((accumulator, countProduct) => {
         return accumulator + parseInt(countProduct.getAttribute('value'));
     }, 0);

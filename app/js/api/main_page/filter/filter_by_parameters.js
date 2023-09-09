@@ -1,5 +1,4 @@
-import { showProducts } from "../get_products.js";
-import { getPriceProduct } from "../../../app/functions/range_slider.js";
+import { findProductsbyParameters } from "../../../app/functions/find_products_by_parameters.js";
 
 document.addEventListener('click', changeParameter);
 let arrayParameters = new Map();
@@ -65,19 +64,8 @@ async function changeParameter(e) {
         }
 
         const selectedParameters = arraySelectedParameters.join(',');
-
         arrayParameters.set(`${filterName}`, selectedParameters);
-        const gender = arrayParameters.get('filter-gender');
-        const strapMaterial = arrayParameters.get('filter-strap-material');
-        const strapColor = arrayParameters.get('filter-strap-color');
-        const faceColor = arrayParameters.get('filter-face-color');
-        const mechanism = arrayParameters.get('filter-mechanism');
-
-        const priceProduct = await getPriceProduct();
-        const minVal = priceProduct[0];
-        const maxVal = priceProduct[1];
-
-        showProducts(minVal, maxVal, gender, strapMaterial, strapColor, faceColor, mechanism);
+        findProductsbyParameters();
 
     }
 

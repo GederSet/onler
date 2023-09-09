@@ -27,6 +27,17 @@ body {
 
 body {
     font-size: $fontSize;
+    scrollbar-width: 0.3125rem;
+    scrollbar-color: $scrollBody $scroll;
+
+    &::-webkit-scrollbar {
+        width: rem(15);
+        // background-color: $scrollBody;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $scroll;
+    }
 }
 
 body._lock {

@@ -7,26 +7,15 @@
     header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
     require_once '../config/Database.php';
-    require_once '../objects/Product.php';
+    require_once '../objects/Search.php';
 
     $database = new Database();
     $conn = $database->getConnection();
 
     $data = json_decode(file_get_contents("php://input"));
 
-    $product = new Product($conn);
-
-    $product->min_price = $data->min_price;
-    $product->max_price = $data->max_price;
-
-    $id_products = $data->id_products;
-    $gender = $data->gender;
-    $strap_material = $data->strap_material;
-    $strap_color = $data->strap_color;
-    $face_color = $data->face_color;
-    $mechanism = $data->mechanism;
-
-    $stmt = $product->getProducts($id_products, $gender, $strap_material, $strap_color, $face_color, $mechanism);
+    $search = new Search($conn);
+    $stmt = $search->getSearchProducts($data->name_product);
     $count = $stmt->rowCount();
 
     if($count > 0){
@@ -39,6 +28,6 @@
     else {
         
         http_response_code(404);
-        echo json_encode(['message'=>'Товары по выбранным фильтрам не найдены'], JSON_UNESCAPED_UNICODE);
+        echo json_encode(['message'=>'Товары не найдены'], JSON_UNESCAPED_UNICODE);
         
     }

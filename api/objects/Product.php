@@ -13,13 +13,14 @@
             $this->conn = $db;
         }
 
-        public function getProducts($gender, $strap_material, $strap_color, $face_color, $mechanism)
+        public function getProducts($id_products, $gender, $strap_material, $strap_color, $face_color, $mechanism)
         {
 
             $sql = 
             "SELECT id, name, price, url_image 
              FROM $this->table_name WHERE price 
              BETWEEN :min_price AND :max_price
+             AND id IN($id_products)
              AND id_gender IN($gender)
              AND id_strap_material IN($strap_material)
              AND id_strap_color IN($strap_color)
@@ -31,6 +32,16 @@
             $stmt->bindParam(':max_price', $this->max_price);
             $stmt->execute();
 
+            return $stmt;
+
+        }
+
+        public function getAllIdProducts()
+        {
+
+            $sql = "SELECT id FROM $this->table_name";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute();
             return $stmt;
 
         }

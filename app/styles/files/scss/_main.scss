@@ -4,7 +4,7 @@
 /*-----------main-------------------------------------------------------------------------------------------*/
 
 main {
-    padding-top: rem(130);
+    padding-top: rem(120);
 }
 
 .products {
@@ -371,6 +371,10 @@ main {
 }
 
 @media(max-width:em(960)) {
+    main {
+        padding-top: rem(100);
+    }
+
     .products {
 
         &__container {
@@ -411,15 +415,12 @@ main {
 
 }
 
-@media(max-width:em(750)) {
-    main {
-        padding-top: rem(90);
-    }
-}
-
 @media(max-width:em(580)) {
-    .products {
+    main {
+        padding-top: rem(70);
+    }
 
+    .products {
         &__card {
             flex: 0 1 calc(50% - 20px);
         }

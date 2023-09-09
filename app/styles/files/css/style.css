@@ -26,6 +26,14 @@ body {
 
 body {
   font-size: 1rem;
+  scrollbar-width: 0.3125rem;
+  scrollbar-color: #EBEBEB #D8D8D8;
+}
+body::-webkit-scrollbar {
+  width: 0.9375rem;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #D8D8D8;
 }
 
 body._lock {
@@ -179,10 +187,6 @@ input[type=number]::-webkit-outer-spin-button {
   align-items: center;
   justify-content: space-between;
 }
-.header__wrapper {
-  max-width: 29.375rem;
-  flex: 1 1 29.375rem;
-}
 .header__page {
   max-width: 24.0625rem;
   display: flex;
@@ -208,11 +212,11 @@ input[type=number]::-webkit-outer-spin-button {
   flex: 0 1 auto;
 }
 .header__search {
-  max-width: 350px;
-  flex: 1 1 350px;
+  position: relative;
+  flex: 0 1 33.125rem;
 }
 .header__info {
-  flex: 1 1 auto;
+  flex: 0 1 auto;
   justify-content: flex-end;
   display: flex;
   -moz-column-gap: 20px;
@@ -225,6 +229,9 @@ input[type=number]::-webkit-outer-spin-button {
   }
 }
 
+.menu {
+  display: none;
+}
 .menu__list {
   display: flex;
   flex-wrap: wrap;
@@ -253,7 +260,7 @@ input[type=number]::-webkit-outer-spin-button {
   height: 100%;
   background-color: white;
 }
-.search__magnifier {
+.search__magnifier, .search__close {
   cursor: pointer;
   flex: 0 0 2.5rem;
   height: 100%;
@@ -265,7 +272,65 @@ input[type=number]::-webkit-outer-spin-button {
 .search__info {
   flex: 1 1 auto;
   min-width: 0;
-  padding: 0.625rem;
+  padding: 0.625rem 0 0.625rem 0;
+}
+.search__body {
+  display: none;
+  position: absolute;
+  top: 3.125rem;
+  left: 0;
+  width: 100%;
+  max-height: calc(100vh - 92px);
+  overflow: hidden;
+  overflow-y: auto;
+  border-radius: 0.25rem;
+  border: 0.0625rem solid #CECECE;
+  background-color: white;
+}
+.search__body::-webkit-scrollbar {
+  width: 0.9375rem;
+  background-color: #EBEBEB;
+}
+.search__body::-webkit-scrollbar-thumb {
+  background-color: #D8D8D8;
+}
+.search__body.show {
+  display: block;
+}
+.search__shell {
+  cursor: pointer;
+  padding: 0.75rem 0.875rem 0 0.875rem;
+}
+.search__row {
+  display: flex;
+  padding-bottom: 0.75rem;
+  -moz-column-gap: 0.8125rem;
+       column-gap: 0.8125rem;
+  align-items: center;
+}
+.search__shell:not(:last-child) .search__row {
+  border-bottom: 0.0625rem solid #CECECE;
+}
+.search__img {
+  flex: 0 0 2.5625rem;
+  height: 4.375rem;
+  overflow: hidden;
+  border-radius: 0.25rem;
+}
+.search__img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.search__name {
+  margin-bottom: 0.4375rem;
+}
+.search__zero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.75rem;
 }
 
 .header-info {
@@ -312,18 +377,25 @@ input[type=number]::-webkit-outer-spin-button {
   display: none;
 }
 
-@media (max-width: 60em) {
+@media (max-width: 36.25em) {
   .header {
-    position: fixed;
-    z-index: 5;
-    top: 0;
-    left: 0;
-    width: 100%;
     padding: 1.25rem 0;
   }
-}
-@media (max-width: 48.4375em) {
+  .header__search {
+    position: static;
+  }
+  .search__body {
+    top: 4.0625rem;
+    min-height: calc(100vh - 4.0625rem);
+    border-radius: 0;
+    border: none;
+    border-top: 0.0625rem solid #CECECE;
+  }
+  .search__body::-webkit-scrollbar {
+    width: 0.5rem;
+  }
   .menu {
+    display: block;
     position: fixed;
     z-index: 2;
     top: 0;
@@ -381,8 +453,6 @@ input[type=number]::-webkit-outer-spin-button {
     bottom: 0.5625rem;
     transform: rotate(-45deg);
   }
-}
-@media (max-width: 32.75em) {
   .search__mobile-magnifer {
     display: block;
   }
@@ -393,8 +463,8 @@ input[type=number]::-webkit-outer-spin-button {
   .search__magnifier {
     flex: 0 0 3.75rem;
   }
-  .search__info {
-    padding: 0.625rem 0.625rem 0.625rem 1.25rem;
+  .search__close {
+    flex: 0 0 3.75rem;
   }
   .header-info__text {
     display: none;
@@ -402,7 +472,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 /*-----------main-------------------------------------------------------------------------------------------*/
 main {
-  padding-top: 8.125rem;
+  padding-top: 7.5rem;
 }
 
 .products__container {
@@ -729,6 +799,9 @@ main {
   }
 }
 @media (max-width: 60em) {
+  main {
+    padding-top: 6.25rem;
+  }
   .products__container {
     flex-direction: column;
   }
@@ -753,12 +826,10 @@ main {
     flex: 0 1 calc(33.333% - 20px);
   }
 }
-@media (max-width: 46.875em) {
-  main {
-    padding-top: 5.625rem;
-  }
-}
 @media (max-width: 36.25em) {
+  main {
+    padding-top: 4.375rem;
+  }
   .products__card {
     flex: 0 1 calc(50% - 20px);
   }

@@ -2,7 +2,7 @@
     <div class="header__container">
         <div class="header__wrapper">
             <div class="header__page">
-                <a href="index.php" class="header__logo">onler</a>
+                <a href="#" class="header__logo">onler</a>
                 <nav class="header__menu menu">
                     <ul class="menu__list">
                         <li class="menu__items"><a href="#" class="menu__link" id="link-all">Каталог</a></li>
@@ -14,9 +14,11 @@
         </div>
         <div class="header__search search">
             <form class="search__page">
-                <input type="text" class="search__info" placeholder="Поиск">
                 <div class="search__magnifier _icon-magnifier"></div>
+                <input type="text" class="search__info" placeholder="Поиск">
+                <div class="search__close _icon-close"></div>
             </form>
+            <div class="search__body"></div>
         </div>
         <div class="header__info header-info">
             <button class="search__mobile-magnifer _icon-magnifier"></button>

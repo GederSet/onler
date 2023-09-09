@@ -1,7 +1,8 @@
-export async function showProducts(minPrice, maxPrice, gender, strapMaterial, strapColor, faceColor, mechanism) {
+export async function showProducts(idProducts, minPrice, maxPrice, gender, strapMaterial, strapColor, faceColor, mechanism) {
 
     const url = 'http://localhost/onler_2/api/products/get_products.php';
     const data = {
+        id_products: idProducts,
         min_price: minPrice,
         max_price: maxPrice,
         gender: gender,
@@ -26,24 +27,23 @@ export async function showProducts(minPrice, maxPrice, gender, strapMaterial, st
             throw await response.json();
         }
         const products = await response.json();
-        console.log(products);
 
         productsBody.innerHTML = '';
-        products.forEach(products => {
+        products.forEach(product => {
 
             productsBody.innerHTML +=
                 `
-                <div class="products__card" value="${products.id}">
+                <div class="products__card" value="${product.id}">
                     <div class="products__shell-image">
                         <div class="products__image">
-                            <img src="${products.url_image}" alt="${products.name}">
+                            <img src="${product.url_image}" alt="${product.name}">
                         </div>
                     </div>
                     <div class="products__shell-info">
                         <div class="products__rows">
                             <div class="products__page">
-                                <div class="products__name">${products.name}</div>
-                                <div class="products__price">${products.price} ₽</div>
+                                <div class="products__name">${product.name}</div>
+                                <div class="products__price">${product.price} ₽</div>
                             </div>
                             <div class="products__page">
                                 <div class="products__basket _icon-basket-add _schowIcon"></div>

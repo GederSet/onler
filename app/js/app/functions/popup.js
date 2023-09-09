@@ -1,8 +1,15 @@
 let registerClose = true;
 
 const timePopup = 300;
-const body = document.querySelector('body');
 const register = document.querySelector('.popup__register');
+
+
+document.addEventListener('keydown', closePopupEscape);
+function closePopupEscape(e) {
+    if (e.key === 'Escape') {
+        closePopup(document.querySelector('.popup'));
+    }
+}
 
 
 document.addEventListener('click', actionElement);
@@ -15,7 +22,6 @@ function actionElement(event) {
         bodyLock();
         openPopup(clickElement.closest('.open-popup'));
     }
-
     if (clickElement.closest('.close-popup')) {
         closePopup(clickElement.closest('.popup'));
     }
@@ -32,13 +38,18 @@ function actionElement(event) {
 
 
 
-function bodyLock() {
+export function bodyLock() {
     const scrollWidth = window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px';
     document.querySelector('header').style.paddingRight = scrollWidth;
-    body.style.paddingRight = scrollWidth;
-    body.classList.add('_lock');
+    document.querySelector('body').style.paddingRight = scrollWidth;
+    document.querySelector('body').classList.add('_lock');
 }
 
+export function bodyShow() {
+    document.querySelector('header').style.paddingRight = 0;
+    document.querySelector('body').style.paddingRight = 0;
+    document.querySelector('body').classList.remove('_lock');
+}
 
 function openPopup(link) {
 
@@ -56,9 +67,7 @@ function openPopup(link) {
 function closePopup(popup) {
     popup.classList.remove('_open');
     setTimeout(() => {
-        document.querySelector('header').style.paddingRight = 0;
-        body.style.paddingRight = 0;
-        body.classList.remove('_lock');
+        bodyShow();
     }, timePopup);
 }
 
