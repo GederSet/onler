@@ -41,7 +41,7 @@ export async function showProducts(idProducts, minPrice, maxPrice, gender, strap
                     </div>
                     <div class="products__shell-info">
                         <div class="products__rows">
-                            <div class="products__page">
+                            <div class="products__page" id="products__page-1">
                                 <div class="products__name">${product.name}</div>
                                 <div class="products__price">${product.price} ₽</div>
                             </div>

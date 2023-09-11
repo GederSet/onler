@@ -70,6 +70,7 @@ main {
     }
 
     &__shell-image {
+        cursor: pointer;
         padding: rem(20) rem(15) rem(0) rem(15);
     }
 
@@ -102,6 +103,7 @@ main {
     }
 
     &__page {
+        cursor: pointer;
         display: flex;
         flex-direction: column;
     }

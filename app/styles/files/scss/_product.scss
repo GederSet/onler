@@ -1,0 +1,358 @@
+@import 'functions';
+@import 'settings';
+
+/*-----------product-------------------------------------------------------------------------------------------*/
+.main {
+    padding-bottom: rem(120);
+}
+
+.main__product {}
+
+.product {
+    display: flex;
+    column-gap: rem(30);
+}
+
+.product__columns {}
+
+.product__columns:nth-child(1) {
+    flex: 1 1 max-content;
+}
+
+.product__columns:nth-child(2) {
+    flex: 1 0 rem(350);
+    max-width: rem(387);
+}
+
+/*-----------info------------------------------------------*/
+.product__info {
+    display: flex;
+    gap: rem(30) rem(10);
+    justify-content: space-between;
+    margin-bottom: rem(50);
+}
+
+.info__body:nth-child(1) {
+    max-width: rem(363);
+    min-width: rem(269);
+    flex: 1 0 rem(269);
+}
+
+.info__body:nth-child(2) {
+    max-width: rem(455);
+    flex: 1 0 max-content;
+    line-height: 150%;
+}
+
+/*-----------size-box---------------*/
+.info__size-box {
+    position: relative;
+    padding-top: 98.143236074271%;
+}
+
+.info__wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 11.405835543767%;
+}
+
+.info__slider {
+    flex-basis: 30.769230769231%;
+}
+
+.info__slider,
+.info__main-img {
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.swiper-pagination {
+    position: static;
+    margin-top: rem(15);
+}
+
+.swiper-pagination .swiper-pagination-bullet {
+    width: rem(10);
+    height: rem(10);
+    background-color: $decorElement;
+}
+
+.slider-container {}
+
+.slider {}
+
+.slider-wrapper {}
+
+.swiper__img {
+    height: 100%;
+}
+
+.swiper__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.info__main-img {
+    flex-basis: auto;
+    width: 100%;
+    height: 100%;
+}
+
+.info__main-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/*-----------parameters---------------*/
+.info__title {
+    margin-bottom: rem(20);
+}
+
+.info__page {}
+
+.parameter {
+    display: grid;
+    grid-template-columns: minmax(auto, rem(280)) auto;
+    column-gap: rem(10);
+    line-height: 150%;
+}
+
+.parameter__box {}
+
+.parameter__page {
+    position: relative;
+    color: $parameterColor;
+}
+
+.parameter__page::before {
+    content: "";
+    position: absolute;
+    bottom: rem(7);
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-bottom: rem(1) dashed $parameterColor;
+}
+
+.parameter__name {
+    position: relative;
+    z-index: 1;
+    padding-right: rem(10);
+    background-color: white;
+}
+
+.parameter__value {
+    align-self: end;
+}
+
+.info__show,
+.characteristic__show,
+.characteristic__show-description {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    line-height: 150%;
+}
+
+.info__show::before,
+.characteristic__show::before,
+.characteristic__show-description::before {
+    content: "";
+    position: absolute;
+    bottom: rem(0);
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-bottom: rem(1) dashed $parameterColor;
+}
+
+/*-----------characteristic------------------------------------*/
+.product__characteristic {
+    display: flex;
+    gap: rem(36);
+}
+
+.characteristic {}
+
+.characteristic__page {}
+
+.characteristic__page:nth-child(2) {
+    width: rem(288);
+    flex: 0 0 rem(288);
+    padding-top: rem(52);
+}
+
+.characteristic__title {
+    font-size: rem(32);
+    margin-bottom: rem(20);
+}
+
+.characteristic__box:not(:last-child) {
+    margin-bottom: rem(24);
+}
+
+.characteristic__shell {
+    margin-bottom: rem(10);
+}
+
+.characteristic__sub-title {
+    line-height: 150%;
+}
+
+.characteristic__description-title {
+    margin-bottom: rem(7);
+}
+
+.characteristic__parameter {
+    word-break: break-all;
+    grid-template-columns: minmax(auto, rem(205)) minmax(auto, rem(394));
+}
+
+.characteristic__description {
+    margin-bottom: rem(5);
+}
+
+/*-----------price-block------------------------------------*/
+.product__price-block {
+    padding: rem(27) rem(25) rem(30);
+    border-radius: rem(23);
+    box-shadow: rem(1) rem(1) rem(20) rem(10) #F2F2F2;
+    background-color: $baseBlockColor;
+}
+
+.product__price {
+    font-size: rem(28);
+    margin-bottom: rem(20);
+}
+
+.product__add {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $whiteColor;
+    border-radius: rem(15);
+    background-color: $decorElement;
+    margin-bottom: rem(20);
+    padding: rem(15) rem(40);
+}
+
+.product__date {
+    font-size: rem(14);
+    text-align: center;
+}
+
+@media(max-width:em(1175)) {
+    .product__columns:nth-child(1) {
+        width: 100%;
+        flex: 1 0 100%;
+    }
+
+    .info__page,
+    .info__show,
+    .info__main-img {
+        display: none;
+    }
+
+    .product__columns:nth-child(2) {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 2;
+        max-width: none;
+        flex: none;
+        background-color: transparent;
+    }
+
+    .product__price-block {
+        border-radius: 0;
+        padding: rem(15) rem(14) rem(10);
+        box-shadow: 0 rem(-4) rem(8) 0 #D8D8D8;
+    }
+
+    .product__add {
+        margin-bottom: rem(10);
+    }
+
+    .product__info {
+        margin-bottom: rem(0);
+        flex-direction: column;
+    }
+
+    .info__size-box {
+        padding: 0;
+    }
+
+    .info__wrapper {
+        position: static;
+        display: block;
+    }
+
+    .info__body:nth-child(1) {
+        max-width: none;
+        min-width: 0;
+    }
+
+    .info__slider {
+        height: calc(100vh - 210px);
+    }
+
+    .swiper-slide {
+        width: auto;
+    }
+
+    .characteristic__page:nth-child(1),
+    .characteristic__page:nth-child(2) {
+        flex: 0 1 50%;
+        width: auto;
+    }
+
+    .characteristic__page:nth-child(2) {
+        padding: 0;
+    }
+
+    .product__price {
+        margin-bottom: rem(30);
+    }
+
+    .info__title {
+        margin-bottom: rem(16);
+    }
+
+    .characteristic__title {
+        margin-bottom: rem(10);
+    }
+
+    .characteristic__title,
+    .characteristic__description-title {
+        font-size: rem(25);
+    }
+}
+
+@media(max-width:em(660)) {
+    .product__info {
+        margin: 0;
+    }
+
+    .characteristic__title,
+    .characteristic__description-title {
+        font-size: rem(22);
+    }
+
+    .characteristic__title,
+    .product__characteristic {
+        flex-direction: column-reverse;
+    }
+
+    .characteristic__page:nth-child(1),
+    .characteristic__page:nth-child(2) {
+        flex: 0 1 100%;
+    }
+}
