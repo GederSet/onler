@@ -23,13 +23,17 @@ async function getBasketPropducts() {
     if (basketBody && products.count !== 0) {
         basketBody.innerHTML =
             `
-            <div class="basket__columns basket__columns_products"></div>
-            <div class="basket__columns">
-                <div class="basket__info page">Товаров: <div>${products[1][0].count_products}</div>
+            <div class="basket__page">
+                <div class="basket__columns basket__columns_products"></div>
+            </div>
+            <div class="basket__page">
+                <div class="basket__columns basket__columns_info">
+                    <div class="basket__info page">Товаров: <div>${products[1][0].count_products}</div>
+                    </div>
+                    <div class="basket__total page">Итого: <div><span>${products[1][0].total_price}</span> ₽</div>
+                    </div>
+                    <button class="basket__pay page">Оплатить заказ</button>
                 </div>
-                <div class="basket__total page">Итого: <div><span>${products[1][0].total_price}</span> ₽</div>
-                </div>
-                <button class="basket__pay page">Оплатить заказ</button>
             </div>
             `
         const basket = document.querySelector('.basket__columns_products');
@@ -40,7 +44,7 @@ async function getBasketPropducts() {
                 <div class="basket__rows">
                     <div class="basket__column basket__column_short basket__column_image">
                         <div class="basket__image">
-                            <img src="${product.url_image}" alt="Часы">
+                            <img src="${product.url}" alt="Часы">
                         </div>
                     </div>
                     <div class="basket__column basket__column_name basket__column_name-${product.id}">

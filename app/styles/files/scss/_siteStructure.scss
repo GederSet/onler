@@ -5,7 +5,7 @@
 .wrapper {
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    overflow: clip;
     min-height: 100%;
 
     >main {

@@ -14,9 +14,13 @@
         {
 
             $sql = 
-            "SELECT id, name, price, url_image 
-             FROM $this->table_name
-             WHERE name LIKE '%$name%'";
+            "SELECT product.id, product.name, product.price, img.url 
+             FROM img 
+             JOIN product
+             ON img.id_product = product.id
+             WHERE img.order_img = 1 AND
+             product.name LIKE '%$name%'";
+
             $stmt = $this->conn->prepare($sql);
             $stmt->execute();
 

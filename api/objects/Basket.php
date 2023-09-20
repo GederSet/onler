@@ -43,12 +43,14 @@
         {
 
             $sql = 
-            "SELECT id, name, price AS minimal_price, url_image, stock_quantity, 
+            "SELECT product.id, product.name, product.price AS minimal_price, 
+             img.url, product.stock_quantity, 
              basket.count AS basket_count,
              basket.count * price AS total_price
-             FROM product 
+             FROM img 
+             JOIN product ON img.id_product = product.id 
              JOIN basket ON basket.id_product = product.id 
-             WHERE basket.id_user = :user_id;";
+             WHERE basket.id_user = :user_id AND img.order_img = 1";
 
             $stmt = $this->conn->prepare($sql);
             $stmt->bindParam(':user_id', $this->user_id);

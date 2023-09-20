@@ -16,6 +16,15 @@
         justify-content: space-between;
     }
 
+    &__page:nth-child(1) {
+        flex: 1 1 auto;
+    }
+
+    &__page:nth-child(2) {
+        flex: 0 1 rem(330);
+        position: relative;
+    }
+
     &__columns {
         display: flex;
         row-gap: rem(13);
@@ -26,12 +35,13 @@
         }
     }
 
-    &__columns:nth-child(1) {
-        flex: 1 1 auto;
+    &__columns_products {
+        flex-direction: column-reverse;
     }
 
-    &__columns:nth-child(2) {
-        flex: 0 1 rem(330);
+    &__columns_info {
+        position: sticky;
+        top: rem(116);
     }
 
     &__wrapper {
@@ -210,8 +220,12 @@
             flex-direction: column;
         }
 
-        &__columns:nth-child(2) {
+        &__page:nth-child(2) {
             flex: 0 1 max-content;
+        }
+
+        &__columns_info {
+            position: static;
         }
     }
 }

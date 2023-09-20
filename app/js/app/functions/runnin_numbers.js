@@ -23,15 +23,4 @@ export function countingRunningNumbers(currentPrice, finalPrice, step, time, blo
     animate();
 
 }
-// export function countingRunningNumbers(currentPrice, finalPrice, step, time, blockPrice) {
 
-//     const iteration = (time / (finalPrice / step));
-//     let interval = setInterval(() => {
-//         currentPrice += step;
-//         if (currentPrice === finalPrice) {
-//             clearInterval(interval);
-//         }
-//         blockPrice.textContent = currentPrice;
-//     }, iteration);
-
-// }

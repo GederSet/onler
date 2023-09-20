@@ -26,6 +26,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+._icon-star:before {
+  content: "\e90b";
+}
+
 ._icon-arrow:before {
   content: "\e90a";
 }
