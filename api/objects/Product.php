@@ -59,7 +59,7 @@
              product.caliber_diametr_mechanism, watch_mechanism.mechanism, 
              watch_strap_color.color AS strap_color, watch_strap_material.material, 
              watch_face_color.color AS face_color, gender.gender,
-             img.url 
+             img.url, img.order_img
              FROM img 
              JOIN product ON product.id = img.id_product
              JOIN watch_mechanism ON watch_mechanism.id = product.id_mechanism

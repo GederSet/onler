@@ -20,7 +20,6 @@ export async function getAllProductPhotos(idProduct) {
             throw await response.json();
         }
         const photos = await response.json();
-        console.log(photos);
 
         photos.forEach(photo => {
             sliderWrapper.innerHTML +=

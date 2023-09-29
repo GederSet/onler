@@ -27,11 +27,11 @@ body {
 
 body {
     font-size: $fontSize;
-    scrollbar-width: 0.3125rem;
+    scrollbar-width: rem(14);
     scrollbar-color: $scrollBody $scroll;
 
     &::-webkit-scrollbar {
-        width: rem(15);
+        width: rem(14);
         // background-color: $scrollBody;
     }
 

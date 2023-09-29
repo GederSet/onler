@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icons';
-  src: url('../../fonts/icons.eot?vdb1b4');
-  src: url('../../fonts/icons.eot?vdb1b4#iefix') format('embedded-opentype'),
-    url('../../fonts/icons.ttf?vdb1b4') format('truetype'),
-    url('../../fonts/icons.woff?vdb1b4') format('woff'),
-    url('../../fonts/icons.svg?vdb1b4#icons') format('svg');
+  src: url('../../fonts/icons.eot?vsnlj3');
+  src: url('../../fonts/icons.eot?vsnlj3#iefix') format('embedded-opentype'),
+    url('../../fonts/icons.ttf?vsnlj3') format('truetype'),
+    url('../../fonts/icons.woff?vsnlj3') format('woff'),
+    url('../../fonts/icons.svg?vsnlj3#icons') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -26,50 +26,54 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-._icon-star:before {
-  content: "\e90b";
-}
-
-._icon-arrow:before {
-  content: "\e90a";
-}
-
-._icon-phone:before {
-  content: "\e909";
-}
-
-._icon-eye:before {
-  content: "\e903";
-}
-
-._icon-close:before {
-  content: "\e908";
-}
-
-._icon-password:before {
-  content: "\e907";
-}
-
-._icon-check:before {
-  content: "\e906";
-}
-
-._icon-basket-add:before {
-  content: "\e901";
-}
-
-._icon-basket-delete:before {
-  content: "\e905";
-}
-
-._icon-filter:before {
-  content: "\e902";
-}
-
-._icon-user:before {
-  content: "\e904";
+._icon-arrow-long:before {
+  content: "\e900";
 }
 
 ._icon-magnifier:before {
-  content: "\e900";
+  content: "\e901";
+}
+
+._icon-basket-add:before {
+  content: "\e902";
+}
+
+._icon-filter:before {
+  content: "\e903";
+}
+
+._icon-eye:before {
+  content: "\e904";
+}
+
+._icon-user:before {
+  content: "\e905";
+}
+
+._icon-basket-delete:before {
+  content: "\e906";
+}
+
+._icon-check:before {
+  content: "\e907";
+}
+
+._icon-password:before {
+  content: "\e908";
+}
+
+._icon-close:before {
+  content: "\e909";
+}
+
+._icon-phone:before {
+  content: "\e90a";
+}
+
+._icon-arrow:before {
+  content: "\e90b";
+}
+
+._icon-star:before {
+  content: "\e90c";
 }

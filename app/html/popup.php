@@ -15,7 +15,7 @@
                     <span></span>
                 </div>
             </div>
-            <button class="popup__main-button" id="buttonSignIn" type="submit">Войти</button>
+            <button class="popup__main-button main-button" id="buttonSignIn" type="submit">Войти</button>
             <button type="button" class="popup__info">Зарегистрироваться</button>
         </form>
         <form class="popup__register" method="POST" action="#">
@@ -41,7 +41,7 @@
                     <span></span>
                 </div>
             </div>
-            <button class="popup__main-button" id="buttonRegister" type="submit">Зарегистрироваться</button>
+            <button class="popup__main-button main-button" id="buttonRegister" type="submit">Зарегистрироваться</button>
             <button class="button popup__info" type="button">Войти</button>
         </form>
     </div>

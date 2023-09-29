@@ -75,22 +75,47 @@
     position: relative;
 }
 
+.info__main-img:hover .info__arrow span {
+    opacity: 1;
+}
+
 .info__arrow {
     cursor: pointer;
     position: absolute;
     top: 50%;
     width: rem(50);
     height: rem(50);
+    display: flex;
+    align-items: center;
+    transform: translateY(-50%);
 }
 
 .info__arrow:nth-child(1) {
     left: 0;
-    transform: translateY(-50%) rotate(180deg);
 }
 
-.info__arrow:nth-child(2) {
+.info__arrow:nth-child(1) span {
+    transform: rotate(-90deg);
+}
+
+.info__arrow:nth-child(3) {
     right: 0;
-    transform: translateY(-50%) rotate(0deg);
+    justify-content: flex-end;
+}
+
+.info__arrow:nth-child(3) span {
+    transform: rotate(90deg);
+}
+
+.info__arrow span {
+    opacity: 0;
+    font-size: rem(28);
+    color: black;
+    transition: 0.3s ease 0s;
+}
+
+.info__arrow:hover span {
+    color: #21aeb1;
 }
 
 .swiper-pagination {
@@ -467,6 +492,11 @@
     padding: rem(12) rem(40);
     border-radius: rem(15);
     border: rem(1) solid $decorElement;
+    transition: 0.3s ease 0s;
+}
+
+.review__button:hover {
+    border: rem(1) solid $decorElementHover;
 }
 
 .review__button_send {

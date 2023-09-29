@@ -32,7 +32,7 @@ async function getBasketPropducts() {
                     </div>
                     <div class="basket__total page">Итого: <div><span>${products[1][0].total_price}</span> ₽</div>
                     </div>
-                    <button class="basket__pay page">Оплатить заказ</button>
+                    <button class="basket__pay page main-button">Оплатить заказ</button>
                 </div>
             </div>
             `

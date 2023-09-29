@@ -182,7 +182,6 @@ main {
     &__icon,
     &__text {
         color: $whiteColor;
-        background-color: $decorElement;
     }
 
     &__icon {
@@ -196,7 +195,19 @@ main {
     &__page {
         height: 0;
         overflow: hidden;
+        overflow-y: auto;
+        max-height: rem(450);
         transition: all 0.3s ease 0s;
+        scrollbar-width: rem(0);
+        scrollbar-color: $scrollBody $scroll;
+    }
+
+    &__page::-webkit-scrollbar {
+        width: rem(0);
+    }
+
+    &__page::-webkit-scrollbar-thumb {
+        background-color: $scroll;
     }
 
     &__options {
@@ -410,6 +421,10 @@ main {
 
         &__title {
             margin-bottom: rem(5);
+        }
+
+        &__page {
+            max-height: none;
         }
 
     }

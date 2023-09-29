@@ -20,7 +20,6 @@ export async function getInfoProduct(idProduct) {
             throw await response.json();
         }
         const productInfo = await response.json();
-        console.log(productInfo);
 
         container.innerHTML =
             `
@@ -34,13 +33,13 @@ export async function getInfoProduct(idProduct) {
                                             <div class="swiper-wrapper"></div>
                                         </div>
                                         <div class="swiper-pagination"></div>
-                                        <div class="info__main-img">
-                                            <div class="info__arrow">
-                                                <span></span>
+                                        <div class="info__main-img" value="${productInfo.order_img}">
+                                            <div class="info__arrow info__arrow_prev">
+                                                <span class="_icon-arrow-long"></span>
                                             </div>
                                             <img src="${productInfo.url}" alt="${productInfo.name}">
-                                            <div class="info__arrow">
-                                                <span></span>
+                                            <div class="info__arrow info__arrow_next">
+                                                <span class="_icon-arrow-long"></span>
                                             </div>
                                         </div>
                                     </div>
@@ -215,7 +214,7 @@ export async function getInfoProduct(idProduct) {
                     <div class="product__columns">
                         <div class="product__price-block">
                             <div class="product__price" data-da="info__body-name,last,1175">${productInfo.price} ₽</div>
-                            <button class="product__add">Добавить в корзину</button>
+                            <button class="product__add main-button">Добавить в корзину</button>
                             <div class="product__date">Доставка 20 августа</div>
                         </div>
                     </div>
@@ -237,7 +236,7 @@ export async function getInfoProduct(idProduct) {
                     <div class="review__body">
                         <div class="review-button-prev _icon-arrow"></div>
                         <div class="swiper-container review__slider review-slider">
-                            <div class="swiper-wrapper">
+                            <div class="swiper-wrapper review__wrapper">
                                 <div class="swiper-slide review-slider__slide">
                                     <div class="review-slider__rows">
                                         <div class="review-slider__shell">
@@ -393,7 +392,7 @@ export async function getInfoProduct(idProduct) {
                         <div class="review-button-next _icon-arrow"></div>
                     </div>
                     <div class="review__buttons">
-                        <button class="review__button review__button_send">Написать отзыв</button>
+                        <button class="review__button review__button_send main-button">Написать отзыв</button>
                         <button class="review__button review__button_watch">Смотреть все</button>
                     </div>
                 </div>

@@ -21,7 +21,7 @@
                 <div class="products__container">
                     <div class="products__filter filter">
                         <div class="filter__body">
-                            <div class="filter__button" data-spoiler>
+                            <div class="filter__button main-button" data-spoiler>
                                 <div class="filter__icon _icon-filter"></div>
                                 <div class="filter__text">Фильтры</div>
                             </div>
