@@ -22,6 +22,10 @@
         </div>
         <div class="header__info header-info">
             <button class="search__mobile-magnifer _icon-magnifier"></button>
+            <a class="header-info__page">
+                <div class="header-info__icon _icon-deliver"></div>
+                <div class="header-info__text">Доставки</div>
+            </a>
             <a href="basket.php" class="header-info__page">
                 <div class="header-info__icon header-info__icon_page">
                     <div class="_icon-basket-add"></div>
@@ -29,7 +33,7 @@
                 </div>
                 <div class="header-info__text">Корзина</div>
             </a>
-            <a value="signIn" class="header-info__page open-popup">
+            <a value="signIn" class="header-info__page open-popup" id="header-info__user">
                 <div class="header-info__icon _icon-user"></div>
                 <div class="header-info__text">Войти</div>
             </a>

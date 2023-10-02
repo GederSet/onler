@@ -97,7 +97,7 @@ export async function getInfoProduct(idProduct) {
                                     </div>
                                     <div class="parameter__value">${productInfo.strap_color}</div>
                                 </div>
-                                <div class="info__show">Все характеристики</div>
+                                <div class="info__show more-info">Все характеристики</div>
                             </div>
                         </div>
                         <div class="product__characteristic characteristic">
@@ -202,12 +202,12 @@ export async function getInfoProduct(idProduct) {
                                         </div>
                                     </div>
                                 </div>
-                                <div class="characteristic__show" data-spoiler-reverse>Развернуть характеристики</div>
+                                <div class="characteristic__show more-info" data-spoiler-reverse>Развернуть характеристики</div>
                             </div>
                             <div class="characteristic__page">
                                 <div class="characteristic__sub-title characteristic__description-title">Описание</div>
                                 <div class="characteristic__description" data-height="80">${productInfo.description}</div>
-                                <div class="characteristic__show-description" data-spoiler-reverse>Развернуть описание</div>
+                                <div class="characteristic__show-description more-info" data-spoiler-reverse>Развернуть описание</div>
                             </div>
                         </div>
                     </div>

@@ -216,6 +216,23 @@
     line-height: 150%;
 }
 
+.more-info {
+    transition: 0.2s ease 0s;
+}
+
+.more-info::before {
+    transition: 0.2s ease 0s;
+}
+
+.more-info:hover {
+    color: $decorElementHover;
+}
+
+
+.more-info:hover::before {
+    border-color: $decorElementHover;
+}
+
 .info__show::before,
 .characteristic__show::before,
 .characteristic__show-description::before {

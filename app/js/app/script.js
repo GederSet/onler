@@ -1,9 +1,11 @@
 import './functions/popup.js';
 import './functions/search.js';
+import './functions/logout.js';
 import './functions/is_mobile.js';
 import './functions/search_list.js';
 import './functions/menu_burger.js';
 import './functions/placeholder.js';
+import './functions/change_header.js';
 import './functions/find_products.js';
 import './functions/open_product_page.js';
 import './functions/clear_search_filfer.js';

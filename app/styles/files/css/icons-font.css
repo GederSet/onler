@@ -26,6 +26,26 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+._icon-return:before {
+  content: "\e911";
+}
+
+._icon-shopping:before {
+  content: "\e90d";
+}
+
+._icon-review:before {
+  content: "\e90e";
+}
+
+._icon-exit:before {
+  content: "\e90f";
+}
+
+._icon-deliver:before {
+  content: "\e910";
+}
+
 ._icon-arrow-long:before {
   content: "\e900";
 }

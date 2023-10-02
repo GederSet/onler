@@ -38,6 +38,7 @@ async function registerUser(event) {
         console.log(info);
         localStorage.setItem('userId', info.user_id);
         addInformationElement(parent, 'Вы зарегестрировались!', 'form-successfully');
+        location.reload();
     }
 
     catch (error) {

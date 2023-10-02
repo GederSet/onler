@@ -14,9 +14,18 @@ function hideSearchList(e) {
     if (
         !el.closest('.search__info') && !el.closest('.search__body')
         && !el.closest('.open-popup') && !el.closest('.popup__sign')
+        && !el.closest('.popup__register') && !el.closest('.search__close')
+    ) {
+        bodyShow();
+        searchList.classList.remove('show');
+    }
+    else if (
+        !el.closest('.search__info') && !el.closest('.search__body')
+        && !el.closest('.open-popup') && !el.closest('.popup__sign')
         && !el.closest('.popup__register')
     ) {
         bodyShow();
+        searchInput.value = '';
         searchList.classList.remove('show');
     }
 

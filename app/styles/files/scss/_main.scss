@@ -439,10 +439,13 @@ main {
 
 }
 
-@media(max-width:em(580)) {
+@media(max-width:em(730)) {
     main {
         padding-top: rem(70);
     }
+}
+
+@media(max-width:em(580)) {
 
     .products {
         &__card {
