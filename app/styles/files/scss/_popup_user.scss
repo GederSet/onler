@@ -1,33 +1,22 @@
 @import 'functions';
 @import 'settings';
 
-/*-----------popup-------------------------------------------------------------------------------------------*/
+/*-----------popup_user-----------------------------------------------------------------------------*/
 
-.popup {
-
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 7;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    visibility: hidden;
-    overflow-y: auto;
-    transition: all 0.3s ease 0s;
+.popup-user {
 
     &__content {
         display: flex;
         max-width: 313px;
         align-items: center;
         flex-direction: row-reverse;
+        overflow: hidden;
         transform: translateY(-100%);
         transition: all 0.5s ease 0s;
-        overflow: hidden;
+    }
+
+    &._open .popup__content {
+        transform: translateY(0);
     }
 
     &__sign,
@@ -154,13 +143,4 @@
 
 .form-successfully {
     color: rgb(14, 172, 14);
-}
-
-.popup._open {
-    opacity: 1;
-    visibility: visible;
-}
-
-.popup._open .popup__content {
-    transform: translateY(0);
 }

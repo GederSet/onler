@@ -1,21 +1,30 @@
-let isMobile = {
-    Android: function () { return navigator.userAgent.match(/Android/i); },
-    BlackBerry: function () { return navigator.userAgent.match(/BlackBerry/i); },
-    iOS: function () { return navigator.userAgent.match(/iPhone|iPad|iPod/i); },
-    Opera: function () { return navigator.userAgent.match(/Opera Mini/i); },
-    Windows: function () { return navigator.userAgent.match(/IEMobile/i); },
-    any: function () { return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows()); }
-};
+document.addEventListener("DOMContentLoaded", showIcon);
 
 
 
-// schow icon if touch
-if (isMobile.any()) {
-    let iconMobile = document.querySelectorAll('._schowIcon');
-    for (let i = 0; i < iconMobile.length; i++) {
-        iconMobile[i].style.cssText = `
-                opacity:1;
-                visibility: visible;
-            `;
+function showIcon() {
+
+    console.log('show icons');
+    let isMobile = {
+        Android: function () { return navigator.userAgent.match(/Android/i); },
+        BlackBerry: function () { return navigator.userAgent.match(/BlackBerry/i); },
+        iOS: function () { return navigator.userAgent.match(/iPhone|iPad|iPod/i); },
+        Opera: function () { return navigator.userAgent.match(/Opera Mini/i); },
+        Windows: function () { return navigator.userAgent.match(/IEMobile/i); },
+        any: function () { return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows()); }
+    };
+
+
+
+    // schow icon if touch
+    if (isMobile.any()) {
+        let iconMobile = document.querySelectorAll('._schowIcon');
+        for (let i = 0; i < iconMobile.length; i++) {
+            iconMobile[i].style.cssText = `
+                    opacity:1;
+                    visibility: visible;
+                `;
+        }
     }
+
 }

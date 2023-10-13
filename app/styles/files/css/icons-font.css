@@ -26,6 +26,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+._icon-truck:before {
+  content: "\e912";
+}
+
 ._icon-return:before {
   content: "\e911";
 }

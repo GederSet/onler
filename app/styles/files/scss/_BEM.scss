@@ -1,0 +1,152 @@
+@import 'functions';
+@import 'settings';
+
+/*-----------BEM-------------------------------------------------------------------------------------------*/
+
+
+
+/*-----------product-card------------*/
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: $baseBlockColor;
+    border-radius: rem(12);
+    box-shadow: 0 0 rem(15) rem(1) #EBEBEB;
+
+    &__shell-image {
+        cursor: pointer;
+        padding: rem(20) rem(15) rem(0) rem(15);
+    }
+
+    &__image {
+        position: relative;
+        padding-top: 150%;
+        margin-bottom: rem(16);
+    }
+
+    &__image img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    &__shell-info {
+        position: relative;
+        min-height: rem(50);
+    }
+
+    &__rows {
+        width: 100%;
+        min-height: 100%;
+        display: flex;
+        column-gap: rem(5);
+        padding: 0 rem(15) rem(20) rem(15);
+        background: $baseBlockColor;
+    }
+
+    // &__page {
+    //     display: flex;
+    //     flex-direction: column;
+    // }
+
+    &__page:nth-child(1) {
+        flex: 1 1 auto;
+    }
+
+    &__name {
+        @include adaptiv-exact('font-size', 580, 320, 18, 14);
+        margin-bottom: rem(5);
+        word-break: break-all;
+        overflow: hidden;
+        max-height: rem(50);
+        -webkit-line-clamp: 1;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+    }
+
+    &__price {
+        color: $priceProduct;
+        font-size: rem(24);
+        @include adaptiv-exact('font-size', 580, 320, 24, 14);
+    }
+}
+
+.product-card:hover {
+    overflow: visible;
+}
+
+.product-card:hover .product-card__rows {
+    position: absolute;
+    height: max-content;
+    z-index: 2;
+    overflow: hidden;
+    border-radius: 0 0 rem(12) rem(12);
+    box-shadow: 0 0 rem(15) rem(1) #EBEBEB;
+}
+
+.product-card:hover .product-card__name {
+    overflow: visible;
+    max-height: max-content;
+    -webkit-line-clamp: initial;
+    display: block;
+    -webkit-box-orient: initial;
+    text-overflow: initial;
+}
+
+.product-card:hover .product-card__shell-image {
+    overflow: hidden;
+    position: relative;
+    z-index: 4;
+    border-radius: rem(12) rem(12) 0 0;
+    background-color: $baseBlockColor;
+}
+
+
+/*-----------button------------*/
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $whiteColor;
+    background-color: $decorElement;
+    padding: rem(14) rem(30);
+    border-radius: rem(10);
+    transition: 0.3s ease 0s;
+}
+
+.button:hover {
+    background-color: $decorElementHover;
+}
+
+/*-----------popup------------*/
+
+.popup {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 7;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    overflow-y: auto;
+    transition: all 0.3s ease 0s;
+
+}
+
+.popup._open {
+    opacity: 1;
+    visibility: visible;
+}

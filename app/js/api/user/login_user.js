@@ -3,7 +3,7 @@ import { startFunctions } from "../basket/get_basket_products.js";
 import { getCountPropducts } from "../basket/count_basket_products.js";
 import { addInformationElement } from "../../app/functions/add_information_element.js";
 
-const inputForm = document.querySelector('.popup__sign');
+const inputForm = document.querySelector('.popup-user__sign');
 inputForm.addEventListener('submit', registerUser);
 
 async function registerUser(event) {
@@ -16,7 +16,7 @@ async function registerUser(event) {
 
     const name = inputForm.querySelector('[name="name"]');
     const password = inputForm.querySelector('[name="password"]');
-    const parent = name.closest('.popup__rows');
+    const parent = name.closest('.popup-user__rows');
 
     const url = 'http://localhost/onler_2/api/user/login_user.php';
     const data = {

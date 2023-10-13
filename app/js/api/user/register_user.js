@@ -1,7 +1,7 @@
 import { checkInput } from "../../app/functions/form_validation.js";
 import { addInformationElement } from "../../app/functions/add_information_element.js";
 
-const registerForm = document.querySelector('.popup__register');
+const registerForm = document.querySelector('.popup-user__register');
 registerForm.addEventListener('submit', registerUser);
 
 async function registerUser(event) {
@@ -14,7 +14,7 @@ async function registerUser(event) {
 
     const name = registerForm.querySelector('[name="name"]');
     const password = registerForm.querySelector('[name="password"]');
-    const parent = name.closest('.popup__rows');
+    const parent = name.closest('.popup-user__rows');
 
     const url = 'http://localhost/onler_2/api/user/register_user.php';
     const data = {

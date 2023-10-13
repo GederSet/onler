@@ -3,14 +3,14 @@ import { addInformationElement } from "./add_information_element.js";
 export function checkInput(form) {
 
     let status = true;
-    const typeForm = form.classList.contains('popup__register');
+    const typeForm = form.classList.contains('popup-user__register');
     const password = form.querySelector('[name="password"]');
     const repeatPassword = form.querySelector('[name="repeatPassword"]');
 
     const inputs = form.querySelectorAll('input');
     inputs.forEach(input => {
 
-        const parent = input.closest('.popup__rows');
+        const parent = input.closest('.popup-user__rows');
         const previousElement = parent.previousElementSibling;
 
         if (previousElement.classList.contains('form-error') || previousElement.classList.contains('form-successfully')) {

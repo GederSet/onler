@@ -1,13 +1,17 @@
 let registerClose = true;
 
 const timePopup = 300;
-const register = document.querySelector('.popup__register');
+const register = document.querySelector('.popup-user__register');
 
 
 document.addEventListener('keydown', closePopupEscape);
 function closePopupEscape(e) {
     if (e.key === 'Escape') {
-        closePopup(document.querySelector('.popup'));
+        const popups = document.querySelectorAll('.popup');
+        popups.forEach(popup => {
+            closePopup(popup);
+        });
+        // closePopup(document.querySelector('.popup'));
     }
 }
 
@@ -25,14 +29,16 @@ function actionElement(event) {
     if (clickElement.closest('.close-popup')) {
         closePopup(clickElement.closest('.popup'));
     }
-    if (clickElement.closest('.popup__info') && registerClose) {
+
+    // Попап с регистрацией / входом пользователя
+    if (clickElement.closest('.popup-user__info') && registerClose) {
         openRegister();
-    } else if (clickElement.closest('.popup__info') && !registerClose) {
+    } else if (clickElement.closest('.popup-user__info') && !registerClose) {
         closeRegister();
     }
 
-    if (clickElement.closest('.popup__icon_eye')) {
-        showPassword(clickElement.closest('.popup__icon_eye'));
+    if (clickElement.closest('.popup-user__icon_eye')) {
+        showPassword(clickElement.closest('.popup-user__icon_eye'));
     }
 }
 
@@ -55,16 +61,18 @@ function openPopup(link) {
 
     const namePopup = link.getAttribute('value');
     const popup = document.getElementById(namePopup);
-    popup.classList.add('_open');
-    popup.addEventListener('click', function (event) {
-        if (!event.target.closest('.popup__content')) {
-            closePopup(popup);
-        }
-    });
+    if (popup) {
+        popup.classList.add('_open');
+        popup.addEventListener('click', function (event) {
+            if (!event.target.closest('.popup__content')) {
+                closePopup(popup);
+            }
+        });
+    }
 
 }
 
-function closePopup(popup) {
+export function closePopup(popup) {
     popup.classList.remove('_open');
     setTimeout(() => {
         bodyShow();

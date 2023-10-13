@@ -96,7 +96,7 @@
                 </div>
             </section>
         </main>
-        <?php require_once('app/html/popup.php')?>
+        <?php require_once('app/html/popup_user.php')?>
         <script type="module" src="app/js/app/script.js"></script>
         <script type="module" src="app/js/app/pages_site/home_page/home_script.js"></script>
     </div>

@@ -30,90 +30,15 @@ main {
 
     &__card {
         flex: 0 1 calc(25% - 20px);
-        display: flex;
-        flex-direction: column;
         font-family: Lato;
-        overflow: hidden;
-        background: $baseBlockColor;
-        border-radius: rem(9);
-        box-shadow: rem(1) rem(1) rem(20) rem(10) #F4F4F4;
-    }
-
-    &__card:hover {
-        overflow: visible;
-    }
-
-    &__card:hover &__rows {
-        position: absolute;
-        height: max-content;
-        z-index: 2;
-        overflow: hidden;
-        border-radius: 0 0 rem(9) rem(9);
-        box-shadow: rem(1) rem(1) rem(20) rem(10) #F4F4F4;
-    }
-
-    &__card:hover &__name {
-        overflow: visible;
-        max-height: max-content;
-        -webkit-line-clamp: initial;
-        display: initial;
-        -webkit-box-orient: initial;
-        text-overflow: initial;
-    }
-
-    &__card:hover &__shell-image {
-        overflow: hidden;
-        position: relative;
-        z-index: 4;
-        border-radius: rem(9) rem(9) 0 0;
-        background-color: $baseBlockColor;
-    }
-
-    &__shell-image {
-        cursor: pointer;
-        padding: rem(20) rem(15) rem(0) rem(15);
-    }
-
-    &__image {
-        position: relative;
-        padding-top: 150%;
-        margin-bottom: rem(16);
-    }
-
-    &__image img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-    }
-
-    &__shell-info {
-        position: relative;
-        min-height: rem(50);
-    }
-
-    &__rows {
-        width: 100%;
-        min-height: 100%;
-        display: flex;
-        padding: 0 rem(15) rem(20) rem(15);
-        background: $baseBlockColor;
-    }
-
-    &__page {
-        cursor: pointer;
-        display: flex;
-        flex-direction: column;
-    }
-
-    &__page:nth-child(1) {
-        flex: 1 1 auto;
     }
 
     &__page:nth-child(2) {
         align-self: flex-end;
+    }
+
+    &__card:hover &__basket {
+        opacity: 1;
     }
 
     &__basket {
@@ -124,32 +49,12 @@ main {
         transition: all 0.3s ease 0s;
     }
 
-    &__card:hover &__basket {
-        opacity: 1;
-    }
-
     &__basket:hover {
         color: black;
     }
 
     &__name {
         color: $nameProduct;
-        font-size: rem(18);
-        @include adaptiv-exact('font-size', 580, 320, 18, 14);
-        margin-bottom: rem(5);
-        word-break: break-all;
-        overflow: hidden;
-        max-height: rem(50);
-        -webkit-line-clamp: 1;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        text-overflow: ellipsis;
-    }
-
-    &__price {
-        color: $priceProduct;
-        font-size: rem(24);
-        @include adaptiv-exact('font-size', 580, 320, 24, 14);
     }
 }
 
@@ -160,12 +65,7 @@ main {
         top: rem(116);
         display: flex;
         flex-direction: column;
-        // transition: 0.2s ease 0s;
     }
-
-    // &__body._bottom {
-    //     top: rem(116);
-    // }
 
     &__button {
         cursor: pointer;
@@ -383,9 +283,8 @@ main {
 
 @media(max-width:em(1080)) {
     .products {
-
         &__card {
-            flex: 0 1 calc(33.333% - 20px);
+            flex: 0 1 calc(33.333% - rem(20));
         }
     }
 }
@@ -406,7 +305,7 @@ main {
         }
 
         &__card {
-            flex: 0 1 calc(25% - 20px);
+            flex: 0 1 calc(25% - rem(20));
         }
     }
 
@@ -433,7 +332,7 @@ main {
 @media(max-width:em(775)) {
     .products {
         &__card {
-            flex: 0 1 calc(33.333% - 20px);
+            flex: 0 1 calc(33.333% - rem(20));
         }
     }
 
@@ -446,10 +345,9 @@ main {
 }
 
 @media(max-width:em(580)) {
-
     .products {
         &__card {
-            flex: 0 1 calc(50% - 20px);
+            flex: 0 1 calc(50% - rem(20));
         }
     }
 }

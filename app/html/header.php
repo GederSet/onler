@@ -22,7 +22,7 @@
         </div>
         <div class="header__info header-info">
             <button class="search__mobile-magnifer _icon-magnifier"></button>
-            <a class="header-info__page">
+            <a href="delivery.php" class="header-info__page">
                 <div class="header-info__icon _icon-deliver"></div>
                 <div class="header-info__text">Доставки</div>
             </a>
