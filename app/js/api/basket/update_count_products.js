@@ -21,7 +21,6 @@ export async function updateCountProduct(productId, productCount) {
             throw response.json();
         }
         const info = await response.text();
-        console.log(info);
     }
     catch (error) {
         const messageError = await error.text();

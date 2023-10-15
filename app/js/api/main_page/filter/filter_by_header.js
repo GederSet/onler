@@ -1,6 +1,6 @@
 import { showProducts } from "../get_products.js";
-import { getAllParametersInfo } from "./filter_by_parameters.js";
-import { getAllPriceProduct } from "../../../app/functions/range_slider.js";
+import { getAllPriceProduct } from "../../../app/pages_site/home_page/functions/range_slider.js";
+import { getAllParametersInfo } from "../../../app/pages_site/home_page/functions/get_selected_parameters.js";
 
 
 document.addEventListener('click', getProductsByGender);

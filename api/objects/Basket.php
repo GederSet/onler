@@ -127,4 +127,28 @@
 
         }
 
+
+        public function buyProducts()
+        {
+
+            $sql = 
+            "INSERT INTO delivery (id_user, id_product, count, order_date)
+             SELECT id_user, id_product, count, 
+             DATE_FORMAT(CURRENT_TIMESTAMP(), '%Y.%m.%d, %H:%i:%s')
+             FROM basket
+             WHERE id_user = :user_id;
+
+             DELETE FROM $this->table_name
+             WHERE id_user = :user_id;";
+
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bindParam(':user_id', $this->user_id);
+
+            if($stmt->execute()){
+                return true;
+            }
+            else return false;
+
+        }
+
     }

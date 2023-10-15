@@ -1,5 +1,3 @@
-import { showProducts } from "../../api/main_page/get_products.js";
-import { getAllParametersInfo } from "../../api/main_page/filter/filter_by_parameters.js";
 import { findProductsbyParameters } from "./find_products_by_parameters.js";
 
 

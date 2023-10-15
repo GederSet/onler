@@ -37,6 +37,5 @@ async function deleteBasketProduct(userId, product) {
         startFunctions();
         getCountPropducts();
     }
-    console.log(info);
 
 }

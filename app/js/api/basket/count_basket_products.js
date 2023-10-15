@@ -17,12 +17,13 @@ export async function getCountPropducts() {
     const response = await fetch(url, options);
     const countProduct = await response.json();
     const count = parseInt(countProduct.count_products);
+    console.log(count);
     const basketCounter = document.querySelector('.header-info__count');
 
     if (count > 0) {
         basketCounter.classList.add('show');
         basketCounter.textContent = count;
-    } else if (count === 0) {
+    } else {
         basketCounter.classList.remove('show');
         basketCounter.textContent = '';
     }

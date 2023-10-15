@@ -45,7 +45,7 @@
                         </div>
                     </div>
                     <div class="delivery__body">
-                        <div class="delivery__card product-card" value="${product.id}">
+                        <div class="delivery__card product-card" value="2">
                             <div class="product-card__shell-image">
                                 <div class="product-card__image">
                                     <img src="app/img/01 main page/TISSOT CHEMIN DES TOURELLES POWERMATIC 80 42 MM 01.jpg" alt="${product.name}">
@@ -63,7 +63,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="delivery__card product-card" value="${product.id}">
+                        <div class="delivery__card product-card" value="2">
                             <div class="product-card__shell-image">
                                 <div class="product-card__image">
                                     <img src="app/img/01 main page/TISSOT CHEMIN DES TOURELLES POWERMATIC 80 42 MM 01.jpg" alt="${product.name}">
@@ -81,7 +81,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="delivery__card product-card" value="${product.id}">
+                        <div class="delivery__card product-card" value="2">
                             <div class="product-card__shell-image">
                                 <div class="product-card__image">
                                     <img src="app/img/01 main page/TISSOT CHEMIN DES TOURELLES POWERMATIC 80 42 MM 01.jpg" alt="${product.name}">
@@ -99,7 +99,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="delivery__card product-card" value="${product.id}">
+                        <div class="delivery__card product-card" value="2">
                             <div class="product-card__shell-image">
                                 <div class="product-card__image">
                                     <img src="app/img/01 main page/TISSOT CHEMIN DES TOURELLES POWERMATIC 80 42 MM 01.jpg" alt="${product.name}">
@@ -117,7 +117,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="delivery__card product-card" value="${product.id}">
+                        <div class="delivery__card product-card" value="2">
                             <div class="product-card__shell-image">
                                 <div class="product-card__image">
                                     <img src="app/img/01 main page/TISSOT CHEMIN DES TOURELLES POWERMATIC 80 42 MM 01.jpg" alt="${product.name}">
@@ -135,7 +135,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="delivery__card product-card" value="${product.id}">
+                        <div class="delivery__card product-card" value="2">
                             <div class="product-card__shell-image">
                                 <div class="product-card__image">
                                     <img src="app/img/01 main page/TISSOT CHEMIN DES TOURELLES POWERMATIC 80 42 MM 01.jpg" alt="${product.name}">
@@ -153,7 +153,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="delivery__card product-card" value="${product.id}">
+                        <div class="delivery__card product-card" value="2">
                             <div class="product-card__shell-image">
                                 <div class="product-card__image">
                                     <img src="app/img/01 main page/TISSOT CHEMIN DES TOURELLES POWERMATIC 80 42 MM 01.jpg" alt="${product.name}">
@@ -171,7 +171,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="delivery__card product-card" value="${product.id}">
+                        <div class="delivery__card product-card" value="2">
                             <div class="product-card__shell-image">
                                 <div class="product-card__image">
                                     <img src="app/img/01 main page/TISSOT CHEMIN DES TOURELLES POWERMATIC 80 42 MM 01.jpg" alt="${product.name}">
@@ -189,7 +189,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="delivery__card product-card" value="${product.id}">
+                        <div class="delivery__card product-card" value="2">
                             <div class="product-card__shell-image">
                                 <div class="product-card__image">
                                     <img src="app/img/01 main page/TISSOT CHEMIN DES TOURELLES POWERMATIC 80 42 MM 01.jpg" alt="${product.name}">
@@ -207,7 +207,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="delivery__card product-card" value="${product.id}">
+                        <div class="delivery__card product-card" value="2">
                             <div class="product-card__shell-image">
                                 <div class="product-card__image">
                                     <img src="app/img/01 main page/TISSOT CHEMIN DES TOURELLES POWERMATIC 80 42 MM 01.jpg" alt="${product.name}">
@@ -225,7 +225,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="delivery__card product-card" value="${product.id}">
+                        <div class="delivery__card product-card" value="2">
                             <div class="product-card__shell-image">
                                 <div class="product-card__image">
                                     <img src="app/img/01 main page/TISSOT CHEMIN DES TOURELLES POWERMATIC 80 42 MM 01.jpg" alt="${product.name}">

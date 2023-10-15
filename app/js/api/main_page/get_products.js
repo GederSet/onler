@@ -34,7 +34,7 @@ export async function showProducts(idProducts, minPrice, maxPrice, gender, strap
             productsBody.innerHTML +=
                 `
                 <div class="products__card product-card" value="${product.id}">
-                    <div class="product-card__shell-image" id="products__shell-image">
+                    <div class="product-card__shell-image">
                         <div class="product-card__image">
                             <img src="${product.url}" alt="${product.name}">
                         </div>

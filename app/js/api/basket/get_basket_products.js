@@ -1,6 +1,6 @@
-import { disabledMinus } from "../../app/functions/counter.js";
 import { dinamicAdapt } from "../../app/functions/dinamic_adapt.js";
-import { changeBusketNumbers } from "../../app/functions/counter.js";
+import { disabledMinus } from "../../app/pages_site/basket_page/functions/counter.js";
+import { changeBusketNumbers } from "../../app/pages_site/basket_page/functions/counter.js";
 
 async function getBasketPropducts() {
 

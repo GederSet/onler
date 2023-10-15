@@ -1,4 +1,4 @@
-import { updateCountProduct } from "../../api/basket/update_count_products.js";
+import { updateCountProduct } from "../../../../api/basket/update_count_products.js";
 import { countingRunningNumbers } from "./runnin_numbers.js";
 
 disabledMinus();

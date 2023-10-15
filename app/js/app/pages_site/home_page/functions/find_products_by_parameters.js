@@ -1,7 +1,7 @@
 import { getPriceProduct } from "./range_slider.js";
-import { showProducts } from "../../api/main_page/get_products.js";
-import { getAllIdProducts } from "../../api/main_page/get_all_id_products.js";
-import { getAllParametersInfo } from "../../api/main_page/filter/filter_by_parameters.js";
+import { showProducts } from "../../../../api/main_page/get_products.js";
+import { getAllIdProducts } from "../../../../api/main_page/get_all_id_products.js";
+import { getAllParametersInfo } from "./get_selected_parameters.js";
 
 export async function findProductsbyParameters() {
 
