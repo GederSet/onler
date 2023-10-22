@@ -8,29 +8,24 @@
 
 
     require_once '../config/Database.php';
-    require_once '../objects/Basket.php';
+    require_once '../objects/Delivery.php';
 
     $database = new Database();
     $conn = $database->getConnection();
 
+    $delivery = new Delivery($conn);
+    
     $data = json_decode(file_get_contents("php://input"));
 
-    $basket = new Basket($conn);
+    $delivery->user_id = $data->id_user;
 
-    $user_id = $data->user_id;
-    $id_product = $data->product_id;
-    $id_new_product = $data->new_product_id;
-
-
-    if($basket->buyProducts($user_id, $id_product, $id_new_product)){
-
+    if($delivery->getProducts()){
+        $result = $delivery->getProducts();
+        $price_info = $delivery->getTotalPrice();
         http_response_code(200);
-        echo json_encode(['message' => 'Товары куплены'], JSON_UNESCAPED_UNICODE);
-
+        echo json_encode([$result, $price_info], JSON_UNESCAPED_SLASHES);
     }
     else {
-
-        http_response_code(404);
-        echo json_encode(['message' => 'Товары не куплены'], JSON_UNESCAPED_UNICODE);
-
+        http_response_code(200);
+        echo json_encode(array("message" => "Вы еще не покупали товаров", "count" => 0), JSON_UNESCAPED_UNICODE);
     }

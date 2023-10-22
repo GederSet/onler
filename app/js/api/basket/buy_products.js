@@ -1,23 +1,37 @@
 import { startFunctions } from "./get_basket_products.js";
 import { getCountPropducts } from "./count_basket_products.js";
+import { changeProductStatus } from "./change_delivery_status.js";
 
 document.addEventListener('click', actionElement);
 
-function actionElement(e) {
+async function actionElement(e) {
 
     const userId = localStorage.getItem('userId');
     if (e.target.closest('.basket__pay') && userId) {
-        // buyProducts(userId);
+
+        let productId = [];
+        let newProductId = [];
+        const products = document.querySelectorAll('.basket__wrapper');
+
+        for (let i = 0; i < products.length; i++) {
+            productId.push(parseInt(products[i].getAttribute('value')));
+            newProductId.push(getRandomInt(1, 18000000000000000));
+        }
+
+        await buyProducts(userId, productId, newProductId);
+        await changeProductStatus(userId, newProductId);
     }
 
 }
 
 
-async function buyProducts(userId) {
+async function buyProducts(userId, productId, newProductId) {
 
     const url = 'http://localhost/onler_2/api/basket/buy_products.php';
     const data = {
         user_id: userId,
+        product_id: productId,
+        new_product_id: newProductId,
     }
     const options = {
         method: 'POST',
@@ -31,7 +45,7 @@ async function buyProducts(userId) {
 
         const response = await fetch(url, options);
         if (!response.ok) {
-            throw await response.json();
+            throw await response.text();
         }
         const info = await response.text();
         console.log(info);
@@ -41,6 +55,12 @@ async function buyProducts(userId) {
     }
     catch (error) {
         console.log(error);
-        console.log(url);
     }
+}
+
+
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }

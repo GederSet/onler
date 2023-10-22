@@ -17,7 +17,6 @@ export async function getCountPropducts() {
     const response = await fetch(url, options);
     const countProduct = await response.json();
     const count = parseInt(countProduct.count_products);
-    console.log(count);
     const basketCounter = document.querySelector('.header-info__count');
 
     if (count > 0) {

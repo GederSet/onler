@@ -4,11 +4,11 @@
         <div class="pupup-status__title">Статус доставки</div>
         <div class="pupup-status__page">
             <div class="pupup-status__columns">
-                <div class="pupup-status__circle pupup-status__circle_full"></div>
+                <div class="pupup-status__circle"></div>
                 <div class="pupup-status__status">Оформлен</div>
             </div>
             <div class="pupup-status__columns">
-                <div class="pupup-status__circle pupup-status__circle_full"></div>
+                <div class="pupup-status__circle"></div>
                 <div class="pupup-status__status">Упакован</div>
             </div>
             <div class="pupup-status__columns">

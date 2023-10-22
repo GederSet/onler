@@ -128,23 +128,41 @@
         }
 
 
-        public function buyProducts()
+        public function buyProducts($user_id, $id_product, $id_new_product)
         {
 
-            $sql = 
-            "INSERT INTO delivery (id_user, id_product, count, order_date)
-             SELECT id_user, id_product, count, 
-             DATE_FORMAT(CURRENT_TIMESTAMP(), '%Y.%m.%d, %H:%i:%s')
-             FROM basket
-             WHERE id_user = :user_id;
+
+            $sql_create_temporary = 
+            "CREATE TEMPORARY TABLE temp_ids (id BIGINT, id_product BIGINT);";
+
+            $stmt_create = $this->conn->prepare($sql_create_temporary);
+            $stmt_create->execute();
+
+            for($i = 0; $i < count($id_product); $i++){
+
+                $sql_insert_temporary = 
+                "INSERT INTO temp_ids (id, id_product) VALUES ($id_product[$i], $id_new_product[$i])";
+
+                $stmt_insert = $this->conn->prepare($sql_insert_temporary);
+                $stmt_insert->execute();
+
+            }
+
+
+            $sql_insert_exist_table = 
+            "INSERT INTO delivery (id, id_user, id_product, count, order_date, arrival_date)
+            SELECT temp_ids.id_product, basket.id_user, basket.id_product, basket.count,
+            DATE_FORMAT(CURRENT_TIMESTAMP(), '%Y.%m.%d, %H:%i:%s'), DATE_FORMAT(DATE_ADD(CURRENT_TIMESTAMP(), INTERVAL 30 SECOND), '%Y.%m.%d, %H:%i:%s')
+            FROM basket
+            JOIN temp_ids ON basket.id_product = temp_ids.id
+            WHERE basket.id_user = $user_id;
 
              DELETE FROM $this->table_name
-             WHERE id_user = :user_id;";
+             WHERE id_user = $user_id";
 
-            $stmt = $this->conn->prepare($sql);
-            $stmt->bindParam(':user_id', $this->user_id);
+            $stmt_insert_exist = $this->conn->prepare($sql_insert_exist_table);
 
-            if($stmt->execute()){
+            if($stmt_insert_exist->execute()){
                 return true;
             }
             else return false;
