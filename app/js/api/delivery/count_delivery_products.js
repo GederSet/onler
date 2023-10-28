@@ -1,6 +1,6 @@
-export async function getCountPropducts() {
+export async function getCountDeliveryPropducts() {
 
-    const url = 'http://localhost/onler_2/api/basket/cout_basket_products.php';
+    const url = 'http://localhost/onler_2/api/delivery/cout_delivery_products.php';
     const userId = localStorage.getItem('userId');
 
     const data = {
@@ -17,15 +17,15 @@ export async function getCountPropducts() {
     const response = await fetch(url, options);
     const countProduct = await response.json();
     const count = parseInt(countProduct.count_products);
-    const basketCounter = document.querySelector('.header-info__count-basket');
+    const deliveryCounter = document.querySelector('.header-info__count-delivery');
 
     if (count > 0) {
-        basketCounter.classList.add('show');
-        basketCounter.textContent = count;
+        deliveryCounter.classList.add('show');
+        deliveryCounter.textContent = count;
     } else {
-        basketCounter.classList.remove('show');
-        basketCounter.textContent = '';
+        deliveryCounter.classList.remove('show');
+        deliveryCounter.textContent = '';
     }
 }
 
-getCountPropducts();
+getCountDeliveryPropducts();

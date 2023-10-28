@@ -5,12 +5,15 @@ inputSearch.addEventListener('keydown', findProductsByEnter);
 iconMagnifier.addEventListener('click', findProducts);
 
 function findProductsByEnter(e) {
+
     if (e.key === "Enter") {
+        e.preventDefault();
         findProducts();
     }
 }
 
-function findProducts() {
+function findProducts(e) {
+
     const searchBoxProducts = document.querySelectorAll('.search__body.show .search__shell');
     if (searchBoxProducts.length > 0) {
 

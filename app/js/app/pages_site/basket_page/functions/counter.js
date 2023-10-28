@@ -132,7 +132,7 @@ function calculationPriceProduct(button, count) {
 }
 
 function calculationTotalPrice() {
-    const headerCounter = document.querySelector('.header-info__count');
+    const headerCounter = document.querySelector('.header-info__count-basket');
     const basketCounter = document.querySelector('.basket__info div');
     const blockTotalPrice = document.querySelector('.basket__total div span');
     const currentTotalPrice = parseInt(blockTotalPrice.textContent);

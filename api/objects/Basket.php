@@ -128,7 +128,7 @@
         }
 
 
-        public function buyProducts($user_id, $id_product, $id_new_product)
+        public function buyProducts($user_id, $id_product, $id_new_product, $code)
         {
 
 
@@ -150,17 +150,26 @@
 
 
             $sql_insert_exist_table = 
-            "INSERT INTO delivery (id, id_user, id_product, count, order_date, arrival_date)
+            "INSERT INTO delivery (id, id_user, id_product, count, order_date, arrival_date, purchase_date, code)
             SELECT temp_ids.id_product, basket.id_user, basket.id_product, basket.count,
-            DATE_FORMAT(CURRENT_TIMESTAMP(), '%Y.%m.%d, %H:%i:%s'), DATE_FORMAT(DATE_ADD(CURRENT_TIMESTAMP(), INTERVAL 30 SECOND), '%Y.%m.%d, %H:%i:%s')
+            DATE_FORMAT(CURRENT_TIMESTAMP(), '%d.%m.%Y, %H:%i:%s'), 
+            DATE_FORMAT(DATE_ADD(CURRENT_TIMESTAMP(), INTERVAL 30 SECOND), '%d.%m.%Y, %H:%i:%s'),
+            DATE_FORMAT(DATE_ADD(CURRENT_TIMESTAMP(), INTERVAL 3 DAY), '%d.%m.%Y, %H:%i:%s'), $code
             FROM basket
             JOIN temp_ids ON basket.id_product = temp_ids.id
             WHERE basket.id_user = $user_id;
 
-             DELETE FROM $this->table_name
-             WHERE id_user = $user_id";
+            DELETE FROM $this->table_name
+            WHERE id_user = $user_id";
 
             $stmt_insert_exist = $this->conn->prepare($sql_insert_exist_table);
+
+
+            $sql_update_code = 
+            "UPDATE delivery SET code = $code WHERE id_user = $user_id";
+            $stmt_update = $this->conn->prepare($sql_update_code);
+            $stmt_update->execute();
+
 
             if($stmt_insert_exist->execute()){
                 return true;

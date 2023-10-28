@@ -16,16 +16,16 @@
 <body>
     <div class="wrapper">
         <?php require_once('app/html/header.php')?>
-        <main class="main main__delivery">
-            <section class="delivery">
-                <div class="delivery__container">
-                    <div class="delivery__hat">
+        <main class="main main__history">
+            <section class="history">
+                <div class="history__container">
+                    <div class="history__hat">
                         <nav class="menu-info">
                             <ul class="menu-info__list">
-                                <li class="menu-info__items active">
+                                <li class="menu-info__items">
                                     <a href="delivery.php" class="menu-info__links">Доставки</a>
                                 </li>
-                                <li class="menu-info__items">
+                                <li class="menu-info__items active">
                                     <a href="history.php" class="menu-info__links">Покупки</a>
                                 </li>
                                 <li class="menu-info__items">
@@ -33,16 +33,14 @@
                                 </li>
                             </ul>
                         </nav>
-                        <div class="delivery__box"></div>
                     </div>
-                    <div class="delivery__body"></div>
+                    <div class="history__body"></div>
                 </div>
             </section>
         </main>
         <?php require_once('app/html/popup_user.php')?>
-        <?php require_once('app/html/popup_order_status.php')?>
         <script type="module" src="app/js/app/script.js"></script>
-        <script type="module" src="app/js/app/pages_site/delivery_page/delivery_script.js"></script>
+        <script type="module" src="app/js/app/pages_site/history_page/history_script.js"></script>
     </div>
 </body>
 

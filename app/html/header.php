@@ -5,9 +5,46 @@
                 <a href="#" class="header__logo">onler</a>
                 <nav class="header__menu menu">
                     <ul class="menu__list">
-                        <li class="menu__items"><a href="#" class="menu__link" id="link-all">Каталог</a></li>
-                        <li class="menu__items"><a href="#" class="menu__link" id="link-men">Мужские</a></li>
-                        <li class="menu__items"><a href="#" class="menu__link" id="link-women">Женские</a></li>
+                        <li class="menu__items">
+                            <a href="profile.php" class="header-info__rows header-info__rows_normal">
+                                <div class="header-info__wrapper">
+                                    <div class="header-info__icon _icon-user"></div>
+                                </div>
+                                <div class="header-info__link">Профиль</div>
+                            </a>
+                        </li>
+                        <li class="menu__items">
+                            <a href="delivery.php" class="header-info__rows header-info__rows_normal">
+                                <div class="header-info__wrapper">
+                                    <div class="header-info__icon _icon-deliver"></div>
+                                </div>
+                                <div class="header-info__link">Доставки</div>
+                            </a>
+                        </li>
+                        <li class="menu__items">
+                            <a href="history.php" class="header-info__rows header-info__rows_normal">
+                                <div class="header-info__wrapper">
+                                    <div class="header-info__icon _icon-shopping"></div>
+                                </div>
+                                <div class="header-info__link">Покупки</div>
+                            </a>
+                        </li>
+                        <li class="menu__items">
+                            <a href="review.php" class="header-info__rows header-info__rows_normal">
+                                <div class="header-info__wrapper">
+                                    <div class="header-info__icon _icon-review"></div>
+                                </div>
+                                <div class="header-info__link">Отызвы</div>
+                            </a>
+                        </li>
+                        <li class="menu__items">
+                            <a href="return.php" class="header-info__rows header-info__rows_normal">
+                                <div class="header-info__wrapper">
+                                    <div class="header-info__icon _icon-return"></div>
+                                </div>
+                                <div class="header-info__link">Возвраты</div>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -22,14 +59,17 @@
         </div>
         <div class="header__info header-info">
             <button class="search__mobile-magnifer _icon-magnifier"></button>
-            <a href="delivery.php" class="header-info__page">
-                <div class="header-info__icon _icon-deliver"></div>
+            <a href="delivery.php" class="header-info__page header-info__delivery">
+                <div class="header-info__icon header-info__icon_page">
+                    <div class="_icon-deliver"></div>
+                    <span class="header-info__count header-info__count-delivery">0</span>
+                </div>
                 <div class="header-info__text">Доставки</div>
             </a>
-            <a href="basket.php" class="header-info__page">
+            <a href="basket.php" class="header-info__page header-info__basket">
                 <div class="header-info__icon header-info__icon_page">
                     <div class="_icon-basket-add"></div>
-                    <span class="header-info__count">0</span>
+                    <span class="header-info__count header-info__count-basket">0</span>
                 </div>
                 <div class="header-info__text">Корзина</div>
             </a>

@@ -136,7 +136,6 @@
 .slider-wrapper {}
 
 .swiper__img {
-    cursor: pointer;
     height: 100%;
 }
 
@@ -304,7 +303,7 @@
 /*-----------price-block------------------------------------*/
 .product__price-block {
     position: sticky;
-    top: rem(116);
+    top: rem(120);
     padding: rem(27) rem(25) rem(30);
     border-radius: rem(23);
     box-shadow: rem(1) rem(1) rem(20) rem(10) #F2F2F2;

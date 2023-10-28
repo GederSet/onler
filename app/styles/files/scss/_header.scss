@@ -52,7 +52,7 @@
         flex: 0 1 auto;
         justify-content: flex-end;
         display: flex;
-        @include adaptiv-value('column-gap', 20, 16, 1);
+        column-gap: rem(20);
     }
 }
 
@@ -217,7 +217,7 @@
         align-items: center;
         justify-content: center;
         color: $whiteColor;
-        background-color: #03CEA4;
+        background-color: $counter;
         border-radius: rem(4);
         padding: rem(5);
         min-width: rem(22);
@@ -260,11 +260,15 @@
         margin-bottom: rem(15);
     }
 
+    &__rows_normal &__link {
+        color: $userInfo;
+    }
+
     &__rows_normal:hover &__icon {
         color: $decorElementHoverV2;
     }
 
-    &__rows_normal:hover &__text {
+    &__rows_normal:hover &__link {
         color: $decorElementHoverV2;
     }
 
@@ -272,7 +276,7 @@
         color: $redText;
     }
 
-    &__rows_exit &__text {
+    &__rows_exit &__link {
         color: $redText;
     }
 
@@ -288,7 +292,7 @@
         transition: 0.3s ease 0s;
     }
 
-    &__shell &__text {
+    &__shell &__link {
         font-size: rem(14);
         transition: 0.3s ease 0s;
     }
@@ -300,8 +304,20 @@
     display: none;
 }
 
+@media(max-width:em(950)) {
+
+    .header {
+
+        &__info {
+            column-gap: rem(10);
+        }
+
+    }
+
+}
 
 @media(max-width:em(730)) {
+
     .header {
         padding: rem(20) 0;
 
@@ -338,8 +354,8 @@
         overflow: auto;
 
         &__list {
-            padding: rem(100) rem(30);
-            row-gap: rem(30);
+            padding: rem(60) rem(20) rem(20) rem(20);
+            row-gap: rem(20);
             flex-direction: column;
         }
 
@@ -400,8 +416,11 @@
 
 
     .search {
+
         &__mobile-magnifer {
-            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         &__page {
@@ -418,8 +437,22 @@
         }
     }
 
-    .header-info__text {
-        display: none;
+    .header-info {
+
+        &__text {
+            display: none;
+        }
+
+        &__icon_page {
+            margin-bottom: 0;
+        }
+
+
+        &__delivery,
+        &__sign-in {
+            display: none;
+        }
+
     }
 
 }

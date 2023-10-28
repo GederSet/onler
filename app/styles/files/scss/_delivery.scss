@@ -3,15 +3,15 @@
 
 /*-----------delivery-------------------------------------------------------------------------------------------*/
 
-
+.main__delivery {
+    padding-top: rem(110);
+}
 
 /*-----------hat------------------*/
 
 .delivery {
     font-family: Inter;
 }
-
-.delivery__container {}
 
 .delivery__hat {
     display: flex;
@@ -28,40 +28,14 @@
     @include adaptiv-value('column-gap', 30, 10, 1);
 }
 
-.menu-info {}
-
-.menu-info__list {
-    display: flex;
-    row-gap: rem(5);
-    flex-wrap: wrap;
-    @include adaptiv-value('column-gap', 30, 10, 1);
-}
-
-.menu-info__items {
-    color: #979797;
-    transition: 0.3s ease 0s;
-}
-
-.menu-info__items:hover {
-    color: $baseTextColor;
-}
-
-.menu-info__items.active a {
-    color: $baseTextColor;
-}
-
-.menu-info__links {
-    font-weight: 500;
-    @include adaptiv-value('font-size', 20, 16, 1);
-}
-
 .delivery__rows {
     display: flex;
+    align-items: flex-end;
     column-gap: rem(10);
 }
 
 .delivery__text {
-    @include adaptiv-value('font-size', 20, 16, 1);
+    font-size: rem(20);
 }
 
 
@@ -78,6 +52,10 @@
 .delivery__card {
     flex: 0 1 calc(20% - rem(20));
     font-family: Inter;
+}
+
+.delivery__card-rows {
+    padding: 0 rem(15) rem(20) rem(15);
 }
 
 .delivery__product-page>div:not(:last-child) {
@@ -155,7 +133,18 @@
 
 }
 
+@media(max-width:em(730)) {
+
+    .main__delivery {
+        padding-top: rem(80);
+    }
+
+}
+
 @media(max-width:em(580)) {
+    .delivery__body {
+        margin-right: rem(-16);
+    }
 
     .delivery__card {
         flex: 0 1 calc(50% - rem(20));
@@ -163,7 +152,41 @@
 
 }
 
+@media(max-width:em(530)) {
+
+    .delivery__body {
+        gap: rem(15);
+        margin-right: rem(-25);
+    }
+
+    .delivery__card {
+        box-shadow: 0 0 rem(5) rem(1) #E9E9E9 !important;
+    }
+
+}
+
+@media(max-width:em(450)) {
+
+    .delivery__text {
+        font-size: rem(16);
+    }
+
+}
+
 @media(max-width:em(420)) {
+
+    .delivery__body {
+        gap: rem(10);
+        margin-right: rem(-30);
+    }
+
+    .delivery__card {
+        box-shadow: 0 0 rem(5) rem(1) #E9E9E9 !important;
+    }
+
+    .delivery__card-rows {
+        padding: 0 rem(10) rem(20) rem(10);
+    }
 
     .delivery__product-name,
     .delivery__product-price,

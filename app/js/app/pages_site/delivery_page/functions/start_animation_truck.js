@@ -16,7 +16,7 @@ function startAnimationTruck(e) {
         const finalPosition = 100;
         const residualTime = getTruckData(productCard)[1];
         const lineTruck = document.querySelector('.pupup-status__line');
-        // lineTruck.style.width = currentPosition + '%';
+
 
         for (let i = 0; i < statusCircle.length; i++) {
             if (statusCircle[i].classList.contains('pupup-status__circle_full')) {

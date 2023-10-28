@@ -39,7 +39,10 @@ export function getTruckData(productCard) {
 
 
     // 3. Определяем текущее местоположение грузовика за счёт текущего времени
-    const truckPosition = Math.min(Math.round((elapsedTime * 100) / totalTime), 100);
+    let truckPosition = Math.min(Math.round((elapsedTime * 100) / totalTime), 100);
+    if (truckPosition <= 0) {
+        truckPosition = 100;
+    }
 
 
     // Узнаём сколько осталость времени до конца анимации

@@ -1,4 +1,4 @@
-async function showProducts() {
+export async function showProducts() {
 
     const userId = localStorage.getItem('userId');
     const url = 'http://localhost/onler_2/api/delivery/get_delivery_products.php';
@@ -18,11 +18,17 @@ async function showProducts() {
     const products = await response.json();
     const deliveryBody = document.querySelector('.delivery__body');
     if (deliveryBody && products.count !== 0) {
-        const deliveryHeader = document.querySelector('.delivery-total-price');
+        const deliveryHeader = document.querySelector('.delivery__box');
         deliveryHeader.innerHTML =
             `
-            <div class="delivery__text">Итого:</div>
-            <div class="delivery__text">${products[1][0].total_price} ₽</div>
+            <div class="delivery__rows delivery-total-price">
+                <div class="delivery__text">Итого:</div>
+                <div class="delivery__text">${products[1].total_price} ₽</div>
+            </div>
+            <div class="delivery__rows">
+                <div class="delivery__text">Код получения:</div>
+                <div class="delivery__text">${products[2].code}</div>
+            </div>
             `
         products[0].forEach(product => {
             deliveryBody.innerHTML +=
@@ -32,15 +38,14 @@ async function showProducts() {
                         <div class="product-card__image">
                             <img src="${product.url}" alt="${product.name}">
                         </div>
+                        ${getCountProduct(product.count)}
                     </div>
                     <div class="product-card__shell-info">
-                        <div class="product-card__rows">
+                        <div class="delivery__card-rows product-card__rows">
                             <div class="product-card__page delivery__product-page" id="product-card__page-1">
                                 <div class="delivery__product-name product-card__name">${product.name}</div>
                                 <div class="delivery__product-price">${product.price} ₽</div>
-                                <div value="orderStatus" class="delivery__text-body open-popup active">
-                                    <span class="delivery__product-status active">${product.status}</span>
-                                </div>
+                                ${getStatus(product.status)}
                             </div>
                         </div>
                     </div>
@@ -57,4 +62,30 @@ async function showProducts() {
 
 }
 
-showProducts();
+
+function getStatus(status) {
+
+    if (status === 'Готов к выдаче') {
+        return `
+                <div value="orderStatus" class="delivery__text-body open-popup active">
+                    <span class="delivery__product-status active">${status}</span>
+                </div>
+                `
+    } else {
+        return `
+                <div value="orderStatus" class="delivery__text-body open-popup">
+                    <span class="delivery__product-status">${status}</span>
+                </div>
+                `
+    }
+
+}
+
+
+function getCountProduct(count) {
+    if (count > 1) {
+        return `<div class="product-card__count">${count}</div>`
+    } else {
+        return `<div class="product-card__count product-card__count_disabled"></div>`;
+    }
+}

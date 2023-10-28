@@ -6,11 +6,14 @@
 .pupup-status {
     opacity: 1;
     visibility: visible;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .pupup-status .popup__content {
-    transform: scale(0.9);
-    transition: all 0.5s ease 0s;
+    transform: scale(0.7);
+    transition: transform 0.5s ease 0s;
 }
 
 .pupup-status._open .popup__content {
@@ -146,9 +149,14 @@
 }
 
 @media(max-width:em(840)) {
+    .pupup-status {
+        display: block;
+    }
+
     .pupup-status__body {
         width: 100%;
         height: 100%;
+        min-height: rem(500);
         border-radius: rem(0);
     }
 
@@ -160,9 +168,8 @@
     .pupup-status__page {
         flex-direction: column;
         row-gap: rem(50);
-        // width: rem(557);
+        width: auto;
         margin-bottom: rem(37);
-        // justify-content: space-between;
     }
 
     .pupup-status__columns {
@@ -183,9 +190,6 @@
         left: rem(43);
         width: rem(2);
         height: rem(268);
-        // transform: rotate(90deg);
-        // top: rem(340);
-        // left: rem(-191);
     }
 
     .pupup-status__dashed {
@@ -214,6 +218,7 @@
     }
 
     .pupup-status__line {
+        min-width: rem(2);
         width: 100%;
         height: 25%;
     }

@@ -1,7 +1,7 @@
 import { findProductsbyParameters } from "./find_products_by_parameters.js";
 
 
-
+let isDragging = false;
 const rangeGap = 10000;
 const progressBar = document.querySelector('.filter__range');
 const rangePrice = document.querySelectorAll('.filter__rows input');
@@ -15,8 +15,21 @@ rangePrice.forEach((input) => {
 rangeRound.forEach((round) => {
     round.addEventListener('input', startRangeSlider);
 });
+rangeRound.forEach((round) => {
+    round.addEventListener("mousedown", function () {
+        isDragging = true;
+    });
+});
 
-async function getRangePrice(e) {
+document.addEventListener("mouseup", function () {
+    if (isDragging) {
+        isDragging = false;
+        findProductsbyParameters();
+    }
+});
+
+
+function getRangePrice(e) {
 
     let minVal = parseInt(rangePrice[0].value);
     let maxVal = parseInt(rangePrice[1].value);
@@ -52,7 +65,6 @@ export async function startRangeSlider(e) {
         progressBar.style.left = (minVal / rangeRound[0].max) * 100 + '%';
         progressBar.style.right = 100 - (maxVal / rangeRound[1].max) * 100 + '%';
 
-        findProductsbyParameters();
     }
 
 }

@@ -39,12 +39,14 @@
 
             $sql = 
             "SELECT product.id, product.name, product.price, 
-            img.url, delivery_status.status, delivery.order_date, delivery.arrival_date
+            img.url, delivery_status.status, delivery.order_date, 
+            delivery.arrival_date, delivery.count
             FROM img 
             JOIN product ON img.id_product = product.id 
             JOIN delivery ON delivery.id_product = product.id
             JOIN delivery_status ON delivery.id_status = delivery_status.id
-            WHERE delivery.id_user = :user_id AND img.order_img = 1";
+            WHERE delivery.id_user = :user_id AND img.order_img = 1
+            ORDER BY delivery.order_date DESC";
 
             $stmt = $this->conn->prepare($sql);
             $stmt->bindParam(':user_id', $this->user_id);
@@ -57,7 +59,7 @@
         {
 
             $sql = 
-            "SELECT SUM(delivery.count * price) AS total_price 
+            "SELECT SUM(delivery.count * price) AS total_price
              FROM product 
              JOIN delivery ON delivery.id_product = product.id 
              WHERE delivery.id_user = :user_id";
@@ -65,7 +67,34 @@
             $stmt = $this->conn->prepare($sql);
             $stmt->bindParam(':user_id', $this->user_id);
             $stmt->execute();
-            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+
+        }
+
+        public function getCode()
+        {
+
+            $sql = "SELECT DISTINCT code from $this->table_name WHERE id_user = :user_id";
+
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bindParam(':user_id', $this->user_id);
+            $stmt->execute();
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+
+        }
+
+        public function getCountProducts()
+        {
+
+            $sql = 
+            "SELECT SUM(count) AS count_products FROM product 
+             JOIN delivery ON delivery.id_product = product.id 
+             WHERE delivery.id_user = :user_id";
+
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bindParam(':user_id', $this->user_id);
+            $stmt->execute();
+            return $stmt->fetch(PDO::FETCH_ASSOC);
 
         }
 

@@ -17,16 +17,14 @@
     
     $data = json_decode(file_get_contents("php://input"));
 
-    $delivery->user_id = $data->id_user;
+    $delivery->user_id = $data->user_id;
 
-    if($delivery->getProducts()){
-        $code = $delivery->getCode();
-        $result = $delivery->getProducts();
-        $price_info = $delivery->getTotalPrice();
+    if($delivery->getCountProducts()){
+        $result = $delivery->getCountProducts();
         http_response_code(200);
-        echo json_encode([$result, $price_info, $code], JSON_UNESCAPED_SLASHES);
+        echo json_encode($result, JSON_UNESCAPED_UNICODE);
     }
     else {
         http_response_code(200);
-        echo json_encode(array("message" => "Вы ещё не покупали товаров", "count" => 0), JSON_UNESCAPED_UNICODE);
+        echo json_encode(array("message" => 0), JSON_UNESCAPED_UNICODE);
     }

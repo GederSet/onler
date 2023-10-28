@@ -8,25 +8,23 @@
 
 
     require_once '../config/Database.php';
-    require_once '../objects/Delivery.php';
+    require_once '../objects/History.php';
 
     $database = new Database();
     $conn = $database->getConnection();
 
-    $delivery = new Delivery($conn);
+    $history = new History($conn);
     
     $data = json_decode(file_get_contents("php://input"));
 
-    $delivery->user_id = $data->id_user;
+    $history->user_id = $data->id_user;
 
-    if($delivery->getProducts()){
-        $code = $delivery->getCode();
-        $result = $delivery->getProducts();
-        $price_info = $delivery->getTotalPrice();
+    if($history->getProducts()){
+        $result = $history->getProducts();
         http_response_code(200);
-        echo json_encode([$result, $price_info, $code], JSON_UNESCAPED_SLASHES);
+        echo json_encode($result, JSON_UNESCAPED_SLASHES);
     }
     else {
         http_response_code(200);
-        echo json_encode(array("message" => "Вы ещё не покупали товаров", "count" => 0), JSON_UNESCAPED_UNICODE);
+        echo json_encode(array("message" => "Вы ещё не забирали товары", "count" => 0), JSON_UNESCAPED_UNICODE);
     }

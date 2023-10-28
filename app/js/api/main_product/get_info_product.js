@@ -1,3 +1,5 @@
+import { getDate } from "../../app/pages_site/product_page/functions/get_future_day.js";
+
 export async function getInfoProduct(idProduct) {
 
     const url = 'http://localhost/onler_2/api/products/get_info_product.php';
@@ -33,7 +35,7 @@ export async function getInfoProduct(idProduct) {
                                             <div class="swiper-wrapper"></div>
                                         </div>
                                         <div class="swiper-pagination"></div>
-                                        <div class="info__main-img" value="${productInfo.order_img}">
+                                        <div class="info__main-img" value="${productInfo.order_img}" id-product="${productInfo.id}">
                                             <div class="info__arrow info__arrow_prev">
                                                 <span class="_icon-arrow-long"></span>
                                             </div>
@@ -214,8 +216,8 @@ export async function getInfoProduct(idProduct) {
                     <div class="product__columns">
                         <div class="product__price-block">
                             <div class="product__price" data-da="info__body-name,last,1175">${productInfo.price} ₽</div>
-                            <button class="product__add main-button">Добавить в корзину</button>
-                            <div class="product__date">Доставка 20 августа</div>
+                            <button class="product__add main-button" data-ripple>Добавить в корзину</button>
+                            ${getDate()}
                         </div>
                     </div>
                 </div>
@@ -392,7 +394,7 @@ export async function getInfoProduct(idProduct) {
                         <div class="review-button-next _icon-arrow"></div>
                     </div>
                     <div class="review__buttons">
-                        <button class="review__button review__button_send main-button">Написать отзыв</button>
+                        <button class="review__button review__button_send main-button" data-ripple>Написать отзыв</button>
                         <button class="review__button review__button_watch">Смотреть все</button>
                     </div>
                 </div>

@@ -17,12 +17,13 @@
 
     $basket = new Basket($conn);
 
+    $code = $data->code;
     $user_id = $data->user_id;
     $id_product = $data->product_id;
     $id_new_product = $data->new_product_id;
 
 
-    if($basket->buyProducts($user_id, $id_product, $id_new_product)){
+    if($basket->buyProducts($user_id, $id_product, $id_new_product, $code)){
 
         http_response_code(200);
         echo json_encode(['message' => 'Товары куплены'], JSON_UNESCAPED_UNICODE);

@@ -29,11 +29,3 @@
 [class*='__null'] {
     font-size: $titleFontSize;
 }
-
-.main-button {
-    transition: 0.3s ease 0s;
-}
-
-.main-button:hover {
-    background-color: $decorElementHover;
-}

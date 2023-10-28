@@ -40,7 +40,7 @@ export async function showProducts(idProducts, minPrice, maxPrice, gender, strap
                         </div>
                     </div>
                     <div class="product-card__shell-info" id="products__shell-info">
-                        <div class="product-card__rows">
+                        <div class="products__card-rows product-card__rows">
                             <div class="product-card__page" id="product-card__page-1">
                                 <div class="product-card__name products__name">${product.name}</div>
                                 <div class="product-card__price">${product.price} ₽</div>

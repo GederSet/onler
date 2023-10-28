@@ -4,6 +4,9 @@
 /*-----------popup_user-----------------------------------------------------------------------------*/
 
 .popup-user {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     &__content {
         display: flex;

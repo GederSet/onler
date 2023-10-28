@@ -1,6 +1,7 @@
 import { startFunctions } from "./get_basket_products.js";
 import { getCountPropducts } from "./count_basket_products.js";
 import { changeProductStatus } from "./change_delivery_status.js";
+import { getCountDeliveryPropducts } from "../delivery/count_delivery_products.js";
 
 document.addEventListener('click', actionElement);
 
@@ -18,20 +19,23 @@ async function actionElement(e) {
             newProductId.push(getRandomInt(1, 18000000000000000));
         }
 
-        await buyProducts(userId, productId, newProductId);
+        const code = getRandomInt(100000, 999999);
+
+        await buyProducts(userId, productId, newProductId, code);
         await changeProductStatus(userId, newProductId);
     }
 
 }
 
 
-async function buyProducts(userId, productId, newProductId) {
+async function buyProducts(userId, productId, newProductId, code) {
 
     const url = 'http://localhost/onler_2/api/basket/buy_products.php';
     const data = {
         user_id: userId,
         product_id: productId,
         new_product_id: newProductId,
+        code: code,
     }
     const options = {
         method: 'POST',
@@ -51,6 +55,7 @@ async function buyProducts(userId, productId, newProductId) {
         console.log(info);
         startFunctions();
         getCountPropducts();
+        getCountDeliveryPropducts();
 
     }
     catch (error) {
