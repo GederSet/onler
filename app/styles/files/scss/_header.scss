@@ -245,7 +245,7 @@
         width: rem(237);
         border-radius: rem(10);
         padding: rem(24) rem(17);
-        background-color: $whiteColor;
+        background-color: $menuBlockColor;
         box-shadow: 0px 0px rem(14) 0px #E7E7E7;
     }
 
@@ -285,8 +285,6 @@
         justify-content: center;
         min-width: rem(22);
     }
-
-    // &__icon {}
 
     &__shell &__icon {
         transition: 0.3s ease 0s;

@@ -14,6 +14,14 @@
                             </a>
                         </li>
                         <li class="menu__items">
+                            <a class="header-info__rows header-info__rows_normal theme-link">
+                                <div class="header-info__wrapper">
+                                    <div class="header-info__icon _icon-sun icon-theme"></div>
+                                </div>
+                                <div class="header-info__link" data-change-first-word>Светлая тема</div>
+                            </a>
+                        </li>
+                        <li class="menu__items">
                             <a href="delivery.php" class="header-info__rows header-info__rows_normal">
                                 <div class="header-info__wrapper">
                                     <div class="header-info__icon _icon-deliver"></div>

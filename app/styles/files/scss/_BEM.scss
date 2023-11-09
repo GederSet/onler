@@ -11,7 +11,7 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    background: $baseBlockColor;
+    background: $productBlockColor;
     border-radius: rem(12);
     box-shadow: 0 0 rem(15) rem(1) #EBEBEB;
 
@@ -46,7 +46,7 @@
         min-height: 100%;
         display: flex;
         column-gap: rem(5);
-        background: $baseBlockColor;
+        background: $productBlockColor;
     }
 
     &__page:nth-child(1) {
@@ -99,7 +99,7 @@
     position: relative;
     z-index: 4;
     border-radius: rem(12) rem(12) 0 0;
-    background-color: $baseBlockColor;
+    background-color: $productBlockColor;
 }
 
 .product-card__count {
@@ -108,7 +108,7 @@
     right: rem(20);
     border-radius: rem(5);
     color: $counterNumber;
-    background-color: $baseBlockColor;
+    background-color: $productBlockColor;
     display: flex;
     align-items: center;
     justify-content: center;

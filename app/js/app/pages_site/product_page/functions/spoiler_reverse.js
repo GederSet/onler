@@ -1,4 +1,4 @@
-import { firstWord } from "./change_first_word.js";
+import { changeFirstWord } from "../../../functions/change_first_word.js";
 
 document.addEventListener('click', actionElement);
 function actionElement(event) {
@@ -21,14 +21,14 @@ export function startSpoiler(title) {
 
     if (currentHeightPage >= minHeightPage && !conditionOpening && currentHeightPage !== maxHeightPage) {
         spoilerPage.classList.add('_open');
-        firstWord(spoilerTitle.textContent, spoilerTitle, true);
+        changeFirstWord(spoilerTitle, 'Свернуть', 'basic');
         spoilerPage.style.maxHeight = maxHeightPage + 'px';
         if (arrow) arrow.style.transform = 'rotate(180deg)';
     }
 
     else if (currentHeightPage <= maxHeightPage && conditionOpening && currentHeightPage !== minHeightPage) {
         spoilerPage.classList.remove('_open');
-        firstWord(spoilerTitle.textContent, spoilerTitle, false);
+        changeFirstWord(spoilerTitle, 'Развернуть', 'change');
         spoilerPage.style.maxHeight = minHeightPage + 'px';
         if (arrow) arrow.style.transform = 'rotate(0deg)';
     }

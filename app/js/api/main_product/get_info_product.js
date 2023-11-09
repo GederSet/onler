@@ -204,12 +204,12 @@ export async function getInfoProduct(idProduct) {
                                         </div>
                                     </div>
                                 </div>
-                                <div class="characteristic__show more-info" data-spoiler-reverse>Развернуть характеристики</div>
+                                <div class="characteristic__show more-info" data-spoiler-reverse data-change-word>Развернуть характеристики</div>
                             </div>
                             <div class="characteristic__page">
                                 <div class="characteristic__sub-title characteristic__description-title">Описание</div>
                                 <div class="characteristic__description" data-height="80">${productInfo.description}</div>
-                                <div class="characteristic__show-description more-info" data-spoiler-reverse>Развернуть описание</div>
+                                <div class="characteristic__show-description more-info" data-spoiler-reverse data-change-word>Развернуть описание</div>
                             </div>
                         </div>
                     </div>

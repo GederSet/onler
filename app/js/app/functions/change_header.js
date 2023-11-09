@@ -1,4 +1,4 @@
-function changeHeader() {
+export async function changeHeader() {
 
     const userId = window.localStorage.getItem('userId');
     const headerInfo = document.querySelector('#header-info__user');
@@ -15,6 +15,12 @@ function changeHeader() {
                                 <div class="header-info__icon _icon-user"></div>
                             </div>
                             <div class="header-info__link">Профиль</div>
+                        </a>
+                        <a class="header-info__rows header-info__rows_normal header-info__theme theme-link">
+                            <div class="header-info__wrapper">
+                                <div class="header-info__icon _icon-sun icon-theme"></div>
+                            </div>
+                            <div class="header-info__link" data-change-first-word>Светлая тема</div>
                         </a>
                         <a href="delivery.php" class="header-info__rows header-info__rows_normal">
                             <div class="header-info__wrapper">
@@ -53,5 +59,3 @@ function changeHeader() {
     }
 
 }
-
-changeHeader();

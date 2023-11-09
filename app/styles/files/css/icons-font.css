@@ -26,6 +26,14 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+._icon-moon:before {
+  content: "\e914";
+}
+
+._icon-sun:before {
+  content: "\e913";
+}
+
 ._icon-truck:before {
   content: "\e912";
 }
