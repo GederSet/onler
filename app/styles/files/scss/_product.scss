@@ -337,17 +337,17 @@
     padding-bottom: rem(40);
 }
 
-.review__rows {
+.review__rows-product {
     display: flex;
     align-items: center;
     column-gap: rem(10);
 }
 
-.review__rows:nth-child(1) {
+.review__rows-product:nth-child(1) {
     margin-bottom: rem(20);
 }
 
-.review__rows:nth-child(2) {
+.review__rows-product:nth-child(2) {
     flex-wrap: wrap;
     margin-bottom: rem(30);
 }
@@ -384,7 +384,7 @@
     background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2220%22%20height%3D%2216%22%20fill%3D%22none%22%3E%3Cpath%20fill%3D%22%23FCA95D%22%20fill-rule%3D%22evenodd%22%20d%3D%22M9.205.554c.3-.738%201.35-.739%201.651-.002l1.8%204.398c.02.05.066.084.12.09l4.419.432c.76.074%201.08%201.004.526%201.527l-3.373%203.182a.145.145%200%200%200-.042.135l.966%204.613c.16.764-.678%201.347-1.344.934l-3.808-2.362a.146.146%200%200%200-.152-.001l-3.85%202.33c-.666.404-1.494-.179-1.334-.939l.962-4.595a.146.146%200%200%200-.043-.136L2.285%206.992c-.563-.522-.242-1.461.523-1.533l4.49-.422c.054-.005.1-.04.12-.09L9.206.554Z%22%20clip-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E);
 }
 
-.review__body {
+.review__body-slider {
     position: relative;
     padding: 0 rem(20);
     margin-bottom: rem(35);
@@ -520,14 +520,17 @@
     background-color: $decorElement;
 }
 
-.review__button_watch {
+.review__buttons a.review__button_watch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: $decorElement;
     background-color: $whiteColor;
 }
 
 @media(max-width:em(1200)) {
 
-    .review__body {
+    .review__body-slider {
         padding: 0;
     }
 
@@ -636,15 +639,15 @@
         margin-bottom: rem(40);
     }
 
-    .review__body {
+    .review__body-slider {
         margin-bottom: rem(25);
     }
 
-    .review__rows:nth-child(1) {
+    .review__rows-product:nth-child(1) {
         margin-bottom: rem(10);
     }
 
-    .review__rows:nth-child(2) {
+    .review__rows-product:nth-child(2) {
         margin-bottom: rem(20);
     }
 }

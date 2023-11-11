@@ -222,11 +222,11 @@ export async function getInfoProduct(idProduct) {
                     </div>
                 </div>
                 <div class="review">
-                    <div class="review__rows">
+                    <div class="review__rows-product">
                         <div class="review__title">Отзывы</div>
                         <div class="review__count">20</div>
                     </div>
-                    <div class="review__rows">
+                    <div class="review__rows-product">
                         <div class="review__value">5.0</div>
                         <div class="review__stars-grey">
                             <div class="review__stars-box">
@@ -235,10 +235,10 @@ export async function getInfoProduct(idProduct) {
                         </div>
                         <div class="review__count">20 оценок</div>
                     </div>
-                    <div class="review__body">
+                    <div class="review__body-slider">
                         <div class="review-button-prev _icon-arrow"></div>
                         <div class="swiper-container review__slider review-slider">
-                            <div class="swiper-wrapper review__wrapper">
+                            <div class="swiper-wrapper review__wrapper-container">
                                 <div class="swiper-slide review-slider__slide">
                                     <div class="review-slider__rows">
                                         <div class="review-slider__shell">
@@ -394,8 +394,8 @@ export async function getInfoProduct(idProduct) {
                         <div class="review-button-next _icon-arrow"></div>
                     </div>
                     <div class="review__buttons">
-                        <button class="review__button review__button_send main-button" data-ripple>Написать отзыв</button>
-                        <button class="review__button review__button_watch">Смотреть все</button>
+                        <button value="review" class="review__button review__button_send main-button open-popup" data-ripple>Написать отзыв</button>
+                        <a href="./review.php" class="review__button review__button_watch">Смотреть все</a>
                     </div>
                 </div>
             `

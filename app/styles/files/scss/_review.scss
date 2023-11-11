@@ -1,0 +1,239 @@
+@import 'functions';
+@import 'settings';
+
+/*-----------review-------------------------------------------------------------------------------------------*/
+
+.review_page {
+    padding-bottom: rem(20);
+}
+
+.review__body {
+    display: flex;
+    gap: rem(20) rem(50);
+    justify-content: space-between;
+}
+
+.review__columns {}
+
+.review__columns:nth-child(1) {
+    flex: 1 1 auto;
+    max-width: rem(867);
+}
+
+.review__columns:nth-child(2) {
+    position: relative;
+    flex: 0 0 max-content;
+}
+
+.review__page {
+    position: sticky;
+    top: rem(120);
+}
+
+.review__wrapper {
+    display: grid;
+    gap: rem(9) rem(17);
+    grid-template-columns: rem(50) 1fr;
+    grid-template-rows: repeat(2, max-content);
+    grid-template-areas:
+        'img-user info'
+        '. message'
+    ;
+    padding: rem(25) rem(0);
+}
+
+.review__wrapper:not(:last-child) {
+    border-top: rem(1) solid #BFBFBF;
+}
+
+.review__wrapper:last-child {
+    border-top: rem(1) solid #BFBFBF;
+    border-bottom: rem(1) solid #BFBFBF;
+}
+
+.review__img-box {
+    grid-area: img-user;
+    display: flex;
+    height: max-content;
+    border-radius: 50%;
+    background-color: $decorElement;
+}
+
+.review__img-user {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 rem(50);
+    height: rem(50);
+    color: $whiteColor;
+    font-size: rem(20);
+    text-transform: uppercase;
+}
+
+.review__info {
+    grid-area: info;
+    display: flex;
+    align-self: center;
+    justify-content: space-between;
+}
+
+.review__column {}
+
+.review__name-user {
+    margin-bottom: rem(7);
+}
+
+.review__date-message {}
+
+.review__stars {
+    display: flex;
+    gap: rem(6);
+}
+
+.review__star {
+    color: $star;
+    font-size: rem(18);
+}
+
+.review__star_grey {
+    color: #D9D9D9;
+}
+
+.review__star_grey.active {
+    color: $star;
+}
+
+._icon-star {}
+
+.review__message {
+    grid-area: message;
+}
+
+.review__rows {
+    display: flex;
+    align-items: center;
+    margin-bottom: rem(20);
+}
+
+.review__stars-grey_page {
+    width: rem(115);
+    height: rem(18);
+    margin-right: rem(10);
+}
+
+.review__stars-grey_page .review__stars-orange {
+    width: rem(115);
+}
+
+.review__score {
+    margin-right: rem(10);
+    font-size: rem(20);
+}
+
+.review__stars_score {
+    margin-right: rem(15);
+}
+
+.review__star_score {}
+
+.review__count {}
+
+.review__box {
+    display: grid;
+    align-items: center;
+    gap: rem(20) rem(11);
+    grid-template-rows: repeat(5, max-content);
+    grid-template-columns: repeat(4, max-content);
+    margin-bottom: rem(20);
+}
+
+.review__ball {
+    font-size: rem(20);
+}
+
+.review__line-box {
+    width: rem(280);
+    height: rem(5);
+    border-radius: rem(7.5);
+    background-color: #D9D9D9;
+}
+
+.review__line-progress {
+    width: 80%;
+    height: 100%;
+    border-radius: rem(7.5);
+    background-color: $star;
+}
+
+.review__percent {}
+
+.review__button-page {
+    width: 100%;
+    padding: rem(14);
+    border-radius: rem(17);
+    color: $whiteColor;
+    background-color: $decorElement;
+    transition: background-color 0.3s ease 0s;
+}
+
+.review__button-page:hover {
+    background-color: $decorElementHover;
+}
+
+@media(max-width:em(1150)) {
+    .review__wrapper {
+        grid-template-areas:
+            'img-user info'
+            'message message'
+        ;
+    }
+}
+
+@media(max-width:em(1015)) {
+    .review__body {
+        flex-direction: column-reverse;
+    }
+
+    .review__columns:nth-child(1) {
+        max-width: 100%;
+    }
+
+    .review__box {
+        display: none;
+    }
+
+    .review__button-page {
+        display: none;
+    }
+
+    .review__rows_score {
+        margin-bottom: 0;
+    }
+
+    .review__star_orange {
+        margin-right: rem(15);
+    }
+}
+
+@media(max-width:em(400)) {
+    .review__body {
+        row-gap: rem(15);
+    }
+
+    .review__star {
+        font-size: rem(14);
+    }
+
+    .review__stars {
+        gap: rem(3);
+    }
+
+    .review__star_orange {
+        gap: rem(6);
+    }
+
+    .review__stars_score .review__star {
+        font-size: rem(18);
+    }
+
+}
