@@ -1,0 +1,56 @@
+.pupup-no-review {
+    opacity: 1;
+    visibility: visible;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pupup-no-review__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: rem(44) rem(38) rem(34);
+    width: rem(400);
+    border-radius: rem(20);
+    background-color: $baseBlockColor;
+}
+
+.pupup-no-review__close {
+    position: absolute;
+    top: rem(28);
+    right: rem(28);
+    cursor: pointer;
+    width: rem(20);
+    height: rem(20);
+    color: black;
+}
+
+.pupup-no-review .popup__content {
+    transform: scale(0.7);
+    transition: transform 0.5s ease 0s;
+}
+
+.pupup-no-review._open .popup__content {
+    transform: scale(1);
+}
+
+.pupup-no-review__title {
+    font-size: rem(24);
+}
+
+.pupup-no-review__explanation {
+    max-width: rem(280);
+    font-size: rem(18);
+}
+
+.pupup-no-review__title,
+.pupup-no-review__explanation {
+    text-align: center;
+    margin-bottom: rem(18);
+}
+
+.pupup-no-review__button {
+    width: 100%;
+}

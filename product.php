@@ -22,6 +22,7 @@
         </main>
         <?php require_once('app/html/popup_user.php')?>
         <?php require_once('app/html/popup_review.php')?>
+        <?php require_once('app/html/popup_no_review.php')?>
         <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
         <script type="module" src="app/js/app/script.js"></script>
         <script type="module" src="app/js/app/pages_site/product_page/product_script.js"></script>

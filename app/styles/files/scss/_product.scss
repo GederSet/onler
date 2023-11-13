@@ -363,7 +363,7 @@
     transform: translateY(rem(-1));
     background-size: 20% 100%;
     background-repeat: repeat-x;
-    background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2220%22%20height%3D%2216%22%20fill%3D%22none%22%3E%3Cpath%20fill%3D%22%23C8C8D1%22%20fill-rule%3D%22evenodd%22%20d%3D%22M9.205.554c.3-.738%201.35-.739%201.651-.002l1.8%204.398c.02.05.066.084.12.09l4.419.432c.76.074%201.08%201.004.526%201.527l-3.373%203.182a.145.145%200%200%200-.042.135l.966%204.613c.16.764-.678%201.347-1.344.934l-3.808-2.362a.146.146%200%200%200-.152-.001l-3.85%202.33c-.666.404-1.494-.179-1.334-.939l.962-4.595a.146.146%200%200%200-.043-.136L2.285%206.992c-.563-.522-.242-1.461.523-1.533l4.49-.422c.054-.005.1-.04.12-.09L9.206.554Z%22%20clip-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E);
+    background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2220%22%20height%3D%2216%22%20fill%3D%22%23737373%22%3E%3Cpath%20fill%3D%22%23C8C8D1%22%20fill-rule%3D%22evenodd%22%20d%3D%22M9.205.554c.3-.738%201.35-.739%201.651-.002l1.8%204.398c.02.05.066.084.12.09l4.419.432c.76.074%201.08%201.004.526%201.527l-3.373%203.182a.145.145%200%200%200-.042.135l.966%204.613c.16.764-.678%201.347-1.344.934l-3.808-2.362a.146.146%200%200%200-.152-.001l-3.85%202.33c-.666.404-1.494-.179-1.334-.939l.962-4.595a.146.146%200%200%200-.043-.136L2.285%206.992c-.563-.522-.242-1.461.523-1.533l4.49-.422c.054-.005.1-.04.12-.09L9.206.554Z%22%20clip-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E);
 }
 
 .review__stars-box {
@@ -433,6 +433,8 @@
 .review-slider__slide {
     padding: rem(28) rem(35);
     border-radius: rem(30);
+    min-height: rem(243);
+    max-height: rem(243);
     background-color: $whiteColor;
     box-shadow: 0 0 rem(14) 0 #E7E7E7;
 }
@@ -459,6 +461,7 @@
     justify-content: center;
     border-radius: 50%;
     overflow: hidden;
+    text-transform: uppercase;
     background-color: $decorElement;
     color: $whiteColor;
 }
@@ -480,6 +483,10 @@
 
 .review-slider__stars {
     font-size: rem(13);
+    color: #D9D9D9;
+}
+
+.review-slider__stars.active {
     color: $star;
 }
 
@@ -494,6 +501,13 @@
 
 .review-slider__comment {
     line-height: 130%;
+    word-break: break-all;
+    overflow: hidden;
+    max-height: rem(124);
+    -webkit-line-clamp: 6;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
 }
 
 .review__buttons {

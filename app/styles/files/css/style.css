@@ -205,12 +205,19 @@ body.dark .review-button-next {
   box-shadow: none;
   background-color: #2C2D2E;
 }
-body.dark .review__button_watch {
+body.dark .review__buttons a.review__button_watch {
   color: #DDDDDD;
   border-color: #282929;
   background-color: #282929;
 }
-body.dark .review-slider__stars {
+body.dark .review__line-box {
+  background-color: #737373;
+}
+body.dark .star {
+  color: #737373;
+}
+body.dark .star.active,
+body.dark .review__star_orange {
   color: #FCA95D;
 }
 body.dark .delivery__product-price {
@@ -243,6 +250,30 @@ body.dark .history__card {
 body.dark .popup-user__sign,
 body.dark .popup-user__register {
   background-color: #282929;
+}
+body.dark .pupup-no-review__body,
+body.dark .pupup-review__body {
+  background-color: #282929;
+}
+body.dark .review__button_watch {
+  background-color: #282929;
+}
+body.dark .pupup-review__star {
+  cursor: pointer;
+  font-size: 1.375rem;
+  color: #c4c4c4;
+}
+body.dark .pupup-review__star.active {
+  color: #FCA95D;
+}
+body.dark .pupup-review__star:hover {
+  color: #FCA95D;
+}
+body.dark .pupup-review__star:hover ~ * {
+  color: #FCA95D;
+}
+body.dark .pupup-review__button.disabled {
+  color: #282929;
 }
 
 body._lock {
@@ -376,7 +407,13 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 [class*=__null] {
+  margin-bottom: 1.25rem;
   font-size: 2rem;
+}
+
+[class*=__null_mini] {
+  margin-bottom: 1.25rem;
+  font-size: 1.5rem;
 }
 
 /*-----------header-------------------------------------------------------------------------------------------*/
@@ -1260,6 +1297,7 @@ main {
 }
 
 .pupup-review__button.disabled:hover {
+  cursor: auto;
   background-color: #AEAEAE;
 }
 
@@ -1482,6 +1520,63 @@ main {
     }
   }
 }
+.pupup-no-review {
+  opacity: 1;
+  visibility: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pupup-no-review__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: 2.75rem 2.375rem 2.125rem;
+  width: 25rem;
+  border-radius: 1.25rem;
+  background-color: white;
+}
+
+.pupup-no-review__close {
+  position: absolute;
+  top: 1.75rem;
+  right: 1.75rem;
+  cursor: pointer;
+  width: 1.25rem;
+  height: 1.25rem;
+  color: black;
+}
+
+.pupup-no-review .popup__content {
+  transform: scale(0.7);
+  transition: transform 0.5s ease 0s;
+}
+
+.pupup-no-review._open .popup__content {
+  transform: scale(1);
+}
+
+.pupup-no-review__title {
+  font-size: 1.5rem;
+}
+
+.pupup-no-review__explanation {
+  max-width: 17.5rem;
+  font-size: 1.125rem;
+}
+
+.pupup-no-review__title,
+.pupup-no-review__explanation {
+  text-align: center;
+  margin-bottom: 1.125rem;
+}
+
+.pupup-no-review__button {
+  width: 100%;
+}
+
 /*-----------basket-------------------------------------------------------------------------------------------*/
 .basket__title {
   font-size: 2.875rem;
@@ -2023,7 +2118,7 @@ main {
   transform: translateY(-0.0625rem);
   background-size: 20% 100%;
   background-repeat: repeat-x;
-  background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2220%22%20height%3D%2216%22%20fill%3D%22none%22%3E%3Cpath%20fill%3D%22%23C8C8D1%22%20fill-rule%3D%22evenodd%22%20d%3D%22M9.205.554c.3-.738%201.35-.739%201.651-.002l1.8%204.398c.02.05.066.084.12.09l4.419.432c.76.074%201.08%201.004.526%201.527l-3.373%203.182a.145.145%200%200%200-.042.135l.966%204.613c.16.764-.678%201.347-1.344.934l-3.808-2.362a.146.146%200%200%200-.152-.001l-3.85%202.33c-.666.404-1.494-.179-1.334-.939l.962-4.595a.146.146%200%200%200-.043-.136L2.285%206.992c-.563-.522-.242-1.461.523-1.533l4.49-.422c.054-.005.1-.04.12-.09L9.206.554Z%22%20clip-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E);
+  background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2220%22%20height%3D%2216%22%20fill%3D%22%23737373%22%3E%3Cpath%20fill%3D%22%23C8C8D1%22%20fill-rule%3D%22evenodd%22%20d%3D%22M9.205.554c.3-.738%201.35-.739%201.651-.002l1.8%204.398c.02.05.066.084.12.09l4.419.432c.76.074%201.08%201.004.526%201.527l-3.373%203.182a.145.145%200%200%200-.042.135l.966%204.613c.16.764-.678%201.347-1.344.934l-3.808-2.362a.146.146%200%200%200-.152-.001l-3.85%202.33c-.666.404-1.494-.179-1.334-.939l.962-4.595a.146.146%200%200%200-.043-.136L2.285%206.992c-.563-.522-.242-1.461.523-1.533l4.49-.422c.054-.005.1-.04.12-.09L9.206.554Z%22%20clip-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E);
 }
 
 .review__stars-box {
@@ -2085,6 +2180,8 @@ main {
 .review-slider__slide {
   padding: 1.75rem 2.1875rem;
   border-radius: 1.875rem;
+  min-height: 15.1875rem;
+  max-height: 15.1875rem;
   background-color: white;
   box-shadow: 0 0 0.875rem 0 #E7E7E7;
 }
@@ -2113,6 +2210,7 @@ main {
   justify-content: center;
   border-radius: 50%;
   overflow: hidden;
+  text-transform: uppercase;
   background-color: #17696A;
   color: white;
 }
@@ -2133,6 +2231,10 @@ main {
 
 .review-slider__stars {
   font-size: 0.8125rem;
+  color: #D9D9D9;
+}
+
+.review-slider__stars.active {
   color: #FCA95D;
 }
 
@@ -2147,6 +2249,13 @@ main {
 
 .review-slider__comment {
   line-height: 130%;
+  word-break: break-all;
+  overflow: hidden;
+  max-height: 7.75rem;
+  -webkit-line-clamp: 6;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
 }
 
 .review__buttons {

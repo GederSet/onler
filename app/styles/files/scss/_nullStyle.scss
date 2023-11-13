@@ -263,13 +263,22 @@ body.dark {
         background-color: $menuBlockColor;
     }
 
-    .review__button_watch {
+    .review__buttons a.review__button_watch {
         color: $baseTextColor;
         border-color: $productBlockColor;
         background-color: $productBlockColor;
     }
 
-    .review-slider__stars {
+    .review__line-box {
+        background-color: #737373;
+    }
+
+    .star {
+        color: #737373;
+    }
+
+    .star.active,
+    .review__star_orange {
         color: $star;
     }
 
@@ -312,6 +321,37 @@ body.dark {
     .popup-user__sign,
     .popup-user__register {
         background-color: $productBlockColor;
+    }
+
+    .pupup-no-review__body,
+    .pupup-review__body {
+        background-color: $productBlockColor;
+    }
+
+    .review__button_watch {
+        background-color: $productBlockColor;
+    }
+
+    .pupup-review__star {
+        cursor: pointer;
+        font-size: rem(22);
+        color: #c4c4c4;
+    }
+
+    .pupup-review__star.active {
+        color: $star;
+    }
+
+    .pupup-review__star:hover {
+        color: $star;
+    }
+
+    .pupup-review__star:hover~* {
+        color: $star;
+    }
+
+    .pupup-review__button.disabled {
+        color: $productBlockColor;
     }
 }
 

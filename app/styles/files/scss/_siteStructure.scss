@@ -27,5 +27,11 @@
 
 // Для текста, который указывает на отсутствие товара
 [class*='__null'] {
+    margin-bottom: rem(20);
     font-size: $titleFontSize;
+}
+
+[class*='__null_mini'] {
+    margin-bottom: rem(20);
+    font-size: rem(24);
 }
