@@ -3,7 +3,7 @@ import { getCommentsPage } from "../all_comments/get_comments.js";
 import { getProductScore } from "../main_product/get_product_score.js";
 import { getCommentsProduct } from "../main_product/get_comments_product.js";
 import { getProductScorePage } from "../all_comments/get_product_score_page.js";
-import { createSliders } from "../../app/pages_site/product_page/functions/slider_product.js";
+import { createCommentsSlider } from "../../app/pages_site/product_page/functions/slider_product.js";
 
 export async function sendComment(idUser, idProduct, userRating, comment) {
     const url = 'http://localhost/onler_2/api/history/send_message.php';
@@ -21,7 +21,7 @@ export async function sendComment(idUser, idProduct, userRating, comment) {
         body: JSON.stringify(data)
     }
 
-    const slider = document.querySelector('.review__slider ');
+    const sliderComments = document.querySelector('.review__slider');
 
     const response = await fetch(url, options);
     const productInfo = await response.text();
@@ -30,8 +30,8 @@ export async function sendComment(idUser, idProduct, userRating, comment) {
     await getCommentsPage(idProduct);
     await getProductScorePage(idProduct);
     await createReviewPopup(idUser, idProduct);
-    if (slider) {
-        await createSliders();
+    if (sliderComments) {
+        await createCommentsSlider();
     }
 
 

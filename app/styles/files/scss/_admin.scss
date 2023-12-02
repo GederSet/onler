@@ -1,0 +1,407 @@
+@import 'functions';
+@import 'settings';
+
+/*-----------admin-------------------------------------------------------------------------------------------*/
+
+.admin {
+    padding-bottom: rem(30);
+}
+
+.admin__container {}
+
+.admin__body {}
+
+.admin__rows {
+    display: flex;
+    gap: rem(10);
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: rem(17);
+}
+
+.admin__search-body {
+    flex: 0 1 rem(313);
+    display: flex;
+    border-radius: rem(4);
+    padding-left: rem(10);
+    border: rem(1) solid #CECECE;
+}
+
+.admin__search-input {
+    padding: rem(10) 0;
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.admin__search-button {
+    cursor: pointer;
+    flex: 0 0 rem(40);
+    width: rem(40);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+._icon-magnifier {}
+
+.admin__create {
+    background-color: $decorElement;
+}
+
+.admin__edit {
+    background-color: $decorElement;
+}
+
+.admin__delete {
+    background-color: #e7524d;
+    transition: 0.3s ease 0s;
+}
+
+.admin__create,
+.admin__edit {
+    transition: 0.3s ease 0s;
+}
+
+.admin__create:hover {
+    background-color: $decorElementHoverV2;
+}
+
+.admin__edit:hover {
+    background-color: $decorElementHoverV2;
+}
+
+.admin__delete:hover {
+    background-color: $redText;
+}
+
+.admin__create,
+.admin__edit,
+.admin__delete {
+    display: flex;
+    align-items: center;
+    column-gap: rem(7);
+    justify-content: center;
+    border-radius: rem(10);
+    padding: rem(12) rem(16);
+}
+
+.admin__delete {
+    width: 100%;
+}
+
+.admin__edit {
+    width: 100%;
+    margin-bottom: rem(10);
+}
+
+.admin__create-icon,
+.admin__create-text {
+    color: white;
+}
+
+.admin__create-icon {}
+
+._icon-plus {}
+
+.admin__table {
+    padding: rem(15);
+    border-collapse: collapse;
+}
+
+.admin__table th {
+    font-weight: 500;
+    padding: rem(15);
+    border: rem(1) solid #ddd;
+}
+
+.admin__table td {
+    padding: rem(15);
+    border: rem(1) solid #ddd;
+}
+
+
+.admin__create-text {}
+
+.admin__image img {
+    height: rem(144);
+    width: 100%;
+    object-fit: contain;
+}
+
+.admin__image,
+.admin__name-product,
+.admin__price,
+.admin__description {
+    vertical-align: top;
+}
+
+.admin__price {}
+
+.admin__description {
+    width: 100%;
+}
+
+.admin__description-text {
+    line-height: 130%;
+    word-break: break-all;
+    overflow: hidden;
+    max-height: rem(175);
+    -webkit-line-clamp: 7;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+}
+
+.admin__table-img-header {
+    min-width: rem(130);
+}
+
+.admin__table-name-header {
+    min-width: rem(250);
+}
+
+.admin__table-price-header {
+    min-width: rem(160);
+}
+
+.admin__table-description-header {}
+
+.admin__table-action-header {}
+
+.admin__table-buttons {
+    vertical-align: middle;
+}
+
+.admin__table-edit {
+    display: grid;
+    margin-bottom: rem(20);
+    grid-template-columns: minmax(max-content, rem(354)) 1fr;
+}
+
+.admin__name-product,
+.admin__edit-column {
+    padding: rem(10);
+    margin-top: rem(-1);
+    margin-right: rem(-1);
+    border: rem(1) solid #ddd;
+}
+
+.admin__name-product {}
+
+.admin__edit-column {}
+
+.admin__input-edit,
+.admin__textarea-edit {
+    border: rem(1) solid #ddd;
+    border-radius: rem(5);
+    padding: rem(10);
+    width: 100%;
+    outline: none;
+    transition: border 0.2s ease 0s;
+}
+
+.admin__input-edit:focus,
+.admin__textarea-edit:focus {
+    border: rem(1) solid $decorElement;
+}
+
+.admin__textarea-edit {
+    resize: none;
+    min-height: rem(120);
+}
+
+.admin__spoiler-page {
+    border: rem(1) solid #ddd;
+    border-radius: rem(5);
+}
+
+.admin__spoiler-button {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    padding: rem(10);
+    user-select: none;
+}
+
+.admin__arrow {}
+
+._icon-arrow {}
+
+.admin__page {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease 0s;
+}
+
+.admin__filter-item {
+    cursor: pointer;
+    padding: rem(10);
+    transition: background 0.3s ease 0s, color 0.3s ease 0s;
+}
+
+.admin__filter-item:hover {
+    background-color: #e6e6e6
+}
+
+.admin__spoiler-page .admin__page._open .admin__filter-item {
+    border-top: rem(1) solid #ddd;
+}
+
+.admin__spoiler-page.input-error .admin__page._open .admin__filter-item {
+    border-top: rem(1) solid $redText;
+}
+
+.admin__img-input.input-error {
+    color: $redText;
+    border-top: rem(1) solid $redText;
+}
+
+.input-error {
+    border: rem(1) solid $redText;
+}
+
+.input-error::-webkit-input-placeholder {
+    color: $redText;
+}
+
+.input-error:-moz-placeholder {
+    color: $redText;
+}
+
+.input-error::-moz-placeholder {
+    color: $redText;
+}
+
+.input-error:-ms-input-placeholder {
+    color: $redText;
+}
+
+.admin__file {
+    display: none;
+}
+
+.admin__input-edit_file {
+    color: #7e7e7e;
+}
+
+.admin__input-edit_file.add {
+    color: black;
+}
+
+.admin__spoiler-text {
+    color: #7e7e7e;
+}
+
+.admin__spoiler-text.add {
+    color: black;
+}
+
+.admin__spoiler-page.input-error .admin__spoiler-text {
+    color: $redText;
+}
+
+.admin__spoiler-page.input-error .admin__arrow {
+    color: $redText;
+}
+
+.popup__confirm {
+    margin-bottom: rem(10);
+}
+
+.popup__сancel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $whiteColor;
+    padding: rem(14) rem(30);
+    border-radius: rem(10);
+    transition: 0.3s ease 0s;
+    background-color: #e7524d;
+}
+
+.popup__сancel:hover {
+    background-color: $redText;
+}
+
+#allProducts {
+    margin-left: auto;
+}
+
+.admin__create {
+    margin-left: auto;
+}
+
+@media(max-width: em(1045)) {
+
+    .admin__table-price-header,
+    .admin__table-description-header,
+    .admin__description,
+    .admin__price {
+        display: none;
+    }
+
+    .admin__table-name-header {
+        width: 100%;
+    }
+}
+
+@media(max-width: em(860)) {
+
+    .admin__table-edit {
+        grid-template-columns: max-content 1fr;
+    }
+
+}
+
+@media(max-width: em(660)) {
+
+    .admin__table-edit {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media(max-width: em(640)) {
+
+    .admin__table-name-header,
+    .admin__name-product {
+        display: none;
+    }
+
+    .admin__table-img-header {
+        width: 100%;
+    }
+
+}
+
+@media(max-width: em(500)) {
+
+    .admin__search-body {
+        flex-basis: 100%;
+    }
+
+    .admin__create {
+        width: 100%;
+    }
+
+}
+
+@media(max-width: em(350)) {
+
+    .admin__table-img-header {
+        min-width: rem(100);
+    }
+
+}
+
+@media(max-width: em(280)) {
+
+    .admin__table-img-header {
+        min-width: rem(100);
+    }
+
+    .admin__create-text {
+        word-break: break-all;
+    }
+
+}

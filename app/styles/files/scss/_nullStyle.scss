@@ -353,6 +353,47 @@ body.dark {
     .pupup-review__button.disabled {
         color: $productBlockColor;
     }
+
+    .pupup-status__circle {
+        background-color: $productBlockColor;
+    }
+
+    .pupup-status__circle_full {
+        background-color: $decorElement;
+    }
+
+    .delivery__text-body {
+        color: $baseTextColor;
+    }
+
+    .delivery__product-status {
+        color: $baseTextColor;
+    }
+
+    .delivery__product-status.active {
+        color: $decorElement;
+    }
+
+    .delivery__text-body::before {
+        border-bottom: rem(1) dashed $baseTextColor;
+    }
+
+    .delivery__text-body.active::before {
+        border-bottom: rem(1) dashed $decorText;
+    }
+
+    .pupup-status__dashed {
+        background: linear-gradient(to right, transparent 50%, $productBlockColor 50%),
+            linear-gradient(to right, $decorElement, $decorElement);
+        background-size: rem(25) rem(2), 100% rem(2);
+    }
+
+    @media(max-width:em(840)) {
+        .pupup-status__dashed {
+            background: linear-gradient(to top, transparent 50%, $productBlockColor 50%), linear-gradient(to bottom, #17696A, #17696A);
+            background-size: 2px 25px, 2px 100%;
+        }
+    }
 }
 
 body._lock {

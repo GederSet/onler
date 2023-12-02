@@ -26,7 +26,7 @@ export async function getAllProductPhotos(idProduct) {
                 `
                 <div class="swiper-slide info__slide">
                     <div class="swiper__img">
-                        <img src="${photo.url}" alt="${photo.name}">
+                        <img src="app/img/01 main page/${photo.url}" alt="${photo.name}">
                     </div>
                 </div>
                 `

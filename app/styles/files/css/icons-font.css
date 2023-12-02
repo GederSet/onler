@@ -26,6 +26,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+._icon-plus:before {
+  content: "\e916";
+}
+
+._icon-edit:before {
+  content: "\e917";
+}
+
+._icon-crown:before {
+  content: "\e915";
+}
+
 ._icon-moon:before {
   content: "\e914";
 }

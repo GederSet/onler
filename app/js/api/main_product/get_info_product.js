@@ -39,7 +39,7 @@ export async function getInfoProduct(idProduct) {
                                             <div class="info__arrow info__arrow_prev">
                                                 <span class="_icon-arrow-long"></span>
                                             </div>
-                                            <img src="${productInfo.url}" alt="${productInfo.name}">
+                                            <img src="app/img/01 main page/${productInfo.url}" alt="${productInfo.name}">
                                             <div class="info__arrow info__arrow_next">
                                                 <span class="_icon-arrow-long"></span>
                                             </div>

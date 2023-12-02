@@ -44,7 +44,7 @@ async function getBasketPropducts() {
                 <div class="basket__rows">
                     <div class="basket__column basket__column_short basket__column_image">
                         <div class="basket__image">
-                            <img src="${product.url}" alt="Часы">
+                            <img src="app/img/01 main page/${product.url}" alt="${product.name}">
                         </div>
                     </div>
                     <div class="basket__column basket__column_name basket__column_name-${product.id}">

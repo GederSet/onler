@@ -36,7 +36,7 @@ export async function showProducts() {
                 <div class="delivery__card product-card" value="${product.id}" data-order-date="${product.order_date}" data-arrival-date="${product.arrival_date}">
                     <div class="product-card__shell-image">
                         <div class="product-card__image">
-                            <img src="${product.url}" alt="${product.name}">
+                            <img src="app/img/01 main page/${product.url}" alt="${product.name}">
                         </div>
                         ${getCountProduct(product.count)}
                     </div>

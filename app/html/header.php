@@ -6,14 +6,6 @@
                 <nav class="header__menu menu">
                     <ul class="menu__list">
                         <li class="menu__items">
-                            <a href="profile.php" class="header-info__rows header-info__rows_normal">
-                                <div class="header-info__wrapper">
-                                    <div class="header-info__icon _icon-user"></div>
-                                </div>
-                                <div class="header-info__link">Профиль</div>
-                            </a>
-                        </li>
-                        <li class="menu__items">
                             <a class="header-info__rows header-info__rows_normal theme-link">
                                 <div class="header-info__wrapper">
                                     <div class="header-info__icon _icon-sun icon-theme"></div>

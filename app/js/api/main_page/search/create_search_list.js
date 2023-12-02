@@ -29,7 +29,7 @@ export async function getSearchProducts(nameProduct) {
                 <div class="search__shell" value="${product.id}">
                     <div class="search__row">
                         <div class="search__img">
-                            <img src="${product.url}" alt="${product.name}">
+                            <img src="app/img/01 main page/${product.url}" alt="${product.name}">
                         </div>
                         <div class="search__column">
                             <div class="search__name">${product.name}</div>

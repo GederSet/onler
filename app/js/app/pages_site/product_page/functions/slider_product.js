@@ -1,4 +1,4 @@
-export async function createSliders() {
+export async function createProductImagesSlider() {
     new Swiper('.info__slider', {
 
         spaceBetween: 8,
@@ -26,7 +26,9 @@ export async function createSliders() {
         },
 
     });
+}
 
+export async function createCommentsSlider() {
     new Swiper('.review__slider', {
 
         spaceBetween: 20,

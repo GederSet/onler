@@ -24,7 +24,7 @@ async function showProducts() {
                     <div class="history__card product-card" value="${product.id}">
                         <div class="product-card__shell-image">
                             <div class="product-card__image">
-                                <img src="${product.url}" alt="${product.name}">
+                                <img src="app/img/01 main page/${product.url}" alt="${product.name}">
                             </div>
                             ${getCountProduct(product.count)}
                         </div>

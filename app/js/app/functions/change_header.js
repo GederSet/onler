@@ -1,7 +1,11 @@
+import { showAdminPanel } from "../../api/admin/show_admin_panel.js";
+
+
 export async function changeHeader() {
 
     const userId = window.localStorage.getItem('userId');
     const headerInfo = document.querySelector('#header-info__user');
+    const menuBurger = document.querySelector('.menu__list');
     if (userId) {
         headerInfo.outerHTML =
             `
@@ -10,6 +14,7 @@ export async function changeHeader() {
                 <div class="header-info__text">Профиль</div>
                 <div class="header-info__shell">
                     <div class="header-info__body">
+                        ${await showAdminPanel(userId, 'header')}
                         <a href="profile.php" class="header-info__rows header-info__rows_normal">
                             <div class="header-info__wrapper">
                                 <div class="header-info__icon _icon-user"></div>
@@ -56,6 +61,19 @@ export async function changeHeader() {
                 </div>
             </div>
         `
+        menuBurger.insertAdjacentHTML('afterbegin',
+            `
+            ${await showAdminPanel(userId, 'menuBurger')}
+            <li class="menu__items">
+                <a href="profile.php" class="header-info__rows header-info__rows_normal">
+                    <div class="header-info__wrapper">
+                        <div class="header-info__icon _icon-user"></div>
+                    </div>
+                    <div class="header-info__link">Профиль</div>
+                </a>
+            </li>
+            `
+        )
     }
 
 }

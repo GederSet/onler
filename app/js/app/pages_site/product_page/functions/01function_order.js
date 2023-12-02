@@ -1,5 +1,6 @@
-import { createSliders } from "./slider_product.js";
+import { createCommentsSlider } from "./slider_product.js";
 import { startScroll } from "./scroll_to_characteristics.js";
+import { createProductImagesSlider } from "./slider_product.js";
 import { dinamicAdapt } from "../../../functions/dinamic_adapt.js";
 import { getInfoProduct } from "../../../../api/main_product/get_info_product.js";
 import { getProductScore } from "../../../../api/main_product/get_product_score.js";
@@ -17,7 +18,8 @@ async function createPageProduct() {
     await createReviewPopup(idUser, idProduct);
     await startScroll();
     await dinamicAdapt();
-    await createSliders();
+    await createCommentsSlider();
+    await createProductImagesSlider();
 }
 
 createPageProduct();
