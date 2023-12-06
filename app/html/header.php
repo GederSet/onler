@@ -30,14 +30,6 @@
                             </a>
                         </li>
                         <li class="menu__items">
-                            <a href="review.php" class="header-info__rows header-info__rows_normal">
-                                <div class="header-info__wrapper">
-                                    <div class="header-info__icon _icon-review"></div>
-                                </div>
-                                <div class="header-info__link">Отызвы</div>
-                            </a>
-                        </li>
-                        <li class="menu__items">
                             <a href="return.php" class="header-info__rows header-info__rows_normal">
                                 <div class="header-info__wrapper">
                                     <div class="header-info__icon _icon-return"></div>

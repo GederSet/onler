@@ -26,6 +26,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+._icon-photo:before {
+  content: "\e918";
+}
+
 ._icon-plus:before {
   content: "\e916";
 }

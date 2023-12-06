@@ -26,8 +26,8 @@ export function checkInput(form) {
             status = false;
         }
 
-        else if (input.value.length < 8 && typeForm && input.getAttribute('name') !== 'name') {
-            addInformationElement(parent, 'Введите больше 7 символов', 'form-error');
+        else if (input.value.length < 5 && typeForm && input.getAttribute('name') !== 'name') {
+            addInformationElement(parent, 'Введите больше 4 символов', 'form-error');
             status = false;
         }
 

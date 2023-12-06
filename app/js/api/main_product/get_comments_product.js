@@ -1,4 +1,5 @@
 import { changeDate } from "../../app/pages_site/product_page/functions/change_date.js";
+import { checkImageProduct } from "../../app/pages_site/product_page/functions/checkImageProduct.js";
 
 export async function getCommentsProduct(idProduct) {
     const url = 'http://localhost/onler_2/api/history/get_comments.php';
@@ -28,7 +29,7 @@ export async function getCommentsProduct(idProduct) {
                 <div class="swiper-slide review-slider__slide">
                     <div class="review-slider__rows">
                         <div class="review-slider__shell">
-                            <div class="review-slider__icon">${comment.name[0]}</div>
+                            <div class="review-slider__icon">${checkImageProduct(comment.image_user, comment.name[0])}</div>
                             <div class="review-slider__body">
                                 <div class="review-slider__name">${comment.name}</div>
                                 ${getStars(comment.user_rating)}

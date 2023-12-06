@@ -694,6 +694,8 @@ input[type=number]::-webkit-outer-spin-button {
   color: #FF5252;
 }
 .header-info__wrapper {
+  flex: 0 0 1.5625rem;
+  width: 1.5625rem;
   display: flex;
   justify-content: center;
   min-width: 1.375rem;
@@ -2249,6 +2251,13 @@ main {
   color: white;
 }
 
+.review-slider__icon img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .review-slider__body {
   flex: 1 0 auto;
   display: flex;
@@ -2850,10 +2859,19 @@ main {
   align-items: center;
   justify-content: center;
   flex: 0 0 3.125rem;
+  border-radius: 50%;
+  overflow: hidden;
   height: 3.125rem;
   color: white;
   font-size: 1.25rem;
   text-transform: uppercase;
+}
+
+.review__img-user img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .review__info {
@@ -3351,6 +3369,200 @@ main {
   }
   .admin__create-text {
     word-break: break-all;
+  }
+}
+/*-----------profile-------------------------------------------------------------------------------------------*/
+.profile__body {
+  display: flex;
+  gap: 1.3125rem 3.9375rem;
+  padding: 3.125rem 0 1.875rem 0;
+}
+
+.profile__columns_image {
+  flex: 0 0 8.75rem;
+  display: flex;
+  row-gap: 1.75rem;
+  flex-direction: column;
+}
+
+.profile__columns_info {
+  flex: 1 1 auto;
+}
+
+.profile__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile__image {
+  position: relative;
+  cursor: pointer;
+  flex: 0 0 8.75rem;
+  width: 8.75rem;
+  height: 8.75rem;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 0.0625rem solid #ddd;
+  margin-bottom: 1.0625rem;
+}
+
+.profile__image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.profile__photo {
+  display: none;
+}
+
+.profile__hide {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  transition: 0.3s ease 0s;
+}
+
+.profile__image:hover .profile__hide {
+  opacity: 1;
+}
+
+.profile__hide-icon {
+  color: rgb(238, 238, 238);
+  font-size: 1.6875rem;
+}
+
+.profile__letter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  background-color: #17696A;
+  color: white;
+  font-size: 2rem;
+  height: 100%;
+}
+
+.profile__sections {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.625rem;
+}
+
+.profile__section {
+  width: 100%;
+  text-align: start;
+  padding: 0.5rem 0.8125rem;
+  transition: 0.3s ease 0s;
+  border-radius: 0.3125rem;
+}
+
+.profile__section.active {
+  background-color: #eeeeee;
+}
+
+.profile__section:hover {
+  background-color: #ebebeb;
+}
+
+.profile__title {
+  font-size: 2rem;
+  margin-bottom: 1.6875rem;
+}
+
+.profile__box {
+  margin-bottom: 1.375rem;
+}
+
+.profile__sub-title {
+  margin-bottom: 0.5625rem;
+}
+
+.profile__input {
+  max-width: 21.875rem;
+  width: 100%;
+  border-radius: 0.625rem;
+  border: 0.0625rem solid #ddd;
+  padding: 0.8125rem 1rem;
+}
+
+.profile__button {
+  width: 9.375rem;
+  color: white;
+  border-radius: 0.625rem;
+  padding: 0.8125rem 1.25rem;
+  background-color: #17696A;
+  transition: 0.3s ease 0s;
+}
+
+.profile__button:hover {
+  background-color: #1e8586;
+}
+
+.popup__image-delete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 0.875rem 1.875rem;
+  border-radius: 0.625rem;
+  transition: 0.3s ease 0s;
+  background-color: #e7524d;
+}
+
+.popup__image-delete:hover {
+  background-color: #FF5252;
+}
+
+.popup__image-select,
+.popup__image-confirm {
+  margin-bottom: 0.625rem;
+}
+
+.popup__image-select.hide,
+.popup__image-confirm.hide {
+  display: none;
+}
+
+.profile__error {
+  color: #FF5252;
+  margin-bottom: 0.625rem;
+}
+
+@media (max-width: 33.75em) {
+  .profile__body {
+    flex-direction: column;
+  }
+  .profile__columns_image {
+    flex-basis: auto;
+    flex-direction: column-reverse;
+  }
+  .profile__section {
+    width: calc(50% - 0.625rem);
+  }
+  .profile__title {
+    font-size: 1.75rem;
+  }
+  .profile__input {
+    max-width: none;
+  }
+  .profile__button {
+    width: 100%;
+  }
+}
+@media (max-width: 21.875em) {
+  .profile__section {
+    width: 100%;
   }
 }
 /*-----------BEM-------------------------------------------------------------------------------------------*/

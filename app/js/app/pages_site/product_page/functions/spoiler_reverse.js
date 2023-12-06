@@ -21,14 +21,14 @@ export function startSpoiler(title) {
 
     if (currentHeightPage >= minHeightPage && !conditionOpening && currentHeightPage !== maxHeightPage) {
         spoilerPage.classList.add('_open');
-        changeFirstWord(spoilerTitle, 'Свернуть', 'basic');
+        changeFirstWord([spoilerTitle], 'Свернуть', 'basic');
         spoilerPage.style.maxHeight = maxHeightPage + 'px';
         if (arrow) arrow.style.transform = 'rotate(180deg)';
     }
 
     else if (currentHeightPage <= maxHeightPage && conditionOpening && currentHeightPage !== minHeightPage) {
         spoilerPage.classList.remove('_open');
-        changeFirstWord(spoilerTitle, 'Развернуть', 'change');
+        changeFirstWord([spoilerTitle], 'Развернуть', 'change');
         spoilerPage.style.maxHeight = minHeightPage + 'px';
         if (arrow) arrow.style.transform = 'rotate(0deg)';
     }

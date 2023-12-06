@@ -281,6 +281,8 @@
     }
 
     &__wrapper {
+        flex: 0 0 rem(25);
+        width: rem(25);
         display: flex;
         justify-content: center;
         min-width: rem(22);

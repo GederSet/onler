@@ -19,12 +19,15 @@
         <main class="main">
             <section class="profile">
                 <div class="profile__container">
-                    Профиль
+                    <div class="profile__body"></div>
                 </div>
             </section>
         </main>
         <?php require_once('app/html/popup_user.php')?>
+        <?php require_once('app/html/popup_set_image.php')?>
         <script type="module" src="app/js/app/script.js"></script>
+        <script type="module" src="app/js/app/pages_site/profile_page/profile_script.js"></script>
+        <script src="https://unpkg.com/imask"></script>
     </div>
 </body>
 

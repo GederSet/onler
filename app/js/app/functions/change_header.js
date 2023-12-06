@@ -39,12 +39,6 @@ export async function changeHeader() {
                             </div>
                             <div class="header-info__link">Покупки</div>
                         </a>
-                        <a href="review.php" class="header-info__rows header-info__rows_normal">
-                            <div class="header-info__wrapper">
-                                <div class="header-info__icon _icon-review"></div>
-                            </div>
-                            <div class="header-info__link">Отызвы</div>
-                        </a>
                         <a href="return.php" class="header-info__rows header-info__rows_normal">
                             <div class="header-info__wrapper">
                                 <div class="header-info__icon _icon-return"></div>

@@ -18,7 +18,6 @@ export async function showAdminPanel(idUser, position) {
             throw await response.json();
         }
         const info = await response.json();
-        console.log(info);
 
         if (info.status === 'admin' && position === 'header') {
             return `

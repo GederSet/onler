@@ -1,4 +1,5 @@
 import { changeDate } from "../../app/pages_site/product_page/functions/change_date.js";
+import { checkImageProduct } from "../../app/pages_site/product_page/functions/checkImageProduct.js";
 
 export async function getCommentsPage(idProduct) {
     const url = 'http://localhost/onler_2/api/history/get_all_comments.php';
@@ -27,7 +28,7 @@ export async function getCommentsPage(idProduct) {
                 `
                 <div class="review__wrapper">
                     <div class="review__img-box">
-                        <div class="review__img-user">${comment.name[0]}</div>
+                        <div class="review__img-user">${checkImageProduct(comment.image_user, comment.name[0])}</div>
                     </div>
                     <div class="review__info">
                         <div class="review__column">

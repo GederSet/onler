@@ -56,10 +56,10 @@
         {
 
             $sql = 
-            "UPDATE $this->table_name
-             SET comment = '$comment', 
-             date_message = DATE_FORMAT(CURRENT_TIMESTAMP(), '%d.%m.%Y, %H:%i:%s'), 
-             user_rating = :user_rating
+            "UPDATE $this->table_name 
+             SET comment = '$comment',  
+             date_message = DATE_FORMAT(CURRENT_TIMESTAMP(), '%e.%m.%Y, %H:%i:%s'),  
+             user_rating = :user_rating 
              WHERE id_user = :user_id AND id_product = :product_id";
 
             $stmt = $this->conn->prepare($sql);
@@ -96,7 +96,7 @@
 
             $sql = 
             "SELECT history.comment, history.date_message, 
-             history.user_rating, user.name
+             history.user_rating, user.name, user.image_user
              FROM history
              JOIN user ON user.id = history.id_user
              WHERE comment IS NOT NULL AND comment != '' AND id_product = :product_id
@@ -115,7 +115,7 @@
 
             $sql = 
             "SELECT history.comment, history.date_message, 
-             history.user_rating, user.name
+             history.user_rating, user.name, user.image_user
              FROM history
              JOIN user ON user.id = history.id_user
              WHERE comment IS NOT NULL AND comment != '' AND id_product = :product_id
