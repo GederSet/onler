@@ -51,7 +51,7 @@ export async function preparePasswordForm() {
         catch (error) {
             const errorMesage = await error;
             console.error(errorMesage.message);
-            const bodyError = document.querySelector('#current-password');
+            const bodyError = document.querySelector('#current-password').closest('.profile__box').querySelector('.profile__sub-title').nextElementSibling;
             addInformationElement(bodyError, errorMesage.message, 'profile__error');
         }
 

@@ -25,6 +25,8 @@ export async function changePassword(idUser, password) {
             throw response.json();
         }
         const info = await response.json();
+        const bodySuccess = document.querySelector('#current-password').closest('.profile__box').querySelector('.profile__sub-title').nextElementSibling;
+        addInformationElement(bodySuccess, info.message, 'profile__successfully');
         createPassword();
         console.log(info);
     }
@@ -32,7 +34,7 @@ export async function changePassword(idUser, password) {
     catch (error) {
         const errorMesage = await error;
         console.error(errorMesage.message);
-        const bodyError = document.querySelector('#new-password');
+        const bodyError = document.querySelector('#new-password').closest('.profile__box').querySelector('.profile__sub-title').nextElementSibling;
         addInformationElement(bodyError, errorMesage.message, 'profile__error');
     }
 

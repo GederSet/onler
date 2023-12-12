@@ -11,7 +11,7 @@
                 <div class="popup-user__icon _icon-password"></div>
                 <input name="password" type="password" class="popup-user__input" placeholder="Пароль"
                     autocomplete="off">
-                <div class="popup-user__icon popup-user__icon_eye _icon-eye">
+                <div class="popup-user__icon popup-user__icon_eye _icon-eye password-eye">
                     <span></span>
                 </div>
             </div>
@@ -29,7 +29,7 @@
                 <div class="popup-user__icon _icon-password"></div>
                 <input name="password" type="password" class="popup-user__input" placeholder="Пароль"
                     autocomplete="off">
-                <div class="popup-user__icon popup-user__icon_eye _icon-eye">
+                <div class="popup-user__icon popup-user__icon_eye _icon-eye password-eye">
                     <span></span>
                 </div>
             </div>
@@ -37,7 +37,7 @@
                 <div class="popup-user__icon _icon-password"></div>
                 <input name="repeatPassword" type="password" class="popup-user__input" placeholder="Повторите пароль"
                     autocomplete="off">
-                <div class="popup-user__icon popup-user__icon_eye _icon-eye">
+                <div class="popup-user__icon popup-user__icon_eye _icon-eye password-eye">
                     <span></span>
                 </div>
             </div>

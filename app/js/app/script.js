@@ -9,6 +9,7 @@ import './functions/placeholder.js';
 import './functions/color_theme.js';
 import './functions/change_header.js';
 import './functions/find_products.js';
+import './functions/show_password.js';
 import './functions/get_comment_data.js';
 import './functions/01function_order.js';
 import './functions/review_validation.js';

@@ -25,9 +25,8 @@
 
     if($count > 0){
 
-        $image = $stmt->fetch(PDO::FETCH_ASSOC);
         http_response_code(200);
-        echo json_encode($image, JSON_UNESCAPED_UNICODE);
+        echo json_encode(['message'=>'Вы сменили пароль'], JSON_UNESCAPED_UNICODE);
 
     } 
     else {

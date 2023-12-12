@@ -1,4 +1,4 @@
-import { addInformationElement } from "../../../functions/add_information_element.js";
+import { addInformationElementPassword } from "./add_information_element_password.js";
 
 export function validatePassword(form) {
 
@@ -9,23 +9,23 @@ export function validatePassword(form) {
     const inputs = form.querySelectorAll('.profile__input-validate');
     inputs.forEach(input => {
 
-        const previousElement = input.previousElementSibling;
+        const previousElement = input.closest('.profile__box').querySelector('.profile__sub-title').nextElementSibling;
 
-        if (previousElement.classList.contains('profile__error') || previousElement.classList.contains('form-successfully')) {
+        if (previousElement.classList.contains('profile__error') || previousElement.classList.contains('profile__successfully')) {
             previousElement.remove();
         }
         if (input.value === '') {
-            addInformationElement(input, 'Заполните данные', 'profile__error');
+            addInformationElementPassword(input, 'Заполните данные', 'profile__error');
             status = false;
         }
 
         else if (input.value.length < 5) {
-            addInformationElement(input, 'Введите больше 4 символов', 'profile__error');
+            addInformationElementPassword(input, 'Введите больше 4 символов', 'profile__error');
             status = false;
         }
 
         else if (input.getAttribute('name') == 'repeatPassword' && password.value !== repeatPassword.value) {
-            addInformationElement(input, 'Пароли не совпадают', 'profile__error');
+            addInformationElementPassword(input, 'Пароли не совпадают', 'profile__error');
             status = false;
         }
 

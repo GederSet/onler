@@ -22,7 +22,7 @@
     if($user->findUser()){
 
         http_response_code(201);
-        echo json_encode(array("message" => "Вы сменили пароль"), JSON_UNESCAPED_UNICODE);
+        echo json_encode(array("message" => "Данные введены верно"), JSON_UNESCAPED_UNICODE);
 
     }
 

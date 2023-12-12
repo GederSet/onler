@@ -11,7 +11,6 @@ function closePopupEscape(e) {
         popups.forEach(popup => {
             closePopup(popup);
         });
-        // closePopup(document.querySelector('.popup'));
     }
 }
 
@@ -37,9 +36,6 @@ function actionElement(event) {
         closeRegister();
     }
 
-    if (clickElement.closest('.popup-user__icon_eye')) {
-        showPassword(clickElement.closest('.popup-user__icon_eye'));
-    }
 }
 
 
@@ -89,12 +85,3 @@ function closeRegister() {
     register.style.transform = 'translateX(0%)';
 }
 
-function showPassword(iconPassword) {
-    const blockPassword = iconPassword;
-    blockPassword.classList.toggle('_showPassword');
-    if (blockPassword.classList.contains('_showPassword')) {
-        blockPassword.previousElementSibling.setAttribute('type', 'text');
-    } else {
-        blockPassword.previousElementSibling.setAttribute('type', 'password');
-    }
-}
