@@ -17,9 +17,7 @@ export async function prepareCreateForm() {
         }
 
         const name = createProductForm.querySelector('[name="name"]').value;
-        const img_1 = createProductForm.querySelector('[name="img_1"]').files[0];
-        const img_2 = createProductForm.querySelector('[name="img_2"]').files[0];
-        const img_3 = createProductForm.querySelector('[name="img_3"]').files[0];
+        const inputImgArray = document.querySelectorAll('.admin__file');
         const price = createProductForm.querySelector('[name="price"]').value;
         const description = createProductForm.querySelector('[name="description"]').value;
         const weight = createProductForm.querySelector('[name="weight"]').value;
@@ -38,9 +36,11 @@ export async function prepareCreateForm() {
         const id_gender = createProductForm.querySelector('[name="id_gender"]').getAttribute('value');
 
         let formData = new FormData();
-        formData.append('img_1', img_1);
-        formData.append('img_2', img_2);
-        formData.append('img_3', img_3);
+        for (let i = 0; i < inputImgArray.length; i++) {
+            if (inputImgArray[i].files[0] != undefined) {
+                formData.append([i], inputImgArray[i].files[0]);
+            }
+        }
         formData.append('name', name);
         formData.append('price', price);
         formData.append('description', description);
@@ -71,13 +71,14 @@ export async function prepareCreateForm() {
             if (!response.ok) {
                 throw response.text();
             }
-            const info = await response.text();
+            const info = await response.json();
             createAddPanel();
             console.log(info);
         }
 
         catch (error) {
             console.log(error);
+            console.log(url);
         }
 
     }

@@ -22,7 +22,6 @@ export async function createEditTable(idProduct) {
             throw await response.json();
         }
         const options = await response.json();
-        console.log(options);
 
         body.innerHTML = '';
         body.innerHTML +=
@@ -33,18 +32,18 @@ export async function createEditTable(idProduct) {
                     </div>
                     <div class="admin__name-product">Основная картинка</div>
                     <label class="admin__edit-column">
-                        <input type="file" class="admin__file" name="img_1">
-                        <div class="admin__input-edit admin__input-edit_file admin__img-input add" id="img_text_1" value="${options.images[0].url}">${options.images[0].url}</div>
+                        ${getImageFile(options.images[0], 1)}
+                        ${getImage(options.images[0], 1)}
                     </label>
                     <div class="admin__name-product">Вторая картинка</div>
                     <label class="admin__edit-column">
-                        <input type="file" class="admin__file" name="img_2">
-                        <div class="admin__input-edit admin__input-edit_file admin__img-input add" id="img_text_2" value="${options.images[1].url}">${options.images[1].url}</div>
+                        ${getImageFile(options.images[1], 2)}
+                        ${getImage(options.images[1], 2)}
                     </label>
                     <div class="admin__name-product">Третяя картинка</div>
                     <label class="admin__edit-column">
-                        <input type="file" class="admin__file" name="img_3">
-                        <div class="admin__input-edit admin__input-edit_file admin__img-input add" id="img_text_3" value="${options.images[2].url}">${options.images[2].url}</div>
+                        ${getImageFile(options.images[2], 3)}
+                        ${getImage(options.images[2], 3)}
                     </label>
                     <div class="admin__name-product">Цена</div>
                     <div class="admin__edit-column">
@@ -146,6 +145,27 @@ export async function createEditTable(idProduct) {
         body.innerHTML = `<div class="products__null">${error['message']}</div>`;
         console.log(error);
         console.log(url);
+    }
+
+}
+
+
+function getImage(image, order) {
+
+    if (image) {
+        return `<div class="admin__input-edit admin__input-edit_file admin__img-input add admin__img-input_validate" id="img_text_${order}" value="${image.url}">${image.url}</div>`
+    } else {
+        return `<div class="admin__input-edit admin__input-edit_file admin__img-input" value="">Картинка ${order}</div>`
+    }
+
+}
+
+function getImageFile(image, order) {
+
+    if (image) {
+        return `<input type="file" class="admin__file" name="img_${order}" value="${image.url}">`
+    } else {
+        return `<input type="file" class="admin__file" name="img_${order}" value="">`
     }
 
 }

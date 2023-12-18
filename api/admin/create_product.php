@@ -41,60 +41,29 @@
 
      $targetDir = "../../app/img/01 main page/"; // Папка, в которую будут сохраняться загруженные картинки
 
-     if (!empty($_FILES['img_1'])) {
-          $tempFile = $_FILES['img_1']['tmp_name'];
-          $targetFile = $targetDir . $_FILES['img_1']['name'];
+     $img_array = $_FILES;
+     $img_name = [];
+     for($i = 0; $i < count($img_array); $i++){
 
-          // Перемещаем загруженный файл в папку
-          if (move_uploaded_file($tempFile, $targetFile)) {
-               http_response_code(200);
-               echo json_encode(['message'=>'Картинка 1 успешно загружена'], JSON_UNESCAPED_UNICODE);
+          if (!empty($img_array[$i])) {
+               $tempFile = $img_array[$i]['tmp_name'];
+               $targetFile = $targetDir . $img_array[$i]['name'];
+               array_push($img_name, $img_array[$i]['name']);
+     
+               // Перемещаем загруженный файл в папку
+               if (move_uploaded_file($tempFile, $targetFile)) {
+                    http_response_code(200);
+                    echo json_encode(['message'=>"Картинка " . $i . " успешно загружена"], JSON_UNESCAPED_UNICODE);
+               } else {
+                    http_response_code(404);
+                    echo json_encode(['message'=>"Произошла " . $i . " ошибка при загрузке картинки"], JSON_UNESCAPED_UNICODE);
+               }
           } else {
                http_response_code(404);
-               echo json_encode(['message'=>'Произошла 1 ошибка при загрузке картинки'], JSON_UNESCAPED_UNICODE);
+               echo json_encode(['message'=>"Картинка " . $i . " не была загружена"], JSON_UNESCAPED_UNICODE);
           }
-     } else {
-          http_response_code(404);
-          echo json_encode(['message'=>'Картинка 1 не была загружена'], JSON_UNESCAPED_UNICODE);
+
      }
 
-     if (!empty($_FILES['img_2'])) {
-          $tempFile = $_FILES['img_2']['tmp_name'];
-          $targetFile = $targetDir . $_FILES['img_2']['name'];
-
-          // Перемещаем загруженный файл в папку
-          if (move_uploaded_file($tempFile, $targetFile)) {
-               http_response_code(200);
-               echo json_encode(['message'=>'Картинка 2 успешно загружена'], JSON_UNESCAPED_UNICODE);
-          } else {
-               http_response_code(404);
-               echo json_encode(['message'=>'Произошла 2 ошибка при загрузке картинки'], JSON_UNESCAPED_UNICODE);
-          }
-     } else {
-          http_response_code(404);
-          echo json_encode(['message'=>'Картинка 2 не была загружена'], JSON_UNESCAPED_UNICODE);
-     }
-
-     if (!empty($_FILES['img_3'])) {
-          $tempFile = $_FILES['img_3']['tmp_name'];
-          $targetFile = $targetDir . $_FILES['img_3']['name'];
-
-          // Перемещаем загруженный файл в папку
-          if (move_uploaded_file($tempFile, $targetFile)) {
-               http_response_code(200);
-               echo json_encode(['message'=>'Картинка 3 успешно загружена'], JSON_UNESCAPED_UNICODE);
-          } else {
-               http_response_code(404);
-               echo json_encode(['message'=>'Произошла 3 ошибка при загрузке картинки'], JSON_UNESCAPED_UNICODE);
-          }
-     } else {
-          http_response_code(404);
-          echo json_encode(['message'=>'Картинка 3 не была загружена'], JSON_UNESCAPED_UNICODE);
-     }
-
-     $img_1 = $_FILES['img_1']['name'];
-     $img_2 = $_FILES['img_2']['name'];
-     $img_3 = $_FILES['img_3']['name'];
-
-    $admin->addImages($img_1, $img_2, $img_3, $id_product);
+    $admin->addImages($img_name, $id_product);
     

@@ -3,7 +3,7 @@ export function validateAdminFormErrors(form) {
     let status = true;
 
     const inputs = form.querySelectorAll('.admin__text-input');
-    const imgInputs = form.querySelectorAll('.admin__img-input');
+    const imgInputs = form.querySelectorAll('.admin__img-input_validate');
     inputs.forEach(input => {
 
         if (input.classList.contains('input-error')) {

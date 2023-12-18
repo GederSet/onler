@@ -114,52 +114,70 @@
 
         }
 
-        public function addImages($img_1, $img_2, $img_3, $id_product)
+        public function addImages($img_name, $id_product)
         {
 
-            $sqlOneImg = 
-            "INSERT INTO img (url, order_img, id_product)
-             VALUES ('$img_1', '1', '$id_product')";
+            for ($i = 0; $i < count($img_name); $i++){
 
-            $sqlTwoImg = 
-            "INSERT INTO img (url, order_img, id_product)
-             VALUES ('$img_2', '2', '$id_product')";
+                $name = $img_name[$i];
+                $fakeI = $i;
+                $order = $fakeI + 1;
 
-            $sqlThreeImg = 
-            "INSERT INTO img (url, order_img, id_product)
-             VALUES ('$img_3', '3', '$id_product')";
+                $sql_add_image = 
+                "INSERT INTO img (url, order_img, id_product)
+                 VALUES ('$name', '$order', '$id_product')";
 
-            $stmtOneImg = $this->conn->prepare($sqlOneImg);
-            $stmtOneImg->execute();
+                $stmt_add_image = $this->conn->prepare($sql_add_image);
+                $stmt_add_image->execute();
 
-            $stmtTwoImg = $this->conn->prepare($sqlTwoImg);
-            $stmtTwoImg->execute();
-
-            $stmtThreeImg = $this->conn->prepare($sqlThreeImg);
-            $stmtThreeImg->execute();
+            }
 
         }
 
-        public function editImages($img_1, $img_2, $img_3, $id_product)
+        public function editImages($img_name, $img_order, $id_product)
         {
 
-            $sqlOneImg = 
-            "UPDATE img SET url = '$img_1' WHERE id_product = $id_product AND order_img = 1";
+            for ($i = 0; $i < count($img_name); $i++){
 
-            $sqlTwoImg = 
-            "UPDATE img SET url = '$img_2' WHERE id_product = $id_product AND order_img = 2";
+                $name = $img_name[$i];
+                $order = $img_order[$i] + 1;
 
-            $sqlThreeImg = 
-            "UPDATE img SET url = '$img_3' WHERE id_product = $id_product AND order_img = 3";
+                $sql_add_image = 
+                "INSERT INTO img (url, order_img, id_product)
+                 VALUES ('$name', '$order', '$id_product')";
 
-            $stmtOneImg = $this->conn->prepare($sqlOneImg);
-            $stmtOneImg->execute();
+                $stmt_add_image = $this->conn->prepare($sql_add_image);
+                $stmt_add_image->execute();
 
-            $stmtTwoImg = $this->conn->prepare($sqlTwoImg);
-            $stmtTwoImg->execute();
+            }
 
-            $stmtThreeImg = $this->conn->prepare($sqlThreeImg);
-            $stmtThreeImg->execute();
+            // $sqlOneImg = 
+            // "UPDATE img SET url = '$img_1' WHERE id_product = $id_product AND order_img = 1";
+
+            // $sqlTwoImg = 
+            // "UPDATE img SET url = '$img_2' WHERE id_product = $id_product AND order_img = 2";
+
+            // $sqlThreeImg = 
+            // "UPDATE img SET url = '$img_3' WHERE id_product = $id_product AND order_img = 3";
+
+            // $stmtOneImg = $this->conn->prepare($sqlOneImg);
+            // $stmtOneImg->execute();
+
+            // $stmtTwoImg = $this->conn->prepare($sqlTwoImg);
+            // $stmtTwoImg->execute();
+
+            // $stmtThreeImg = $this->conn->prepare($sqlThreeImg);
+            // $stmtThreeImg->execute();
+
+        }
+
+        public function deleteImages($id)
+        {
+
+            $sql = "DELETE FROM img WHERE id_product = $id";
+
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute();
 
         }
 

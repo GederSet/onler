@@ -262,6 +262,11 @@
 
     &__rows_normal &__link {
         color: $userInfo;
+        transition: 0.3s ease 0s;
+    }
+
+    &__rows_normal:hover &__icon {
+        transition: 0.3s ease 0s;
     }
 
     &__rows_normal:hover &__icon {

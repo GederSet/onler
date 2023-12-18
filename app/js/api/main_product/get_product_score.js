@@ -25,11 +25,11 @@ export async function getProductScore(idProduct) {
                 `
                 <div class="review">
                     <div class="review__rows-product">
-                            <div class="review__title">Отзывы</div>
-                        </div>
+                        <div class="review__title">Отзывы</div>
+                    </div>
                     <div class="basket__null basket__null_mini">Пока никто не оставлял отзывов</div>
                     <div class="review__buttons">
-                        <button value="no-review" class="review__button review__button_send main-button open-popup" id="button-send" data-ripple>Написать отзыв</button>
+                        <button value="no-review" class="review__button review__button_send main-button open-popup" id="button-send">Написать отзыв</button>
                     </div>
                 </div>
                 `

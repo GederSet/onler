@@ -107,3 +107,25 @@
 .pupup-review__button {
     width: 100%;
 }
+
+@media(max-width:em(760)) {
+
+    .pupup-review__body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+
+    .pupup-review__body>.pupup-review__title {
+        width: 100%;
+    }
+
+    .pupup-review__body>form {
+        width: 100%;
+    }
+
+}

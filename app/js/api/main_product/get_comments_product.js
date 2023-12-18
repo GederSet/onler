@@ -43,6 +43,12 @@ export async function getCommentsProduct(idProduct) {
                 </div>
                 `
         });
+        slider.innerHTML +=
+            `
+            <a class="swiper-slide review-slider__slide review-slider__slide_end" href="./review.php">
+                <div class="characteristic__show-description more-info review-slider__show-text">Смотреть все отзывы</div>
+            </a>
+            `
     }
     catch (error) {
         console.log(error);

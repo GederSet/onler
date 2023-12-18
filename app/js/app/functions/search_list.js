@@ -15,13 +15,15 @@ function hideSearchList(e) {
         !el.closest('.search__info') && !el.closest('.search__body')
         && !el.closest('.open-popup') && !el.closest('.popup__content')
         && !el.closest('.search__close') && !el.closest('.menu-burger')
+        && !el.closest('.header__menu')
     ) {
         bodyShow();
         searchList.classList.remove('show');
     }
     else if (
         !el.closest('.search__info') && !el.closest('.search__body')
-        && !el.closest('.open-popup') && !el.closest('.popup__content') && !el.closest('.menu-burger')
+        && !el.closest('.open-popup') && !el.closest('.popup__content')
+        && !el.closest('.menu-burger') && !el.closest('.header__menu')
     ) {
         bodyShow();
         searchInput.value = '';

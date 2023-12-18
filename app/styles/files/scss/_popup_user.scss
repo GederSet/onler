@@ -140,9 +140,43 @@
 }
 
 .form-error {
-    color: rgb(209, 37, 37);
+    color: $redText;
 }
 
 .form-successfully {
     color: rgb(14, 172, 14);
+}
+
+@media(max-width:em(400)) {
+
+    .popup-user__content {
+        width: 100%;
+        height: 100%;
+        max-width: none;
+    }
+
+    .popup-user__sign,
+    .popup-user__register {
+        flex: 0 0 100%;
+        max-width: none;
+        height: 100%;
+        overflow-y: scroll;
+    }
+
+    .popup-user__main-button {
+        min-height: rem(43);
+    }
+
+    .popup-user__box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .popup-user__box>div {
+        width: 100%;
+    }
+
 }

@@ -23,7 +23,7 @@ export async function createAddTable() {
                     <div class="admin__name-product">Основная картинка</div>
                     <label class="admin__edit-column">
                         <input type="file" class="admin__file" name="img_1">
-                        <div class="admin__input-edit admin__input-edit_file admin__img-input" value="">Картинка 1</div>
+                        <div class="admin__input-edit admin__input-edit_file admin__img-input admin__img-input_validate" value="">Картинка 1</div>
                     </label>
                     <div class="admin__name-product">Вторая картинка</div>
                     <label class="admin__edit-column">

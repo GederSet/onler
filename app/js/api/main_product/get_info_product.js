@@ -216,7 +216,7 @@ export async function getInfoProduct(idProduct) {
                     <div class="product__columns">
                         <div class="product__price-block">
                             <div class="product__price" data-da="info__body-name,last,1175">${productInfo.price} ₽</div>
-                            <button class="product__add main-button" data-ripple>Добавить в корзину</button>
+                            <button class="product__add main-button">Добавить в корзину</button>
                             ${getDate()}
                         </div>
                     </div>
@@ -231,7 +231,7 @@ export async function getInfoProduct(idProduct) {
                         <div class="review-button-next _icon-arrow"></div>
                     </div>
                     <div class="review__buttons">
-                        <button value="no-review" class="review__button review__button_send main-button open-popup" id="button-send" data-ripple>Написать отзыв</button>
+                        <button value="no-review" class="review__button review__button_send main-button open-popup" id="button-send">Написать отзыв</button>
                         <a href="./review.php" class="review__button review__button_watch">Смотреть все</a>
                     </div>
                 </div>

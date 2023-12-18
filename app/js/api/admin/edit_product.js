@@ -18,12 +18,7 @@ export async function prepareEditForm() {
 
         const id = editProductForm.querySelector('[name="id"]').getAttribute('value');
         const name = editProductForm.querySelector('[name="name"]').value;
-        const img_1 = editProductForm.querySelector('[name="img_1"]').files[0];
-        const img_2 = editProductForm.querySelector('[name="img_2"]').files[0];
-        const img_3 = editProductForm.querySelector('[name="img_3"]').files[0];
-        const img_not_edit_1 = editProductForm.querySelector('#img_text_1').getAttribute('value');
-        const img_not_edit_2 = editProductForm.querySelector('#img_text_2').getAttribute('value');
-        const img_not_edit_3 = editProductForm.querySelector('#img_text_3').getAttribute('value');
+        const inputImgArray = document.querySelectorAll('.admin__file');
         const price = editProductForm.querySelector('[name="price"]').value;
         const description = editProductForm.querySelector('[name="description"]').value;
         const weight = editProductForm.querySelector('[name="weight"]').value;
@@ -43,12 +38,15 @@ export async function prepareEditForm() {
 
         let formData = new FormData();
         formData.append('id_product', id);
-        formData.append('img_1', img_1);
-        formData.append('img_2', img_2);
-        formData.append('img_3', img_3);
-        formData.append('img_not_edit_1', img_not_edit_1);
-        formData.append('img_not_edit_2', img_not_edit_2);
-        formData.append('img_not_edit_3', img_not_edit_3);
+        for (let i = 0; i < inputImgArray.length; i++) {
+            if (inputImgArray[i].files[0] != undefined) {
+                formData.append([i], inputImgArray[i].files[0]);
+            } else if (inputImgArray[i].getAttribute('value') != '') {
+                const nameImg = inputImgArray[i].getAttribute('value');
+                const nameImgFile = new Blob([nameImg]);
+                formData.append([i], nameImgFile, nameImg);
+            }
+        }
         formData.append('name', name);
         formData.append('price', price);
         formData.append('description', description);

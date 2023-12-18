@@ -140,6 +140,10 @@
     background-color: $decorElementHover;
 }
 
+.button:active {
+    background-color: $decorElementHoverV2;
+}
+
 /*-----------main-button------------*/
 
 .main-button {
@@ -150,6 +154,10 @@
 
 .main-button:hover {
     background-color: $decorElementHover;
+}
+
+.main-button:active {
+    background-color: $decorElementHoverV2;
 }
 
 /*-----------ripple------------*/

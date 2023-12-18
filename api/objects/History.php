@@ -27,7 +27,29 @@
             JOIN product ON img.id_product = product.id 
             JOIN history ON history.id_product = product.id
             JOIN purchase_status ON history.id_status = purchase_status.id
-            WHERE history.id_user = :user_id AND img.order_img = 1
+            WHERE history.id_user = :user_id AND img.order_img = 1 AND history.is_return = 0
+            ORDER BY history.order_date DESC";
+
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bindParam(':user_id', $this->user_id);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        }
+
+        public function getReturnProducts()
+        {
+
+            $sql = 
+            "SELECT product.id, product.name, product.price, 
+            img.url, purchase_status.status, 
+            history.order_date, history.purchase_date, 
+            history.count
+            FROM img 
+            JOIN product ON img.id_product = product.id 
+            JOIN history ON history.id_product = product.id
+            JOIN purchase_status ON history.id_status = purchase_status.id
+            WHERE history.id_user = :user_id AND img.order_img = 1 AND history.is_return = 1
             ORDER BY history.order_date DESC";
 
             $stmt = $this->conn->prepare($sql);
@@ -101,7 +123,7 @@
              JOIN user ON user.id = history.id_user
              WHERE comment IS NOT NULL AND comment != '' AND id_product = :product_id
              ORDER BY date_message DESC
-             LIMIT 10";
+             LIMIT 7";
 
             $stmt = $this->conn->prepare($sql);
             $stmt->bindParam(':product_id', $this->product_id);
@@ -125,6 +147,21 @@
             $stmt->bindParam(':product_id', $this->product_id);
             $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        }
+
+        public function returnProduct(){
+
+            $sql = 
+            "UPDATE history SET is_return = 1 
+             WHERE history.id_product = :product_id AND history.id_user = :user_id";
+
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bindParam(':product_id', $this->product_id);
+            $stmt->bindParam(':user_id', $this->user_id);
+
+            $stmt->execute();
+            return $stmt;
 
         }
 

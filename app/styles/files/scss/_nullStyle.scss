@@ -46,6 +46,7 @@ body.dark {
     $productBlockColor: #282929;
     $menuBlockColor: #2C2D2E;
     $buttonColor: #313334;
+    $buttonColorV2: #393c3d;
     $scrollColorV2: #1c1c1f;
 
     color: $baseTextColor;
@@ -88,6 +89,10 @@ body.dark {
         background-color: $baseBlockColor;
     }
 
+    .menu-burger__line {
+        background-color: $decorElementBlackMode;
+    }
+
     .header-info__body {
         box-shadow: none;
         background-color: $menuBlockColor;
@@ -98,6 +103,10 @@ body.dark {
     }
 
     .header-info__rows_normal:hover .header-info__link {
+        color: $decorElementHoverV2;
+    }
+
+    .popup-user__info:hover {
         color: $decorElementHoverV2;
     }
 
@@ -165,7 +174,7 @@ body.dark {
 
     .product-card__count {
         box-shadow: none;
-        background-color: $menuBlockColor;
+        background-color: #353637;
     }
 
     .search__body {
@@ -247,6 +256,14 @@ body.dark {
         background-color: $productBlockColor;
     }
 
+    .more-info:hover {
+        color: $decorElementHoverV2;
+    }
+
+    .more-info:hover::before {
+        border-color: $decorElementHoverV2;
+    }
+
     .parameter__name {
         color: $baseTextColor;
         background-color: $baseBlockColor;
@@ -306,6 +323,10 @@ body.dark {
         color: $decorElement;
     }
 
+    .history__card-body {
+        box-shadow: none;
+    }
+
     .history__product-price {
         color: $baseTextColor;
     }
@@ -314,8 +335,25 @@ body.dark {
         box-shadow: none !important;
     }
 
+    .history__circle:hover {
+        background-color: $buttonColorV2;
+    }
+
+    .history__circle:hover .history__point {
+        background-color: $baseTextColor;
+    }
+
     .history__card {
         box-shadow: none !important;
+    }
+
+    .history__menu {
+        box-shadow: none;
+        background-color: $buttonColor;
+    }
+
+    .history__menu-text:hover {
+        background-color: $buttonColorV2;
     }
 
     .popup-user__sign,
@@ -354,6 +392,22 @@ body.dark {
         color: $productBlockColor;
     }
 
+    .more-info:hover {
+        color: $decorElementHoverV3;
+    }
+
+    .more-info:hover::before {
+        border-color: $decorElementHoverV3;
+    }
+
+    .review-slider__slide_end:hover .more-info {
+        color: $decorElementHoverV3;
+    }
+
+    .review-slider__slide_end:hover .more-info::before {
+        border-color: $decorElementHoverV3;
+    }
+
     .pupup-status__circle {
         background-color: $productBlockColor;
     }
@@ -382,15 +436,174 @@ body.dark {
         border-bottom: rem(1) dashed $decorText;
     }
 
+    .delivery__product-status.active {
+        color: $decorElementBlackModeV2;
+    }
+
+    .delivery__text-body.active::before {
+        border-bottom: rem(1) dashed $decorElementBlackModeV2;
+    }
+
     .pupup-status__dashed {
         background: linear-gradient(to right, transparent 50%, $productBlockColor 50%),
-            linear-gradient(to right, $decorElement, $decorElement);
+            linear-gradient(to right, $decorElementBlackMode, $decorElementBlackMode);
         background-size: rem(25) rem(2), 100% rem(2);
+    }
+
+    .pupup-status__circle {
+        border: rem(1) solid $decorElementBlackMode;
+    }
+
+    .pupup-status__circle_full {
+        background-color: $decorElementBlackMode;
+    }
+
+    .pupup-status__line {
+        background-color: $decorElementBlackMode;
+    }
+
+    .pupup-status__truck {
+        color: $decorElementBlackMode;
+    }
+
+    .pupup-status__circle {
+        border: rem(1) solid $decorElementBlackMode;
+    }
+
+    .return__card-body {
+        box-shadow: none;
+    }
+
+    .return__product-price {
+        color: $baseTextColor;
+    }
+
+    .profile__section {
+        background-color: $baseBlockColor;
+    }
+
+
+    .profile__section.active {
+        background-color: $productBlockColor;
+    }
+
+    .profile__section:hover {
+        background-color: $buttonColor;
+    }
+
+    .profile__rows,
+    .profile__input {
+        background-color: $productBlockColor;
+        border: rem(1) solid $productBlockColor;
+    }
+
+    .password-eye span::before {
+        background-color: $baseTextColor;
+    }
+
+    .admin__search-body {
+        background-color: $productBlockColor;
+        border: rem(1) solid $productBlockColor;
+    }
+
+    .admin__table {
+        background-color: #1e2020;
+    }
+
+    .admin__table th {
+        border: rem(1) solid #3d3f3f;
+    }
+
+    .admin__table td {
+        border: rem(1) solid #3d3f3f;
+    }
+
+    .admin__table-edit {
+        background-color: #1e2020;
+    }
+
+    .admin__name-product,
+    .admin__edit-column {
+        border: rem(1) solid #3d3f3f;
+    }
+
+    .admin__input-edit,
+    .admin__textarea-edit {
+        border: rem(1) solid #3d3f3f;
+    }
+
+    .admin__spoiler-page {
+        border: rem(1) solid #3d3f3f;
+    }
+
+    .admin__input-edit_file {
+        color: #bdbdbd;
+    }
+
+    .admin__spoiler-text {
+        color: #bdbdbd;
+    }
+
+    .admin__spoiler-text.add {
+        color: $baseTextColor;
+    }
+
+    .admin__input-edit_file.add {
+        color: $baseTextColor;
+    }
+
+    .admin__spoiler-page .admin__page._open .admin__filter-item {
+        border-top: rem(1) solid #3d3f3f;
+    }
+
+    .admin__filter-item:hover {
+        background-color: $menuBlockColor;
+    }
+
+    .input-error {
+        color: $redText;
+        border: rem(1) solid $redText;
+    }
+
+    .input-error::-webkit-input-placeholder {
+        color: $redText;
+    }
+
+    .input-error:-moz-placeholder {
+        color: $redText;
+    }
+
+    .input-error::-moz-placeholder {
+        color: $redText;
+    }
+
+    .input-error:-ms-input-placeholder {
+        color: $redText;
+    }
+
+    .admin__spoiler-page.input-error .admin__page._open .admin__filter-item {
+        border-top: rem(1) solid $redText;
+    }
+
+    .admin__filter-item {
+        color: $baseTextColor;
+    }
+
+    .review__stars-grey {
+        background-image: url('../../../img/03 product/star black.svg');
+    }
+
+    .products__null {
+        background-color: $baseBlockColor;
+    }
+
+    .admin__table {
+        background-color: $baseBlockColor;
     }
 
     @media(max-width:em(840)) {
         .pupup-status__dashed {
-            background: linear-gradient(to top, transparent 50%, $productBlockColor 50%), linear-gradient(to bottom, #17696A, #17696A);
+            background: linear-gradient(to top, transparent 50%, $productBlockColor 50%), linear-gradient(to bottom, $decorElementBlackMode, $decorElementBlackMode);
             background-size: 2px 25px, 2px 100%;
         }
     }

@@ -4,7 +4,7 @@ import { prepareCreateForm } from "../../../../api/admin/create_product.js";
 
 
 export async function createAddPanel() {
-
+    console.log('add panel');
     const body = document.querySelector('.admin__body');
     body.innerHTML =
         `

@@ -63,11 +63,15 @@
 }
 
 .admin__create:hover {
+    background-color: $decorElementHover;
+}
+
+.admin__create:active {
     background-color: $decorElementHoverV2;
 }
 
 .admin__edit:hover {
-    background-color: $decorElementHoverV2;
+    background-color: $decorElementHover;
 }
 
 .admin__delete:hover {
