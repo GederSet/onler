@@ -15,6 +15,7 @@
 
 <body>
     <div class="wrapper">
+        <?php require_once('app/html/preloader.php')?>
         <?php require_once('app/html/header.php')?>
         <main class="main main__return">
             <section class="return">
@@ -34,7 +35,7 @@
                             </ul>
                         </nav>
                     </div>
-                    <div class="return__body"></div>
+                    <div class="return__body" id="products-body"></div>
                 </div>
             </section>
         </main>

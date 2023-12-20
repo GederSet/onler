@@ -1,6 +1,4 @@
 import { checkInput } from "../../app/functions/form_validation.js";
-import { startFunctions } from "../basket/get_basket_products.js";
-import { getCountPropducts } from "../basket/count_basket_products.js";
 import { addInformationElement } from "../../app/functions/add_information_element.js";
 
 const inputForm = document.querySelector('.popup-user__sign');
@@ -37,6 +35,7 @@ async function registerUser(event) {
             throw response.json();
         }
         const info = await response.json();
+        console.log(info);
         localStorage.setItem('userId', info.user_id);
         addInformationElement(parent, 'Вы вошли в аккаунт', 'form-successfully');
         location.reload();

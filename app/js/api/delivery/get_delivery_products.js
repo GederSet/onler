@@ -33,7 +33,7 @@ export async function showProducts() {
         products[0].forEach(product => {
             deliveryBody.innerHTML +=
                 `
-                <div class="delivery__card product-card" value="${product.id}" data-order-date="${product.order_date}" data-arrival-date="${product.arrival_date}">
+                <div class="delivery__card product-card product-card-shell" value="${product.id}" data-order-date="${product.order_date}" data-arrival-date="${product.arrival_date}">
                     <div class="product-card__shell-image">
                         <div class="product-card__image">
                             <img src="app/img/01 main page/${product.url}" alt="${product.name}">
@@ -43,7 +43,7 @@ export async function showProducts() {
                     <div class="product-card__shell-info">
                         <div class="delivery__card-rows product-card__rows">
                             <div class="product-card__page delivery__product-page" id="product-card__page-1">
-                                <div class="delivery__product-name product-card__name">${product.name}</div>
+                                <div class="delivery__product-name product-card__name products-card-name">${product.name}</div>
                                 <div class="delivery__product-price">${product.price} ₽</div>
                                 ${getStatus(product.status)}
                             </div>

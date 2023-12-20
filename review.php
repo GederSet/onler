@@ -15,6 +15,7 @@
 
 <body>
     <div class="wrapper">
+        <?php require_once('app/html/preloader.php')?>
         <?php require_once('app/html/header.php')?>
         <main class="main">
             <section class="review review_page">

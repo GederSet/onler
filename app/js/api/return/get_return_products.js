@@ -23,7 +23,7 @@ export async function showReturnProducts() {
         products.forEach(product => {
             returnBody.innerHTML +=
                 `
-                <div class="return__card-body" value="${product.id}">
+                <div class="return__card-body product-card-shell" value="${product.id}">
                     <div class="return__card product-card">
                         <div class="product-card__shell-image">
                             <div class="product-card__image">
@@ -35,7 +35,7 @@ export async function showReturnProducts() {
                             <div class="return__card-rows product-card__rows">
                                 <div class="product-card__page return__product-page" id="product-card__page-1">
                                     <div class="return__rows">
-                                        <div class="return__product-name product-card__name">${product.name}</div>
+                                        <div class="return__product-name product-card__name products-card-name">${product.name}</div>
                                     </div>
                                     <div class="return__product-price">${product.price} ₽</div>
                                     <div class="return__page">

@@ -18,7 +18,7 @@
     $data = json_decode(file_get_contents("php://input"));
 
     $id_user = $data->id_user;
-    $password = $data->password;
+    $password = md5($data->password);
 
     $stmt = $user->changePassword($id_user, $password);
     $count = $stmt->rowCount();

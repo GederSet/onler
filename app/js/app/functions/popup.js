@@ -22,7 +22,6 @@ function actionElement(event) {
     let clickElement = event.target;
 
     if (clickElement.closest('.open-popup')) {
-        bodyLock();
         openPopup(clickElement.closest('.open-popup'));
     }
     if (clickElement.closest('.close-popup')) {
@@ -53,8 +52,9 @@ export function bodyShow() {
     document.querySelector('body').classList.remove('_lock');
 }
 
-function openPopup(link) {
+export function openPopup(link) {
 
+    bodyLock();
     const namePopup = link.getAttribute('value');
     const popup = document.getElementById(namePopup);
     if (popup) {

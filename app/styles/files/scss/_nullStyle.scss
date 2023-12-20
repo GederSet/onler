@@ -102,8 +102,13 @@ body.dark {
         color: $baseTextColor;
     }
 
+
+    .header-info__rows_normal:hover .header-info__icon {
+        color: $decorElementHoverV4;
+    }
+
     .header-info__rows_normal:hover .header-info__link {
-        color: $decorElementHoverV2;
+        color: $decorElementHoverV4;
     }
 
     .popup-user__info:hover {
@@ -599,6 +604,16 @@ body.dark {
 
     .admin__table {
         background-color: $baseBlockColor;
+    }
+
+    .preloader {
+        background-color: $baseBlockColor;
+    }
+
+    .preloader__circle {
+        border: rem(10) solid $baseBlockColor;
+        border-top: rem(10) solid $decorElementHoverV2;
+        border-right: rem(10) solid $decorElementHoverV2;
     }
 
     @media(max-width:em(840)) {

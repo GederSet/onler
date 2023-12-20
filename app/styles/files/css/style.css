@@ -79,8 +79,11 @@ body.dark .header-info__body {
 body.dark .header-info__rows_normal .header-info__link {
   color: #DDDDDD;
 }
+body.dark .header-info__rows_normal:hover .header-info__icon {
+  color: #29c8ca;
+}
 body.dark .header-info__rows_normal:hover .header-info__link {
-  color: #239a9c;
+  color: #29c8ca;
 }
 body.dark .popup-user__info:hover {
   color: #239a9c;
@@ -459,6 +462,14 @@ body.dark .products__null {
 }
 body.dark .admin__table {
   background-color: #19191A;
+}
+body.dark .preloader {
+  background-color: #19191A;
+}
+body.dark .preloader__circle {
+  border: 0.625rem solid #19191A;
+  border-top: 0.625rem solid #239a9c;
+  border-right: 0.625rem solid #239a9c;
 }
 @media (max-width: 52.5em) {
   body.dark .pupup-status__dashed {
@@ -1167,7 +1178,7 @@ main {
   display: flex;
   align-items: center;
   font-size: 1rem;
-  padding: 1.125rem;
+  padding: 1.0625rem;
   justify-content: space-between;
 }
 .spoiler__name {
@@ -1470,13 +1481,13 @@ main {
 
 .pupup-review__stars {
   display: flex;
-  gap: 0.4375rem;
   justify-content: flex-end;
   flex-direction: row-reverse;
 }
 
 .pupup-review__star {
   cursor: pointer;
+  padding-right: 0.4375rem;
   font-size: 1.375rem;
   color: #D9D9D9;
 }
@@ -1809,6 +1820,10 @@ main {
 .pupup-no-review__explanation {
   max-width: 17.5rem;
   font-size: 1.125rem;
+}
+
+.pupup-no-review__explanation_width {
+  max-width: 20.625rem;
 }
 
 .pupup-no-review__title,
@@ -2407,6 +2422,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  outline: none;
 }
 
 .review-button-prev {
@@ -4225,6 +4241,41 @@ main {
 @media (max-width: 21.875em) {
   .profile__section {
     width: 100%;
+  }
+}
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  z-index: 10;
+}
+
+.preloader.hide {
+  display: none;
+}
+
+.preloader__circle {
+  flex: 0 0 6.25rem;
+  height: 6.25rem;
+  border-radius: 50%;
+  border: 0.625rem solid white;
+  border-top: 0.625rem solid #17696A;
+  border-right: 0.625rem solid #17696A;
+  animation: preloader 1s infinite linear;
+}
+
+@keyframes preloader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 /*-----------BEM-------------------------------------------------------------------------------------------*/

@@ -33,7 +33,7 @@ export async function showProducts(idProducts, minPrice, maxPrice, gender, strap
 
             productsBody.innerHTML +=
                 `
-                <div class="products__card product-card" value="${product.id}">
+                <div class="products__card product-card product-card-shell" value="${product.id}">
                     <div class="product-card__shell-image">
                         <div class="product-card__image">
                             <img src="app/img/01 main page/${product.url}" alt="${product.name}">
@@ -42,10 +42,10 @@ export async function showProducts(idProducts, minPrice, maxPrice, gender, strap
                     <div class="product-card__shell-info" id="products__shell-info">
                         <div class="products__card-rows product-card__rows">
                             <div class="product-card__page" id="product-card__page-1">
-                                <div class="product-card__name products__name">${product.name}</div>
+                                <div class="product-card__name products__name products-card-name">${product.name}</div>
                                 <div class="product-card__price">${product.price} ₽</div>
                             </div>
-                            <div class="product-card__page products__page">
+                            <div class="product-card__page products__page buy-product" value="cannot_buy">
                                 <div class="products__basket _icon-basket-add _schowIcon"></div>
                             </div>
                         </div>

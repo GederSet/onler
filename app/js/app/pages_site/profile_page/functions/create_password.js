@@ -20,7 +20,7 @@ export async function createPassword() {
                 </div>
             </div>
             <div class="profile__box">
-                <div class="profile__sub-title">Текущий пароль</div>
+                <div class="profile__sub-title">Новый пароль</div>
                     <div class="profile__rows">
                         <input name="password" type="password" id="new-password" class="profile__input-password profile__input-validate" autocomplete="off" maxlength="50">
                         <div class="profile__icon profile__icon_eye _icon-eye password-eye">
@@ -30,7 +30,7 @@ export async function createPassword() {
                 </div>
             </div>
             <div class="profile__box">
-                <div class="profile__sub-title">Текущий пароль</div>
+                <div class="profile__sub-title">Повторите пароль</div>
                     <div class="profile__rows">
                         <input name="repeatPassword" type="password" class="profile__input-password profile__input-validate" autocomplete="off" maxlength="50">
                         <div class="profile__icon profile__icon_eye _icon-eye password-eye">

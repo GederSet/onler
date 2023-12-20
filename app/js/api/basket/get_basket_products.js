@@ -52,7 +52,7 @@ async function getBasketPropducts() {
                     </div>
                     <div class="basket__row" data-da="basket__under-${product.id},last,700">
                         <button class="basket__change" data-counter="minus"></button>
-                        <input class="basket__number" type="text" value="${product.basket_count}" max="${product.stock_quantity}"
+                        <input class="basket__number" type="text" value="${product.basket_count}" max="20"
                             inputmode="numeric">
                         <button class="basket__change" data-counter="plus"></button>
                     </div>

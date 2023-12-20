@@ -22,7 +22,7 @@ export async function showProducts() {
         products.forEach(product => {
             historyBody.innerHTML +=
                 `
-                <div class="history__card-body" value="${product.id}">
+                <div class="history__card-body product-card-shell" value="${product.id}">
                 ${getMenuBody(product.status)}
                     <div class="history__card product-card">
                         <div class="product-card__shell-image">
@@ -105,7 +105,7 @@ function checkHideProduct(status, name) {
     if (status == 'Куплен') {
         return `
         <div class="history__rows">
-            <div class="history__product-name product-card__name">${name}</div>
+            <div class="history__product-name product-card__name products-card-name">${name}</div>
             <div class="history__circle" data-ripple>
                 <div class="history__point history__point_top"></div>
                 <div class="history__point history__point_center"></div>
@@ -116,7 +116,7 @@ function checkHideProduct(status, name) {
     } else {
         return `
         <div class="history__rows">
-            <div class="history__product-name product-card__name">${name}</div>
+            <div class="history__product-name product-card__name products-card-name">${name}</div>
         </div>`
     }
 

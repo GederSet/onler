@@ -17,7 +17,7 @@
     $data = json_decode(file_get_contents("php://input"));
 
     $user->name = $data->name;
-    $user->password = $data->password;
+    $user->password = md5($data->password);
 
     if(!$user->findUser()){
         if ($user->registerUser()) {

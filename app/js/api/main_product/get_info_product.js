@@ -216,7 +216,7 @@ export async function getInfoProduct(idProduct) {
                     <div class="product__columns">
                         <div class="product__price-block">
                             <div class="product__price" data-da="info__body-name,last,1175">${productInfo.price} ₽</div>
-                            <button class="product__add main-button">Добавить в корзину</button>
+                            <button class="product__add main-button buy-product" value="cannot_buy">Добавить в корзину</button>
                             ${getDate()}
                         </div>
                     </div>

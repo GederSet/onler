@@ -15,6 +15,7 @@
 
 <body>
     <div class="wrapper">
+        <?php require_once('app/html/preloader.php')?>
         <?php require_once('app/html/header.php')?>
         <main class="main">
             <section class="products">
@@ -92,11 +93,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="products__body"></div>
+                    <div class="products__body" id="products-body"></div>
                 </div>
             </section>
         </main>
         <?php require_once('app/html/popup_user.php')?>
+        <?php require_once('app/html/popup_cannot_buy_product.php')?>
         <script type="module" src="app/js/app/script.js"></script>
         <script type="module" src="app/js/app/pages_site/home_page/home_script.js"></script>
     </div>

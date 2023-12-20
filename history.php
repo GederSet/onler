@@ -15,6 +15,7 @@
 
 <body>
     <div class="wrapper">
+        <?php require_once('app/html/preloader.php')?>
         <?php require_once('app/html/header.php')?>
         <main class="main main__history">
             <section class="history">
@@ -34,7 +35,7 @@
                             </ul>
                         </nav>
                     </div>
-                    <div class="history__body"></div>
+                    <div class="history__body" id="products-body"></div>
                 </div>
             </section>
         </main>

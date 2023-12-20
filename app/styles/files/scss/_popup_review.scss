@@ -44,13 +44,13 @@
 
 .pupup-review__stars {
     display: flex;
-    gap: rem(7);
     justify-content: flex-end;
     flex-direction: row-reverse;
 }
 
 .pupup-review__star {
     cursor: pointer;
+    padding-right: rem(7);
     font-size: rem(22);
     color: #D9D9D9;
 }
